@@ -24,13 +24,13 @@
  * no prior experience working with team members
  * no experience implementing web-based app with user input
  * no experience implementing spaced-repetition algorithms
- * lack of _____ resources
- * <More risks>
+ * _lack of _____ resources_
+ * _More risks_
 
 ### Mitigation Strategies: ###
- * <Mitigation strategies for new language/working enviro>
+ * _Mitigation strategies for new language/working enviro_
  * Close communication via multiple channels (email, Google Chat, Google Docs, GitHub Projects)
- * <More strategies>
+ * _More strategies_
 
 ### Development Method: ###
 Agile 
@@ -66,4 +66,4 @@ Agile
  (Adapted from: _IBM Agile For Dummies_)
 
 ### Project Tracking Software: ### 
-  [GitHub Projects](URL) <Add GitHub Projects URL> <Give Dr. Knox access>
+  [GitHub Projects](URL) _Add GitHub Projects URL; give Dr. Knox access_
