@@ -33,7 +33,37 @@
  * <More strategies>
 
 ### Development Method: ###
- Scrum
+Agile 
+ * Scrum
+   * Deliverables
+     * Product backlog
+     * Sprint backlog
+     * Burndown charts
+     * Shippable functionality
+   * Practices
+     * Release planning
+     * Sprint planning
+     * Sprint review
+     * Sprint retrospective
+ * Extreme Programming
+   * Team-wide coding standard
+   * Collective team ownership
+   * Continuous integration
+   * Test-driven development
+   * Simple design
+   * Small releases
+   * Sustainable
+   * Whole team
+ * Kanban
+   * Visualize work
+   * Limit work in progress
+ * Agile Modeling
+   * Requirements envisioning
+   * Implement in priority order
+   * Unified information source
+   * Document late
+   * Just barely good enough artifacts
+ (Adapted from: _IBM Agile For Dummies_)
 
 ### Project Tracking Software: ### 
-  [GitHub Projects](URL)
+  [GitHub Projects](URL) <Add GitHub Projects URL> <Give Dr. Knox access>
