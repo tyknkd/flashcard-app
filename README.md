@@ -14,10 +14,10 @@
  Fridays, 17:30 MDT 
 
 ### Vision Statement: ###
- Create a dynamic flashcard study app which stores user input cards and uses spaced-repetition
+ Create a dynamic flashcard study app which stores user input content and uses spaced-repetition
 
 ### Motivation: ###
- We want to create an easy-to-use app to enable users to study content efficiently using spaced-repetition
+ We want to create an easy-to-use app to enable users to study the content they want to study efficiently using spaced-repetition
  
 ### Risks to Completion: ###
  * new language/working environment (Need to be more specific/concrete. Which languages? What working environment?)
