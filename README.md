@@ -63,6 +63,7 @@ Agile
    * Unified information source
    * Document late
    * Just barely good enough artifacts
+ 
  (Adapted from: _IBM Agile For Dummies_)
 
 ### Project Tracking Software: ### 
