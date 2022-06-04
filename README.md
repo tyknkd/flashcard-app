@@ -16,15 +16,15 @@ Vision Statement:
 Motivation:
 
 Risks to Completion:
- * new language/working environment
+ * new language/working environment (Need more to be more concrete)
  * no prior experience working with team members
  * lack of _____ resources
- * __________
+ * <More risks>
 
 Mitigation Strategies:
- * 
+ * <Mitigation strategies for new language/working enviro>
  * Close communication via multiple channels (email, Google Chat, Google Docs, GitHub Projects)
- * _______
+ * <More strategies>
 
 Development Method: 
 
