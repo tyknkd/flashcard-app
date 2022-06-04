@@ -1,7 +1,8 @@
 # Word Salad Flashcard App #
 ## CSPB 3308 Project for Team 0 ##
 
-### Team Name: Word Salad ###
+### Team Name: ###
+ Word Salad
 
 ### Team Members: ###
  * Thomas Lees, ThomasJHLees, Thomas.Lees@colorado.edu
@@ -9,15 +10,20 @@
  * Atreyu Sutton, asutton01, Atreyu.Sutton@colorado.edu
  * Tyler Kinkade, tyknkd, Tyler.Kinkade@colorado.edu
 
-### Weekly Meeting: Fridays, 17:30 MDT ###
+### Weekly Meeting: ###
+ Fridays, 17:30 MDT 
 
 ### Vision Statement: ###
+ Create a dynamic flashcard study app which stores user input cards and uses spaced-repetition
 
 ### Motivation: ###
+ We want to create an easy-to-use app to enable users to study content efficiently using spaced-repetition
  
 ### Risks to Completion: ###
- * new language/working environment (Need more to be more concrete)
+ * new language/working environment (Need to be more specific/concrete. Which languages? What working environment?)
  * no prior experience working with team members
+ * no experience implementing web-based app with user input
+ * no experience implementing spaced-repetition algorithms
  * lack of _____ resources
  * <More risks>
 
@@ -26,7 +32,8 @@
  * Close communication via multiple channels (email, Google Chat, Google Docs, GitHub Projects)
  * <More strategies>
 
-### Development Method: ### 
+### Development Method: ###
+ Scrum
 
 ### Project Tracking Software: ### 
   [GitHub Projects](URL)
