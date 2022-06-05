@@ -67,7 +67,7 @@ Agile
  (Adapted from Ambler & Holitza, 2012)
 
 ### Project Tracking Software: ### 
-  [GitHub Projects](URL) _Add GitHub Projects URL; give Dr. Knox access_
+  [GitHub Projects](https://github.com/users/ThomasJHLees/projects/1)
 
 ### References ###
 Ambler, S. W., & Holitza, M. (2012). _Agile for dummies, IBM limited edition._ Wiley.
