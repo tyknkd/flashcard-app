@@ -29,7 +29,7 @@
 
 ### Mitigation Strategies: ###
  * _Mitigation strategies for new language/working enviro_
- * Close communication via multiple channels (email, Google Chat, Google Docs, GitHub Projects)
+ * Close communication via multiple channels (Email, Google Chat, Zoom, Google Docs, GitHub Projects)
  * _More strategies_
 
 ### Development Method: ###
