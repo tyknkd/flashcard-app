@@ -5,7 +5,7 @@
  Word Salad
 
 ### Team Members: ###
- * Thomas Lees, ThomasJHLees, Thomas.Lees@colorado.edu
+ * Thomas Lees, ThomasJHLees, Thomas.Lees@colorado.edu, (636) 565-0741
  * Janet Matthews-Derrico, j-derrico, jama1091@colorado.edu
  * Atreyu Sutton, asutton01, Atreyu.Sutton@colorado.edu
  * Tyler Kinkade, tyknkd, Tyler.Kinkade@colorado.edu
