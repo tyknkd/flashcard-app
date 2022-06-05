@@ -11,7 +11,7 @@
  * Tyler Kinkade, tyknkd, Tyler.Kinkade@colorado.edu
 
 ### Weekly Meeting: ###
- Fridays, 17:30 MDT 
+ Fridays, 17:30 MDT [Zoom: 963 8766 7366; Passcode Team0](https://cuboulder.zoom.us/j/96387667366)
 
 ### Vision Statement: ###
  Create a dynamic flashcard study app which implements a spaced-repetition algorithm to review user-input content
