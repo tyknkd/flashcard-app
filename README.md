@@ -11,7 +11,7 @@
  * Tyler Kinkade, tyknkd, Tyler.Kinkade@colorado.edu
 
 ### Weekly Meeting: ###
- Fridays, 17:30 MDT [Zoom: 963 8766 7366; Passcode Team0](https://cuboulder.zoom.us/j/96387667366)
+ Fridays, 17:30 MDT [Zoom: 963 8766 7366; Passcode: Team0](https://cuboulder.zoom.us/j/96387667366)
 
 ### Vision Statement: ###
  Create a dynamic flashcard study app which implements a spaced-repetition algorithm to review user-input content
@@ -70,7 +70,7 @@ Agile
   [GitHub Projects](URL) _Add GitHub Projects URL; give Dr. Knox access_
 
 ### References ###
-Ambler, S. W., & Holitza, M. (2012). Agile for dummies, IBM limited edition. Wiley.
+Ambler, S. W., & Holitza, M. (2012). _Agile for dummies, IBM limited edition._ Wiley.
 
 Dunlosky, J., Rawson, K. A., Marsh, E. J., Nathan, M. J., & Willingham, D. T. (2013). Improving students’ learning with effective learning techniques: Promising directions from cognitive and educational psychology. _Psychological Science in the Public Interest, 14_(1), 4-58. [https://doi.org/10.1177/1529100612453266](https://doi.org/10.1177/1529100612453266)
 
