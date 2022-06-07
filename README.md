@@ -20,18 +20,18 @@
  Traditional blocked learning (i.e., "cramming") is inefficient compared to spaced interleaved learning (Dunlosky et al., 2013; Kornell & Bjork, 2008; Mondria & Mondria-De Vries, 1994), but few flashcard apps incorporate spaced-repetition. Therefore, we want to create an easy-to-use app to enable users to study the content they want to study efficiently using spaced-repetition.
  
 ### Risks to Completion: ###
- * new language/working environment (Need to be more specific/concrete. Which languages? What working environment?)
- * no prior experience working with team members
- * no experience implementing web-based app with user input
- * no experience implementing spaced-repetition algorithms
- * _lack of _____ resources_
- * _More risks_
+ * New languages/working environment (e.g. HTML, CSS, SQL)
+ * No prior experience working with team members
+ * No experience implementing web-based app with user input
+ * No experience implementing spaced-repetition algorithms
+ * Scope of project (could fail to deliver working project due to high number of desired features)
 
 ### Mitigation Strategies: ###
- * _Mitigation strategies for new language/working enviro_
+ * Take advantage of documentation--while the languages and working environments are new to us, they aren't *new*, and there is extensive documentation and online resources available
  * Close communication via multiple channels (Email, Google Chat, Zoom, Google Docs, GitHub Projects)
- * _More strategies_
-
+ * Weekly meetings to check in, discuss challenges/obstacles, and make sure everyone is on track
+ * Take advantage of team member knowledge on spaced-repetition, research available open source spaced-repetition platforms
+ * Focus first and foremost on minimum viable product, then prioritize additional desired, but not required features.  This will ensure ability to deliver a functional project on deadline
 ### Development Method: ###
 Agile 
  * Scrum
