@@ -11,7 +11,7 @@
  * Tyler Kinkade, tyknkd, Tyler.Kinkade@colorado.edu
 
 ### Weekly Meeting: ###
- Fridays, 17:30 MDT, Zoom
+ Mondays, 17:30 MDT, Zoom
 
 ### Vision Statement: ###
  Create a dynamic flashcard study app which implements a spaced-repetition algorithm to review user-input content
