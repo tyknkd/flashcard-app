@@ -74,7 +74,7 @@ Ambler, S. W., & Holitza, M. (2012). _Agile for dummies, IBM limited edition._ W
 
 Dunlosky, J., Rawson, K. A., Marsh, E. J., Nathan, M. J., & Willingham, D. T. (2013). Improving students’ learning with effective learning techniques: Promising directions from cognitive and educational psychology. _Psychological Science in the Public Interest, 14_(1), 4-58. [https://doi.org/10.1177/1529100612453266](https://doi.org/10.1177/1529100612453266)
 
-Kornell, N., & Bjork, R. A. (2008). Learning concepts and categories: Is spacing the “enemy of induction”? _Psychological Science, 19_(6), 585-592. [https://doi.org/10.1111/j.1467-9280.2008.02127.x](https://doi.org/10.1111/j.1467-9280.2008.02127.x)[
+Kornell, N., & Bjork, R. A. (2008). Learning concepts and categories: Is spacing the “enemy of induction”? _Psychological Science, 19_(6), 585-592. [https://doi.org/10.1111/j.1467-9280.2008.02127.x](https://doi.org/10.1111/j.1467-9280.2008.02127.x)
 
 Mondria, J-A., & Mondria-De Vries, S. (1994). Efficiently memorizing words with the help of word
 cards and “hand computer”: Theory and applications. _System, 22_(1), 47–57. [https://doi.org/10.1016/0346-251X(94)90039-6](https://doi.org/10.1016/0346-251X\(94\)90039-6)
