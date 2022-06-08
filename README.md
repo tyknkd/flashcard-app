@@ -32,6 +32,10 @@
  * Weekly meetings to check in, discuss challenges/obstacles, and make sure everyone is on track
  * Take advantage of team member knowledge on spaced-repetition, research available open source spaced-repetition platforms
  * Focus first and foremost on minimum viable product, then prioritize additional desired, but not required features.  This will ensure ability to deliver a functional project on deadline
+
+### Minimum Viable Product ###
+ * Website interface with a premade English-English vocabulary flashcard set and no user tracking
+
 ### Development Method: ###
 Agile 
  * Scrum
