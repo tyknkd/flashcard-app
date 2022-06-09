@@ -37,9 +37,17 @@
  * Website interface with a premade English-English vocabulary flashcard set and no user tracking
 
 ### Development Method: ###
+We plan to use an Agile framework and borrow pieces of several development idealogies to complete our project.
+
+For our meeting schedule we will largely borrow what Scrum recommends, but condensed into a single weekly meeting. We wil give updates about what we've worked on, what we're going to work on and any blockers that may be in place (standup), host a retrospective of our last sprint period, and complete any required sprint planning. Unfortunately, a daily standup and additional scrum meetings do not make the most sense in a classroom environment.
+
+For our planning and prioritization pieces, we will be using more of a Kanban model. We will define user stories, and organize them in a prioritized backlog. New stories will only be pulled into the board to be worked on when the current work has been completed (within reason). We will also adopt some lean principles in planning where we will only be creating new stories slightly before they are needed instead of trying to map out our entire process. Because of our inexperience in developing programs it makes sense to leave planning to the latest possible time so that we have opportunities to learn pieces that we did not know that we did not know.
+
+The following is a summarized list of the practices we hope to implement on our team: 
+
 Agile 
  * Scrum
-   * Practices
+   * Practices - combined into a single weekly meeting
      * Release planning
      * Sprint planning
      * Sprint review
@@ -58,7 +66,7 @@ Agile
    * Small, frequent releases
    * Sustainable work pace
    * Whole team understands whole project
- * Kanban
+ * Kanban - with our GitHub project board
    * Visualize workflow
    * Limit work in progress
  * Agile Modeling
