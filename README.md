@@ -36,6 +36,15 @@
 ### Minimum Viable Product ###
  * Website interface with a premade English-English vocabulary flashcard set and no user tracking
 
+#### Product Stretch Goals ####
+1. Methods for adding flashcards from the website interface
+2. Categorization of flash cards and ability to organize by category from the website
+3. A flashcard "deck" concept to organize cards
+4. User accounts
+5. Saving decks to user profiles
+6. Public and Private card decks
+7. Searching
+
 ### Development Method: ###
 We plan to use an Agile framework and borrow pieces of several development idealogies to complete our project.
 
