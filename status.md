@@ -8,7 +8,8 @@
 
 ### 6/27/22 ###
 
-### 7/4/22 ### - may want to change date of this one
+### 7/4/22 ### 
+* May want to change date of this one
 
 ### 7/11/22 ###
 
