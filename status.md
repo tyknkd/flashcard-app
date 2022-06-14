@@ -6,6 +6,7 @@
 * We started looking into the different software packages that we can use for our project
 * We created and reviewed user stories for MVP for our project
 * We created new user stories and prepped them for assignment to team members
+* We started sorting out our team's expertise to figure who would be best suited to each task
 
 ### 6/20/22 ###
 
