@@ -1,8 +1,11 @@
 ## Word Salad Status Meetings ##
 ### 6/6/22 ###
-
+* We created a Readme document for our project with Team Name, Vision Statement, Tools to be used, etc.
 
 ### 6/13/22 ###
+* We started looking into the different software packages that we can use for our project
+* We reviewed user stories for MVP for our application
+* We created new user stories and prepped them for assignment to team members
 
 ### 6/20/22 ###
 
