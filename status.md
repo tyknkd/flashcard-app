@@ -4,7 +4,7 @@
 
 ### 6/13/22 ###
 * We started looking into the different software packages that we can use for our project
-* We reviewed user stories for MVP for our application
+* We created and reviewed user stories for MVP for our project
 * We created new user stories and prepped them for assignment to team members
 
 ### 6/20/22 ###
