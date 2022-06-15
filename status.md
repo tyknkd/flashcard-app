@@ -7,7 +7,7 @@
 * We created and reviewed user stories for MVP for our project
 * We created new user stories and prepped them for assignment to team members
 * We started sorting out our team's expertise to figure who would be best suited to each task
-  * Assigend research spikes to figure out where we can use the technologies we will be learning in this course in our project
+  * Assigned research spikes to figure out where we can use the technologies we will be learning in this course in our project
 
 ### 6/20/22 ###
 
