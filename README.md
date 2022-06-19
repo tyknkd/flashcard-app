@@ -20,7 +20,7 @@
  Traditional blocked learning (i.e., "cramming") is inefficient compared to spaced interleaved learning (Dunlosky et al., 2013; Kornell & Bjork, 2008; Mondria & Mondria-De Vries, 1994), but very few flashcard apps incorporate spaced-repetition with user content. Therefore, we want to create an easy-to-use app to enable users to study the content they want to study efficiently using spaced-repetition.
  
 ### Risks to Completion: ###
- * New languages/working environment (e.g. HTML, CSS, SQL)
+ * New languages/working environment (e.g., HTML, CSS, SQL, JavaScript, Flask, Heroku)
  * No prior experience working with team members
  * No experience implementing web-based app with user input
  * No experience implementing spaced-repetition algorithms
