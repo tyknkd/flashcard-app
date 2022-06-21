@@ -10,6 +10,11 @@
   * Assigned research spikes to figure out where we can use the technologies we will be learning in this course in our project
 
 ### 6/20/22 ###
+* All of us finished the research spikes that we started last week
+* New tasks have been assigned to each person, and those will finally have us starting on a little bit of code
+
+<img src="https://user-images.githubusercontent.com/105689655/174692326-ff4cb1bb-f405-45a3-aeba-3564b7c7a429.png" width="300">
+
 
 ### 6/27/22 ###
 
