@@ -2,8 +2,8 @@
 #
 # Reference: https://flask.palletsprojects.com/en/2.1.x/quickstart
 #
-# Import Flask, template 
-from flask import Flask, render_template 
+# Import Flask, template, reverse URL class
+from flask import Flask, render_template, url_for
 
 # Create instance of class
 app = Flask(__name__)
