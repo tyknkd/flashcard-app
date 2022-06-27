@@ -1,11 +1,29 @@
 ### Page 1: Home Page ###
 * Page Description (include a mockup or hand drawn image of the page)
-    * Single Column etc.
+    * Header with Links
+    * Single Column
+    * Description of Service
+    * Big Green Link to Deck Viewing Pages
+    * Footer with Contact
+
+        * Image Here...
+
 * Parameters needed for the page
+
+    * MVP idea and scope
+
 * Data needed to render the page
+
+    * Home Page HTML
+
 * Link destinations for the page
 
+    * Links to deck viewing, contact page
+    * Quick links to induvigual decks
+
 * List of tests for verifying the rendering of the page
+
+    * HELP here...
 
 
 =======================================================================
