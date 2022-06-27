@@ -7,10 +7,13 @@
     * Footer with Contact
 
         * Image Here...
+        * <img src="images/homepage.jpg" alt="Home Page Screenshot" style="float: left; margin-right: 10px;" />
 
 * Parameters needed for the page
 
     * MVP idea and scope
+    * Logo
+    * Description excerpt
 
 * Data needed to render the page
 
