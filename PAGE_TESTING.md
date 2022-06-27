@@ -6,7 +6,7 @@
     * Big Green Link to Deck Viewing Pages
     * Footer with Contact
 
-        * <img src="images/homepage.jpg" alt="Home Page Screenshot" style="float: left; margin-right: 10px;" />
+        <img src="images/homepage.jpg" alt="Home Page Screenshot" style="float: left; margin-right: 10px;" />
 
 * Parameters needed for the page
 
