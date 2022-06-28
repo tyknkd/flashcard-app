@@ -25,7 +25,20 @@
 
 
 ### 6/27/22 ###
+* Completed:
+  * Atreyu: Drafted list of required (MVP) pages for the website and proposed content
+  * Janet: Sourced and formatted SAT vocabulary text files
+  * Thomas: Coded [database](https://dbdiagram.io/d/62b9598569be0b672c4831be) for flashcards
+  * Tyler: Created basic Flask app, HTML templates, and CSS style sheet
+* Next tasks:
+  * Atreyu: Create webpage mockups using [figma.com](https://www.figma.com/)
+  * Janet: Source additional vocabulary (e.g., GRE, LSAT)
+  * Thomas: Code script to populate database with vocab csv
+  * Tyler: Draft list of tests for PAGE_TESTING.md; update WEEKLY_STATUS.md
 
+<img src="https://github.com/ThomasJHLees/Team0Project/blob/main/images/kanban/kanban20220627.png" width="300">
+ 
+ 
 ### 7/4/22 ### 
 * May want to change date of this one
 
