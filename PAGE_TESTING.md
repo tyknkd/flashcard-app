@@ -36,7 +36,7 @@
 =======================================================================
 
 
-### Page 2: Viewing Page for all Decks ###
+### Page 2: Login Page ###
 * Page Description (include a mockup or hand drawn image of the page)
 * Parameters needed for the page
 * Data needed to render the page
@@ -52,7 +52,7 @@
 =======================================================================
 
 
-### Page 3: Individual Deck Page ###
+### Page 3: All Deck Viewing Page ###
 * Page Description (include a mockup or hand drawn image of the page)
 * Parameters needed for the page
 * Data needed to render the page
@@ -70,7 +70,7 @@
 =======================================================================
 
 
-### Page 4: Login Page ###
+### Page 4: Indivigual Deck Page ###
 * Page Description (include a mockup or hand drawn image of the page)
 * Parameters needed for the page
 * Data needed to render the page
@@ -89,7 +89,7 @@
 =======================================================================
 
 
-### Page 5: Contact Page ###
+### Page 5: Filter Page ###
 * Page Description (include a mockup or hand drawn image of the page)
 * Parameters needed for the page
 * Data needed to render the page
