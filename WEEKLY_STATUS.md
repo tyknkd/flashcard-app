@@ -38,12 +38,11 @@
 
 <img src="https://github.com/ThomasJHLees/Team0Project/blob/main/images/kanban/kanban20220627.png" width="300">
  
- 
-### 7/4/22 ### 
-* May want to change date of this one
 
 ### 7/11/22 ###
 
 ### 7/18/22 ###
 
 ### 7/25/22 ###
+
+### 8/1/22 ###
