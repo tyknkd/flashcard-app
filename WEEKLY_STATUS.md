@@ -1,7 +1,7 @@
 ## Word Salad Status Meetings ##
 ### Week 1 (June 6-12) ###
 * We introduced ourselves and talked about our backgrounds and prior experience with programming/computer science
-* We agreed on a website with language flashcards for our project and discussed different potential features (e.g. login page, spaced repition, etc) as well as a basic definition for our minimum viable product
+* We agreed on a website with language flashcards for our project and discussed different potential features (e.g. login page, spaced repetition, etc) as well as a basic definition for our minimum viable product
 * We assigned points to the user stories assigned to us
 * We created a Readme document for our project with Team Name, Vision Statement, Tools to be used, etc.
 
