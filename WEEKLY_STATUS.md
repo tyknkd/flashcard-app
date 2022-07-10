@@ -46,6 +46,8 @@
   * Thomas: Coding script to populate database with vocab csv
   * Tyler: Drafting list of tests for PAGE_TESTING.md; updating WEEKLY_STATUS.md
 
+<img src="https://github.com/ThomasJHLees/Team0Project/blob/main/images/kanban/kanban20220710.png" width="300">
+
 ### Week 6 (July 11-17) ###
 * Completed:
   * Atreyu:
