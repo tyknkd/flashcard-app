@@ -1,18 +1,18 @@
 ## Word Salad Status Meetings ##
-### 6/6/22 ###
+### Week 1 (June 6-12) ###
 * We introduced ourselves and talked about our backgrounds and prior experience with programming/computer science
 * We agreed on a website with language flashcards for our project and discussed different potential features (e.g. login page, spaced repition, etc) as well as a basic definition for our minimum viable product
 * We assigned points to the user stories assigned to us
 * We created a Readme document for our project with Team Name, Vision Statement, Tools to be used, etc.
 
-### 6/13/22 ###
+### Week 2 (June 13-19) ###
 * We started looking into the different software packages that we can use for our project
 * We created and reviewed user stories for MVP for our project
 * We created new user stories and prepped them for assignment to team members 
 * We started sorting out our team's expertise to figure who would be best suited to each task
   * Assigned research spikes to figure out where we can use the technologies we will be learning in this course in our project
 
-### 6/20/22 ###
+### Week 3 (June 20-26) ###
 * All of us finished the research spikes that we started last week
 * Presented our research to the team and shared useful resources
   * Atreyu: Heroku, how we will deploy our project
@@ -24,7 +24,7 @@
 <img src="https://user-images.githubusercontent.com/105689655/174692326-ff4cb1bb-f405-45a3-aeba-3564b7c7a429.png" width="300">
 
 
-### 6/27/22 ###
+### Week 4 (June 27-July 3) ###
 * Completed:
   * Atreyu: Drafted list of required (MVP) pages for the website and proposed content
   * Janet: Sourced and formatted SAT vocabulary text files
@@ -39,8 +39,57 @@
 <img src="https://github.com/ThomasJHLees/Team0Project/blob/main/images/kanban/kanban20220627.png" width="300">
  
 
-### 7/11/22 ###
+### Week 5 (July 4-10) ###
+* In progress:
+  * Atreyu: Creating on webpage mockups
+  * Janet: Sourcing additional vocabulary lists
+  * Thomas: Coding script to populate database with vocab csv
+  * Tyler: Drafting list of tests for PAGE_TESTING.md; updating WEEKLY_STATUS.md
 
-### 7/18/22 ###
+### Week 6 (July 11-17) ###
+* Completed:
+  * Atreyu:
+  * Janet:
+  * Thomas:
+  * Tyler:
+* Next tasks:
+  * Atreyu:
+  * Janet:
+  * Thomas:
+  * Tyler:
 
-### 7/25/22 ###
+### Week 7 (July 18-24) ###
+* Completed:
+  * Atreyu:
+  * Janet:
+  * Thomas:
+  * Tyler:
+* Next tasks:
+  * Atreyu:
+  * Janet:
+  * Thomas:
+  * Tyler:
+
+### Week 8 (July 24-31) ###
+* Completed:
+  * Atreyu:
+  * Janet:
+  * Thomas:
+  * Tyler:
+* Next tasks:
+  * Atreyu:
+  * Janet:
+  * Thomas:
+  * Tyler:
+
+### Week 9 (August 1-8) ###
+* Completed:
+  * Atreyu:
+  * Janet:
+  * Thomas:
+  * Tyler:
+* Next tasks:
+  * Atreyu:
+  * Janet:
+  * Thomas:
+  * Tyler:
