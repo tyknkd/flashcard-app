@@ -17,10 +17,11 @@
 * Data needed to render the page
 
     * Home Page HTML
+    * Deck Titles and Descriptions
 
 * Link destinations for the page
 
-    * Links to deck viewing, contact page
+    * Links to deck viewing/filter, deck interacting page, if logged in--create/edit page and personal deck page
     * Quick links to individual decks
 
 * List of tests for verifying the rendering of the page
@@ -53,7 +54,7 @@
         * Home
         * All decks/Filter Page
         * Indivigual Decks
-    * Not Availible
+    * Not Availible (Availible after logged in)
         * Personal Deck Page
         * Personal Deck Creation/Editing Page
 
@@ -68,7 +69,13 @@
 
 
 =======================================================================
-=======================================================================
+
+
+### Page 3: All Deck Viewing Page / Filter Page ###
+* Page Description (include a mockup or hand drawn image of the page)
+* Parameters needed for the page
+* Data needed to render the page
+* Link destinations for the page
 
 
 
@@ -79,16 +86,10 @@
     * All links lead to correct pages
     * Drop down menus display when menu item clicked
 
-=======================================================================
 
 
-### Page 3: All Deck Viewing Page / Filter Page ###
-* Page Description (include a mockup or hand drawn image of the page)
-* Parameters needed for the page
-* Data needed to render the page
-* Link destinations for the page
 
-* List of tests for verifying the rendering of the page
+
     * Page can be accessed via `/decks/<deck_name>/` and `/decks/<deck_name>`
     * Correct page title
     * All links lead to correct pages
