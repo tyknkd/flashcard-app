@@ -24,7 +24,7 @@
     * Available
         * Home
         * All decks/Filter Page
-        * Indivigual Decks
+        * Indivigual Decks Interacting Page
     * Available If Logged In
         * Personal Deck Page
         * Personal Deck Creation/Editing Page
@@ -112,11 +112,26 @@
 =======================================================================
 
 
-### Page 4: Deck Page for Interacting and Using INDIVIGUAL Decks###
+### Page 4: Indivigual Decks Interacting Page ###
 * Page Description (include a mockup or hand drawn image of the page)
+    * This is a page for interacting with the decks
+    * THIS is the interactive USEABLE PAGE - the purpose of our software
 * Parameters needed for the page
+    * All the created decks
 * Data needed to render the page
+    * Decks and their corresponding info
 * Link destinations for the page
+
+    * Available
+        * Home
+        * All decks/Filter Page
+        * Indivigual Decks Interacting Page <---- THIS IS THE PAGE
+    * Available If Logged In
+        * Personal Deck Page
+        * Personal Deck Creation/Editing Page
+    * Available If Not Logged In
+        * Log In Page
+
 
 * List of tests for verifying the rendering of the page
 
