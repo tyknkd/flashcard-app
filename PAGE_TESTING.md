@@ -210,7 +210,8 @@
     * Correct page title
     * All links lead to correct pages
     * Drop down menus display when clicked
-    * Contact form displayed
-    * Form can be submitted with valid name, email address, message entered
-    * Error message displayed when invalid information entered
+    * Edit Cards displayed
+    * Card can be edited and uploaded to DB
+    * Verified proper info was stored in the DB
+    * Error message displayed when error occured etc.
  
