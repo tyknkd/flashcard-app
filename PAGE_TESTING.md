@@ -48,13 +48,13 @@
     * Logo
     * Knowledge of HTML Forms
 * Data needed to render the page
-    * BD with login information and they're assosiated decks
+    * DB with login information and they're assosiated decks
 * Link destinations for the page
-    * Availible
+    * Available
         * Home
         * All decks/Filter Page
         * Indivigual Decks
-    * Not Availible (Availible after logged in)
+    * Not Available (Availible after logged in)
         * Personal Deck Page
         * Personal Deck Creation/Editing Page
 
@@ -73,10 +73,20 @@
 
 ### Page 3: All Deck Viewing Page / Filter Page ###
 * Page Description (include a mockup or hand drawn image of the page)
-* Parameters needed for the page
-* Data needed to render the page
-* Link destinations for the page
+    * Header to other pages
+    * Page with all decks creates by World Salad
+    * Includes filter to cycle through the decks
+    * Footer with Contact
 
+* Parameters needed for the page
+    * All decks written out
+    * Logo
+    * Other pages with corresponding links
+* Data needed to render the page
+    * Admin created decks
+* Link destinations for the page
+    * Links to deck viewing/filter, deck interacting page, if logged in--create/edit page and personal deck page
+    * Quick links to individual decks
 
 
 * List of tests for verifying the rendering of the page
@@ -86,9 +96,7 @@
     * All links lead to correct pages
     * Drop down menus display when menu item clicked
 
-
-
-
+* List of tests for verifying the rendering of the page
 
     * Page can be accessed via `/decks/<deck_name>/` and `/decks/<deck_name>`
     * Correct page title
@@ -101,16 +109,27 @@
 =======================================================================
 
 
-### Page 4: Deck Page for Interacting and Using Deck###
+### Page 4: Deck Page for Interacting and Using INDIVIGUAL Decks###
 * Page Description (include a mockup or hand drawn image of the page)
 * Parameters needed for the page
 * Data needed to render the page
 * Link destinations for the page
 
+* List of tests for verifying the rendering of the page
+
+    * Page can be accessed via `/decks/<deck_name>/` and `/decks/<deck_name>`
+    * Correct page title
+    * All links lead to correct pages
+    * Drop down menus display when menu item clicked
+    * Appropriate flashcard deck loaded
+    * Clicking flashcard displays back of card
+    * Front of flashcard corresponds to correct back of card (i.e., word matches definition)
 
 
 
 =======================================================================
+
+
 
 
 ### Page 5: Personal Decks Page ###
