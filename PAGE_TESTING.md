@@ -38,9 +38,39 @@
 
 ### Page 2: Login Page ###
 * Page Description (include a mockup or hand drawn image of the page)
+    * Small Logo
+    * Simple Middle Box with Login Form
+        * Username Box
+        * Password Box
+    * Small Footer with point of Contact
 * Parameters needed for the page
+    * Logo
+    * Knowledge of HTML Forms
 * Data needed to render the page
+    * BD with login information and they're assosiated decks
 * Link destinations for the page
+    * Availible
+        * Home
+        * All decks/Filter Page
+        * Indivigual Decks
+    * Not Availible
+        * Personal Deck Page
+        * Personal Deck Creation/Editing Page
+
+* List of tests for verifying the rendering of the page
+    * Page can be accessed via `/login/` and `/login`
+    * Correct page title
+    * Correct page contents
+    * All links lead to correct pages
+    * Drop down menus display when menu item clicked
+    * Correct username and password results in authentication
+    * Error displayed for incorrect username/password
+
+
+=======================================================================
+=======================================================================
+
+
 
 * List of tests for verifying the rendering of the page
     * Page can be accessed via `/decks/` and `/decks`
@@ -52,7 +82,7 @@
 =======================================================================
 
 
-### Page 3: All Deck Viewing Page ###
+### Page 3: All Deck Viewing Page / Filter Page ###
 * Page Description (include a mockup or hand drawn image of the page)
 * Parameters needed for the page
 * Data needed to render the page
@@ -70,26 +100,19 @@
 =======================================================================
 
 
-### Page 4: Indivigual Deck Page ###
+### Page 4: Deck Page for Interacting and Using Deck###
 * Page Description (include a mockup or hand drawn image of the page)
 * Parameters needed for the page
 * Data needed to render the page
 * Link destinations for the page
 
-* List of tests for verifying the rendering of the page
-    * Page can be accessed via `/login/` and `/login`
-    * Correct page title
-    * Correct page contents
-    * All links lead to correct pages
-    * Drop down menus display when menu item clicked
-    * Correct username and password results in authentication
-    * Error displayed for incorrect username/password
+
 
 
 =======================================================================
 
 
-### Page 5: Filter Page ###
+### Page 5: Personal Decks Page ###
 * Page Description (include a mockup or hand drawn image of the page)
 * Parameters needed for the page
 * Data needed to render the page
