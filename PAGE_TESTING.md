@@ -1,5 +1,6 @@
 ### Page 1: Home Page ###
 * Page Description (include a mockup or hand drawn image of the page)
+
     * Header with Links
     * Single Column
     * Description of Service
@@ -45,18 +46,26 @@
 
 
 ### Page 2: Login Page ###
+
 * Page Description (include a mockup or hand drawn image of the page)
+
     * Small Logo
     * Simple Middle Box with Login Form
         * Username Box
         * Password Box
     * Small Footer with point of Contact
+
 * Parameters needed for the page
+
     * Logo
     * Knowledge of HTML Forms
+
 * Data needed to render the page
+
     * DB with login information and they're assosiated decks
+
 * Link destinations for the page
+
     * Available
         * Home
         * All decks/Filter Page
@@ -66,6 +75,7 @@
         * Personal Deck Creation/Editing Page
 
 * List of tests for verifying the rendering of the page
+
     * Page can be accessed via `/login/` and `/login`
     * Correct page title
     * Correct page contents
@@ -79,19 +89,28 @@
 
 
 ### Page 3: All Deck Viewing Page / Filter Page ###
+
 * Page Description (include a mockup or hand drawn image of the page)
+
+    * !!!May include user created decks OR may have a separate page similar to this to show user created decks
+
     * Header to other pages
     * Page with all decks creates by World Salad
     * Includes filter to cycle through the decks
     * Footer with Contact
 
 * Parameters needed for the page
+
     * All decks written out
     * Logo
     * Other pages with corresponding links
+
 * Data needed to render the page
+
     * Admin created decks
+
 * Link destinations for the page
+
     * Available
         * Home
         * Indivigual Decks
@@ -101,25 +120,33 @@
     * Available If Not Logged In
         * Log In Page
 
-
 * List of tests for verifying the rendering of the page
+
     * Page can be accessed via `/decks/` and `/decks`
     * Correct page title
     * All available decks displayed
     * All links lead to correct pages
     * Drop down menus display when menu item clicked
 
+
 =======================================================================
 
 
 ### Page 4: Indivigual Decks Interacting Page ###
+
 * Page Description (include a mockup or hand drawn image of the page)
+
     * This is a page for interacting with the decks
     * THIS is the interactive USEABLE PAGE - the purpose of our software
+
 * Parameters needed for the page
+
     * All the created decks
+
 * Data needed to render the page
+
     * Decks and their corresponding info
+
 * Link destinations for the page
 
     * Available
@@ -132,7 +159,6 @@
     * Available If Not Logged In
         * Log In Page
 
-
 * List of tests for verifying the rendering of the page
 
     * Page can be accessed via `/decks/<deck_name>/` and `/decks/<deck_name>`
@@ -144,13 +170,10 @@
     * Front of flashcard corresponds to correct back of card (i.e., word matches definition)
 
 
-
 =======================================================================
 
 
-
-
-### Page 5: Personal Decks Page ###
+### Page 5: Deck Creation/Editing Page ###
 * Page Description (include a mockup or hand drawn image of the page)
 * Parameters needed for the page
 * Data needed to render the page
