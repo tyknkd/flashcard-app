@@ -132,7 +132,7 @@
 =======================================================================
 
 
-### Page 4: Indivigual Decks Interacting Page ###
+### Page 4: Indivigual Decks Interaction Page - PAGE TO STUDY DECKS ###
 
 * Page Description (include a mockup or hand drawn image of the page)
 
@@ -175,9 +175,34 @@
 
 ### Page 5: Deck Creation/Editing Page ###
 * Page Description (include a mockup or hand drawn image of the page)
+
+    * Flash Card Editing in the Center
+        * Use text boxes for primary editing software
+    * This is the most challenging page
+
 * Parameters needed for the page
+
+    * Direct connection to the DB
+    * Preexisting Decks
+
 * Data needed to render the page
+
+    * Direct connection to the DB
+    * All decks and potential user login
+
 * Link destinations for the page
+
+    * Available
+        * Home
+        * All decks/Filter Page
+        * Indivigual Decks Interacting Page
+    * Available If Logged In
+        * Personal Deck Page
+        * Personal Deck Creation/Editing Page
+    * Available If Not Logged In
+        * Log In Page
+
+
 
 * List of tests for verifying the rendering of the page
     * Page can be accessed via `/contact/` and `/contact`
