@@ -96,6 +96,7 @@
 
     * Header to other pages
     * Page with all decks creates by World Salad
+    * Button to make a new Deck
     * Includes filter to cycle through the decks
     * Footer with Contact
 
@@ -205,7 +206,7 @@
 
 
 * List of tests for verifying the rendering of the page
-    * Page can be accessed via `/contact/` and `/contact`
+    * Page can be accessed via `/edit/<deck_name>/` and `/edit/<deck_name>`
     * Correct page title
     * All links lead to correct pages
     * Drop down menus display when clicked
