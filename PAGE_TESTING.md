@@ -6,7 +6,7 @@
     * Big Green Link to Deck Viewing Pages
     * Footer with Contact
 
-        <img src="images/homepage.jpg" alt="Home Page Screenshot" style="float: left; margin-right: 10px;" />
+        <!-- <img src="images/homepage.jpg" alt="Home Page Screenshot" style="float: left; margin-right: 10px;" /> -->
 
 * Parameters needed for the page
 
@@ -95,16 +95,6 @@
     * All available decks displayed
     * All links lead to correct pages
     * Drop down menus display when menu item clicked
-
-* List of tests for verifying the rendering of the page
-
-    * Page can be accessed via `/decks/<deck_name>/` and `/decks/<deck_name>`
-    * Correct page title
-    * All links lead to correct pages
-    * Drop down menus display when menu item clicked
-    * Appropriate flashcard deck loaded
-    * Clicking flashcard displays back of card
-    * Front of flashcard corresponds to correct back of card (i.e., word matches definition)
 
 =======================================================================
 
