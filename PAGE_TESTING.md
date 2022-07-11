@@ -21,8 +21,15 @@
 
 * Link destinations for the page
 
-    * Links to deck viewing/filter, deck interacting page, if logged in--create/edit page and personal deck page
-    * Quick links to individual decks
+    * Available
+        * Home
+        * All decks/Filter Page
+        * Indivigual Decks
+    * Available If Logged In
+        * Personal Deck Page
+        * Personal Deck Creation/Editing Page
+    * Available If Not Logged In
+        * Log In Page
 
 * List of tests for verifying the rendering of the page
 
@@ -85,8 +92,14 @@
 * Data needed to render the page
     * Admin created decks
 * Link destinations for the page
-    * Links to deck viewing/filter, deck interacting page, if logged in--create/edit page and personal deck page
-    * Quick links to individual decks
+    * Available
+        * Home
+        * Indivigual Decks
+    * Available If Logged In
+        * Personal Deck Page
+        * Personal Deck Creation/Editing Page
+    * Available If Not Logged In
+        * Log In Page
 
 
 * List of tests for verifying the rendering of the page
