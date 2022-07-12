@@ -50,15 +50,15 @@
 
 ### Week 6 (July 11-17) ###
 * Completed:
-  * Atreyu:
-  * Janet:
-  * Thomas:
-  * Tyler:
+  * Atreyu: Added page descriptions, etc. to PAGE_TESTING.md
+  * Janet: Sourced vocabulary lists, added part of speech data
+  * Thomas: Coded initial database scripts
+  * Tyler: Added test criteria to PAGE_TESTING.md
 * Next tasks:
-  * Atreyu:
-  * Janet:
-  * Thomas:
-  * Tyler:
+  * Atreyu: Start coding webpages
+  * Janet: Mockup webpages for Milestone 4
+  * Thomas: Expand database script
+  * Tyler: Code database unit tests
 
 ### Week 7 (July 18-24) ###
 * Completed:
