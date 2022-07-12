@@ -59,6 +59,8 @@
   * Janet: Mockup webpages for Milestone 4
   * Thomas: Expand database script
   * Tyler: Code database unit tests
+ 
+ <img src="https://github.com/ThomasJHLees/Team0Project/blob/main/images/kanban/kanban20220711.png" width="300">
 
 ### Week 7 (July 18-24) ###
 * Completed:
