@@ -14,5 +14,7 @@ def createDB(dbName, sql):
     c.executescript(sql)
     conn.commit()
 
+dbName = "flashcards.db"
 sql = getSQL(".\dbScripts\MySQLCreate.sql")
-createDB("flashcards.db", sql)
+createDB(dbName, sql)
+print('Database', dbName, "created successfully")
