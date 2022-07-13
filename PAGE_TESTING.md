@@ -27,7 +27,7 @@
     * Available
         * Home
         * All decks/Filter Page
-        * Indivigual Decks Interacting Page
+        * Individual Decks Interacting Page
     * Available If Logged In
         * Personal Deck Page
         * Personal Deck Creation/Editing Page
@@ -71,7 +71,7 @@
     * Available
         * Home
         * All decks/Filter Page
-        * Indivigual Decks
+        * Individual Decks
     * Not Available (Availible after logged in)
         * Personal Deck Page
         * Personal Deck Creation/Editing Page
@@ -116,7 +116,7 @@
 
     * Available
         * Home
-        * Indivigual Decks
+        * Individual Decks
     * Available If Logged In
         * Personal Deck Page
         * Personal Deck Creation/Editing Page
@@ -135,7 +135,7 @@
 =======================================================================
 
 
-### Page 4: Indivigual Decks Interaction Page - PAGE TO STUDY DECKS ###
+### Page 4: Individual Decks Interaction Page - PAGE TO STUDY DECKS ###
 
 * Page Description (include a mockup or hand drawn image of the page)
 
@@ -155,7 +155,7 @@
     * Available
         * Home
         * All decks/Filter Page
-        * Indivigual Decks Interacting Page <---- THIS IS THE PAGE
+        * Individual Decks Interacting Page <---- THIS IS THE PAGE
     * Available If Logged In
         * Personal Deck Page
         * Personal Deck Creation/Editing Page
@@ -198,7 +198,7 @@
     * Available
         * Home
         * All decks/Filter Page
-        * Indivigual Decks Interacting Page
+        * Individual Decks Interacting Page
     * Available If Logged In
         * Personal Deck Page
         * Personal Deck Creation/Editing Page
