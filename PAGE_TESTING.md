@@ -47,7 +47,54 @@
 =======================================================================
 
 
-### Page 2: Login Page ###
+### Page 2: About Page ###
+* Page Description (include a mockup or hand drawn image of the page)
+
+    * Header with Links
+    * Single Column
+    * Description of Service
+    * Tips on best usage
+    * Footer with Contact
+
+        <!-- <img src="images/homepage.jpg" alt="Home Page Screenshot" style="float: left; margin-right: 10px;" /> -->
+
+* Parameters needed for the page
+
+    * Tips on best usage
+    * Logo
+    * Description excerpt
+
+* Data needed to render the page
+
+    * Home Page HTML
+    * Deck Titles and Descriptions
+
+* Link destinations for the page
+
+    * Available
+        * Home
+        * All decks/Filter Page
+        * Individual Decks Interacting Page
+    * Available If Logged In
+        * Personal Deck Page
+        * Personal Deck Creation/Editing Page
+    * Available If Not Logged In
+        * Log In Page
+
+* List of tests for verifying the rendering of the page
+
+    * Page can be accessed via `/about` and `/about/`
+    * Correct page title
+    * Correct page contents
+    * Appropriate flashcard deck loaded when corresponding deck image clicked
+    * All links lead to correct pages
+    * Drop down menus display when menu item clicked
+
+
+=======================================================================
+
+
+### Page 3: Login Page ###
 
 * Page Description (include a mockup or hand drawn image of the page)
 
@@ -90,7 +137,7 @@
 =======================================================================
 
 
-### Page 3: All Deck Viewing Page / Filter Page ###
+### Page 4: All Deck Viewing Page / Filter Page ###
 
 * Page Description (include a mockup or hand drawn image of the page)
 
@@ -135,7 +182,7 @@
 =======================================================================
 
 
-### Page 4: Individual Decks Interaction Page - PAGE TO STUDY DECKS ###
+### Page 5: Individual Decks Interaction Page - PAGE TO STUDY DECKS ###
 
 * Page Description (include a mockup or hand drawn image of the page)
 
@@ -176,7 +223,7 @@
 =======================================================================
 
 
-### Page 5: Deck Creation/Editing Page ###
+### Page 6: Deck Creation/Editing Page ###
 * Page Description (include a mockup or hand drawn image of the page)
 
     * Flash Card Editing in the Center
