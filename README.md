@@ -11,7 +11,7 @@
  * Tyler Kinkade, tyknkd, Tyler.Kinkade@colorado.edu
 
 ### Weekly Meeting: ###
- Mondays, 17:30 MDT, Zoom
+ Mondays, 18:00 MDT, Zoom
 
 ### Vision Statement: ###
  Create a web-based dynamic flashcard study app which implements a spaced-repetition algorithm to review user-input content
@@ -33,10 +33,10 @@
  * Take advantage of team member knowledge on spaced-repetition, research available open source spaced-repetition platforms
  * Focus first and foremost on minimum viable product, then prioritize additional desired, but not required features.  This will ensure ability to deliver a functional project on deadline
 
-### Minimum Viable Product ###
+### Minimum Viable Product: ###
  * Website interface with a premade English-English vocabulary flashcard set and no user tracking
 
-#### Product Stretch Goals ####
+#### Product Stretch Goals: ####
 1. Methods for adding flashcards from the website interface
 2. Categorization of flash cards and ability to organize by category from the website
 3. A flashcard "deck" concept to organize cards
@@ -90,7 +90,7 @@ Agile
 ### Project Tracking Software: ### 
   [GitHub Projects](https://github.com/users/ThomasJHLees/projects/1)
 
-### References ###
+### References: ###
 Ambler, S. W., & Holitza, M. (2012). _Agile for dummies, IBM limited edition._ Wiley.
 
 Dunlosky, J., Rawson, K. A., Marsh, E. J., Nathan, M. J., & Willingham, D. T. (2013). Improving students’ learning with effective learning techniques: Promising directions from cognitive and educational psychology. _Psychological Science in the Public Interest, 14_(1), 4-58. [https://doi.org/10.1177/1529100612453266](https://doi.org/10.1177/1529100612453266)
