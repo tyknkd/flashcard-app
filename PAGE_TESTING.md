@@ -9,8 +9,6 @@
     * Big Green Link to Deck Viewing Pages
     * Footer with Contact
 
-        <!-- <img src="images/homepage.jpg" alt="Home Page Screenshot" style="float: left; margin-right: 10px;" /> -->
-
 * Parameters needed for the page
 
     * MVP idea and scope
@@ -43,6 +41,7 @@
     * All links lead to correct pages
     * Drop down menus display when menu item clicked
 
+<img src="https://github.com/ThomasJHLees/Team0Project/blob/main/images/mockups/home.png?raw=true" width="1000">
 
 =======================================================================
 
@@ -90,6 +89,7 @@
     * All links lead to correct pages
     * Drop down menus display when menu item clicked
 
+<img src="https://github.com/ThomasJHLees/Team0Project/blob/main/images/mockups/about.png?raw=true" width="1000">
 
 =======================================================================
 
@@ -133,6 +133,7 @@
     * Correct username and password results in authentication
     * Error displayed for incorrect username/password
 
+<img src="https://github.com/ThomasJHLees/Team0Project/blob/main/images/mockups/login.png?raw=true" width="1000">
 
 =======================================================================
 
@@ -178,6 +179,8 @@
     * All links lead to correct pages
     * Drop down menus display when menu item clicked
 
+    <img src="https://github.com/ThomasJHLees/Team0Project/blob/main/images/mockups/decks.png?raw=true" width="1000">
+
 
 =======================================================================
 
@@ -219,6 +222,7 @@
     * Clicking flashcard displays back of card
     * Front of flashcard corresponds to correct back of card (i.e., word matches definition)
 
+<img src="https://github.com/ThomasJHLees/Team0Project/blob/main/images/mockups/flashcard.png?raw=true" width="1000">
 
 =======================================================================
 
