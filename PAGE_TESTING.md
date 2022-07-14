@@ -268,3 +268,4 @@
     * Verified proper info was stored in the DB
     * Error message displayed when error occured etc.
  
+<img src="https://github.com/ThomasJHLees/Team0Project/blob/main/images/mockups/createcard.png?raw=true" width="1000">
