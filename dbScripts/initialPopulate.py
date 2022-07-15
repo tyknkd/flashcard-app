@@ -68,11 +68,3 @@ def populateCards (dbName, csvFile):
         c.execute(cidSql, cidEntry)
         c.execute(ccbuSql,ccbuEntry)
     conn.commit()
-
-
-#Create decks from the follwing files in the Decks directory
-decks = ["GRE_vocab.csv", "LSAT_vocab.csv","SAT_vocab.csv"]
-addWordSaladSuperUser("flashcards.db")
-for deck in decks:
-    populateCards("flashcards.db", deck)
-    print(deck, "used to successfully populate tables")
