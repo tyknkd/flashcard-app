@@ -17,6 +17,7 @@ def addCard(dbName, userId, word, definition, category, notes):
     #Cards_created_by_users table
     c.execute(userCardSql, [userId, rowId])
     conn.commit()
+    c.close()
 
 #Adds a deck to decks
 def addDeck(dbName, name, category, userId):
@@ -28,6 +29,7 @@ def addDeck(dbName, name, category, userId):
 
     c.execute(deckTableSql, [name, category, userId])
     conn.commit()
+    c.close()
 
 
 #Adds a user to users
@@ -41,6 +43,7 @@ def addUser(dbName, name, username, email):
 
     c.execute(userTableSql, [name, username, email])
     conn.commit()
+    c.close()
 
 
 #Adds cards to specific decks
@@ -54,3 +57,4 @@ def addCardToDeck(dbName, deckId, cardId):
 
     c.execute(cidTableSql, [cardId, deckId])
     conn.commit()
+    c.close()
