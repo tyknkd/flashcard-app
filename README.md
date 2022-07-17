@@ -110,6 +110,7 @@ This project has the following directory tree:
 │   │       ├── GRE_vocab.csv
 │   │       └── LSAT_vocab.csv
 │   ├── templates/
+│   │   ├── base.html
 │   │   ├── index.html
 │   │   ├── about.html
 │   │   ├── decks/
@@ -121,9 +122,23 @@ This project has the following directory tree:
 │   │       └── register.html
 │   └── static/
 │       └── style.css
-├── tests  
+├── tests/  
 │   ├── test_db.py  
 │   └── test_pages.py  
+├── images/  
+│   ├── db_schematic.png  
+│   ├── kanban/  
+│   │       ├── kanban20220627.png
+│   │       ├── kanban20220710.png
+│   │       └── kanban20220711.png
+│   └── mockups/  
+│           ├── about.png
+│           ├── createcard.png
+│           ├── decks.png
+│           ├── flashcard.png
+│           ├── home.png
+│           ├── homepage.jpg
+│           └── login.png
 ├── README.md 
 ├── WEEKLY_STATUS.md 
 ├── PAGE_TESTING.md 
@@ -148,6 +163,7 @@ This project has the following directory tree:
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GRE_vocab.csv   | GRE vocabulary source data                          |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LSAT_vocab.csv  | LSAT vocabulary source data                         |
 | &nbsp;&nbsp;&nbsp;templates/                                          | Web app templates directory                         |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;base.html                         | Base web app page template                          |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.html                        | Main web app page                                   |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;about.html                        | About web app page                                  |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;decks/                            | Web app flashcard decks directory                   |
@@ -162,6 +178,12 @@ This project has the following directory tree:
 | tests/                                                                | Unit tests directory                                |
 | &nbsp;&nbsp;&nbsp;test_db.py                                          | Database unit tests Python script                   |
 | &nbsp;&nbsp;&nbsp;test_pages.py                                       | Web pages unit tests Python script                  |
+| images/                                                               | Documentation images directory                      |
+| &nbsp;&nbsp;&nbsp;db_schematic.png                                    | Database schematic diagram                          |
+| &nbsp;&nbsp;&nbsp;kanban/                                             | Kanban screenshots directory                        |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kanban2022\*.png                  | Weekly Kanban screenshots                           |
+| &nbsp;&nbsp;&nbsp;mockups/                                            | Web page mockup directory                           |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\*.png                            | Web page mockups                                    |
 | README.md                                                             | Summary of project                                  |
 | WEEKLY_STATUS.md                                                      | Summary of weekly meeting, progress, tasks          |
 | PAGE_TESTING.md                                                       | Summary of web pages, testing to implement          |
