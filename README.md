@@ -131,11 +131,11 @@ This project has the following directory tree:
 | File                                          | Description                                               |
 | --------------------------------------------- | --------------------------------------------------------- |
 | wordsalad/                                    | Application directory                                     |
-|   __init__.py                                 | Application factory                                       |
-|   db/                                         | Database directory                                        |
-|     schema.sql                                | SQL database schema                                       |
-|     create.py                                 | Python script to initialize database                      |
-|     populate.py                               | Python script to populate database                        |
+| &nbsp;&nbsp;&nbsp;__init__.py                 | Application factory                                       |
+| &nbsp;&nbsp;&nbsp;db/                         | Database directory                                        |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;schema.sql| SQL database schema                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;create.py | Python script to initialize database                      |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;populate.py| Python script to populate database                        |
 | README.md                                     | Summary of project                                        |
 | ...                                           | ...                                                       |
 
