@@ -15,8 +15,8 @@
   * `back`: (alphanumeric) answer/response/definition/translation for "back" of card
   * `notes`: (alphanumeric) additional information (e.g., part-of-speech, frequency, etc.)
 * List of tests for verifying each table:
-  * After database initialization, for each row and column in flashcard source CSVs specified in `/Decks/source_info.csv`, data is in table:
-    * `category` matches source data category code in `/Decks/source_info.csv`
+  * After database initialization, for each row and column in flashcard source CSVs specified in `/wordsalad/data/source_info.csv`, data is in table:
+    * `category` matches source data category code in `/wordsalad/data/source_info.csv`
     * `front` matches source data prompt/word
     * `back` matches source data answer/definition
     * `notes` matches source data notes
@@ -48,11 +48,11 @@
 * List of tests for verifying each table:
   * After database initialization, a deck exists for each flashcard source data CSV
   * After database initialization, each row and column as expected:
-    * `name` matches human-readable source data name in `/Decks/source_info.csv`
-    * `category` matches source data category code in `/Decks/source_info.csv`
+    * `name` matches human-readable source data name in `/wordsalad/data/source_info.csv`
+    * `category` matches source data category code in `/wordsalad/data/source_info.csv`
     * `owner_id` matches `user_id` of administrative superuser
     * `public` set to true
-    * `description` matches brief description in `/Decks/source_info.csv`
+    * `description` matches brief description in `/wordsalad/data/source_info.csv`
 
 ### Table 4 ###
 * Name: `cards_in_deck`
