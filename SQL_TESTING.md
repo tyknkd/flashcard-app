@@ -10,12 +10,16 @@
 * Table description: Data for each flashcard: the clue/question for the "front" of the card, the corresponding answer for the "back" of the card, the category (e.g., SAT vocabulary study set, GRE vocabulary, etc.), and notes (e.g., part-of-speech, frequency, etc.)
 * Fields (name and description):
   * `card_id`: integer, unique index key
-  * `category`: alphanumeric, category/set to which entry belongs (e.g., SAT vocabulary set, GRE vocabulary set, elementary-level Spanish-English vocabulary set, etc.) 
+  * `category`: alphanumeric, category/set descriptive code with no whitespace characters describing which entry belongs (e.g., SAT_vocab, GRE_vocab, Spanish_English_elem_vocab) 
   * `front`: alphanumeric, clue/question/prompt for "front" of card
   * `back`: alphanumeric, answer/response/definition/translation for "back" of card
   * `notes`: alphanumeric, additional information (e.g., part-of-speech, frequency, etc.)
 * List of tests for verifying each table:
-  * After initial populate, data for each row and column in flashcard source CSVs is in table and category matches source data category
+  * After initial populate, data for each row and column in flashcard source CSVs is in table and category matches source data category:
+    * `category` matches source data category
+    * `front` matches source data prompt/word
+    * `back` matches source data answer/definition
+    * `notes` matches source data notes
   * After initial populate, only rows in source data are in table (i.e., no extra data points from unknown sources)
 
 ###  Table 2 ###
@@ -30,21 +34,26 @@
 * List of tests for verifying each table
   * Administrative super user account details are correct
   * After initial populate, only super user account exists
-  * After adding user, user account details are correct
+  * After adding new user, user account details are as expected
 
 ###  Table 3 ###
 * Name: `decks`
-* Table description: Data describing each deck/set of flashcards: name, category (e.g., SAT vocabulary, GRE vocabulary, elementary Spanish, etc.)
+* Table description: Data describing each deck/set of flashcards: name, category (e.g., SAT vocabulary, GRE vocabulary, elementary Spanish)
 * Fields (name and description):
   * `deck_id`: integer, unique index key
-  * `name`: alphanumeric, name of deck/set of flashcards
-  * `category`: alphanumeric, identifies category/set of flashcards which should be included (e.g., SAT vocabulary, GRE vocabulary, elementary Spanish, etc.)
+  * `name`: alphanumeric, human-readable name of deck/set of flashcards in title case (e.g., SAT Vocabulary, GRE Vocabulary, Elementary Spanish)
+  * `category`: alphanumeric, category/set descriptive code with no whitespace characters identifying category of flashcard set (e.g., SAT_vocab, GRE_vocab, Spanish_English_elem_vocab) 
   * `owner_id`: integer, references `user_id` from `users` table of user which created the deck
   * `public`: boolean, indicates whether deck is public (true) or private (false)
   * `description`: alphanumeric, description of deck
 * List of tests for verifying each table
-  * After initial populate, an entry exists for each flashcard source data CSV
-  * After initial populate, each row and column as expected
+  * After initial populate, a deck exists for each flashcard source data CSV
+  * After initial populate, each row and column as expected:
+    * `name` matches human-readable source data name in `/Decks/source_info.csv`
+    * `category` matches source data category code in `/Decks/source_info.csv`
+    * `owner_id` matches `user_id` of administrative superuser
+    * `public` set to true
+    * `description` matches brief description in `/Decks/source_info.csv`
 
 ## Data Access Methods
 ### Table 1 Access Method 1 ### 
