@@ -25,7 +25,7 @@ def addWordSaladSuperUser(dbName):
 #cards from a csvfile
 def populateCards (dbName, csvFile):
     #Filepath + Name of Card Deck
-    csvPath = "Decks\\" + csvFile
+    csvPath = "data\\" + csvFile
     deckName = csvFile.removesuffix('.csv')
 
     #Get contents of Deck List
