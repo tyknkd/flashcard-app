@@ -1,5 +1,23 @@
+#!/usr/bin/python3
+
+# Script to create and populate database for Word Salad flashcard app
+
 import sqlite3
 import csv
+
+def getSQL(filename):
+    file = open(filename, 'r')
+    sql = file.read()
+    file.close()
+    return sql
+
+def createDB(dbName, sql):
+    db = "./database/"+dbName
+    conn = sqlite3.connect(db)
+    c = conn.cursor()
+
+    c.executescript(sql)
+    conn.commit()
 
 #Helper function to read the deck csv files
 def readCSVFile(filename):
