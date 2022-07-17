@@ -97,9 +97,25 @@ This project has the following directory tree:
 .  
 ├── wordsalad/
 │   ├── __init__.py
+│   ├── db/
+│   │   ├── schema.sql
+│   │   ├── create.py
+│   │   ├── populate.py
+│   │   └── data
+│   │       ├── source_info.csv
+│   │       ├── SAT_vocab.csv
+│   │       ├── GRE_vocab.csv
+│   │       └── LSAT_vocab.csv
 │   ├── templates/
 │   │   ├── index.html
-│   │   └── .html
+│   │   ├── about.html
+│   │   ├── decks/
+│   │   │   ├── index.html
+│   │   │   ├── flashcard.html
+│   │   │   └── edit.html
+│   │   └── auth/
+│   │       ├── login.html
+│   │       └── register.html
 │   └── static/
 │       └── style.css
 ├── tests  
@@ -114,6 +130,12 @@ This project has the following directory tree:
 
 | File                                          | Description                                               |
 | --------------------------------------------- | --------------------------------------------------------- |
+| wordsalad/                                    | Application directory                                     |
+|   __init__.py                                 | Application factory                                       |
+|   db/                                         | Database directory                                        |
+|     schema.sql                                | SQL database schema                                       |
+|     create.py                                 | Python script to initialize database                      |
+|     populate.py                               | Python script to populate database                        |
 | README.md                                     | Summary of project                                        |
 | ...                                           | ...                                                       |
 
