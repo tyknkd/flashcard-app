@@ -3,10 +3,11 @@
 # Reference: https://flask.palletsprojects.com/en/2.1.x/quickstart
 #
 # Import Flask, template, reverse URL class
+from flask import Flask, render_template, url_for
+
+# Import database script
 import dbScripts.createDB as createDB
 import dbScripts.initialPopulate as initialPopulate
-
-from flask import Flask, render_template, url_for
 
 # Create instance of class
 app = Flask(__name__)
