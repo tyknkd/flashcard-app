@@ -15,12 +15,12 @@
   * `back`: (alphanumeric) answer/response/definition/translation for "back" of card
   * `notes`: (alphanumeric) additional information (e.g., part-of-speech, frequency, etc.)
 * List of tests for verifying each table:
-  * After initial populate, for each row and column in flashcard source CSVs specified in `/Decks/source_info.csv`, data is in table:
+  * After database initialization, for each row and column in flashcard source CSVs specified in `/Decks/source_info.csv`, data is in table:
     * `category` matches source data category code in `/Decks/source_info.csv`
     * `front` matches source data prompt/word
     * `back` matches source data answer/definition
     * `notes` matches source data notes
-  * After initial populate, only rows in source data are in table (i.e., no extra data points from unknown sources)
+  * After database initialization, only rows in source data are in table (i.e., no extra data points from unknown sources)
 
 ### Table 2 ###
 * Name: `users`
@@ -33,7 +33,7 @@
   * `password`: (alphanumeric) user password
 * List of tests for verifying each table:
   * Administrative super user account details are correct
-  * After initial populate, only super user account exists
+  * After database initialization, only super user account exists
 
 ### Table 3 ###
 * Name: `decks`
@@ -46,8 +46,8 @@
   * `public`: (boolean) indicates whether deck is public (true) or private (false)
   * `description`: (alphanumeric) description of deck
 * List of tests for verifying each table:
-  * After initial populate, a deck exists for each flashcard source data CSV
-  * After initial populate, each row and column as expected:
+  * After database initialization, a deck exists for each flashcard source data CSV
+  * After database initialization, each row and column as expected:
     * `name` matches human-readable source data name in `/Decks/source_info.csv`
     * `category` matches source data category code in `/Decks/source_info.csv`
     * `owner_id` matches `user_id` of administrative superuser
@@ -62,8 +62,8 @@
   * `card_id`: (integer) references unique `card_id` in `flashcards` table
   * `deck_id`: (integer) references `deck_id` in `decks` table
 * List of tests for verifying each table:
-  * After initial populate, the number of entries matches the number of entries in `flashcards`
-  * After initial populate, for each `card_id`, `deck_id` matches `deck_id` in `decks` with same `category` as the corresponding `card_id` in `flashcards`   
+  * After database initialization, the number of entries matches the number of entries in `flashcards`
+  * After database initialization, for each `card_id`, `deck_id` matches `deck_id` in `decks` with same `category` as the corresponding `card_id` in `flashcards`   
 
 ### Table 5 ###
 * Name: `cards_created_by_users`
@@ -74,9 +74,9 @@
   * `card_id`: (integer) references unique `card_id` in `flashcards` table
   * `category`: (alphanumeric) references `category` in `flashcards` table
 * List of tests for verifying each table:
-  * After initial populate, the number of entries matches the number of entries in `flashcards`
-  * After initial populate, the only `user_id` is corresponds `user_id` of administrative super user in `users` table 
-  * After initial populate, for each `card_id`, `category` matches `category` in `flashcards`
+  * After database initialization, the number of entries matches the number of entries in `flashcards`
+  * After database initialization, the only `user_id` is corresponds `user_id` of administrative super user in `users` table 
+  * After database initialization, for each `card_id`, `category` matches `category` in `flashcards`
 
 ## Data Access Methods
 ### Table 1 Access Method 1 ### 
