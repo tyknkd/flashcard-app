@@ -110,6 +110,7 @@ This project has the following directory tree:
 │   │       ├── GRE_vocab.csv
 │   │       └── LSAT_vocab.csv
 │   ├── templates/
+│   │   ├── base.html
 │   │   ├── index.html
 │   │   ├── about.html
 │   │   ├── decks/
@@ -148,6 +149,7 @@ This project has the following directory tree:
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GRE_vocab.csv   | GRE vocabulary source data                          |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LSAT_vocab.csv  | LSAT vocabulary source data                         |
 | &nbsp;&nbsp;&nbsp;templates/                                          | Web app templates directory                         |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;base.html                         | Base web app page template                          |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.html                        | Main web app page                                   |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;about.html                        | About web app page                                  |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;decks/                            | Web app flashcard decks directory                   |
