@@ -89,6 +89,34 @@ Agile
 
 ### Project Tracking Software: ### 
   [GitHub Projects](https://github.com/users/ThomasJHLees/projects/1)
+  
+### Directory Tree ###
+
+This project has the following directory tree:
+```
+.  
+├── wordsalad/
+│   ├── __init__.py
+│   ├── templates/
+│   │   ├── index.html
+│   │   └── .html
+│   └── static/
+│       └── style.css
+├── tests  
+│   ├── run_app  
+│   └── run_tests  
+├── README.md 
+├── FINAL_REPORT.md 
+├── PAGE_TESTING.md 
+├── SQL_TESTING.md 
+└── WEEKLY_STATUS.md 
+```
+
+| File                                          | Description                                               |
+| --------------------------------------------- | --------------------------------------------------------- |
+| README.md                                     | Summary of project                                        |
+| ...                                           | ...                                                       |
+
 
 ### References: ###
 Ambler, S. W., & Holitza, M. (2012). _Agile for dummies, IBM limited edition._ Wiley.
