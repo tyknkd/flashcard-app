@@ -141,7 +141,7 @@ This project has the following directory tree:
 | --------------------------------------------------------------------- | ----------------------------------------------- |
 | wordsalad/                                                            | Application directory                           |
 | &nbsp;&nbsp;&nbsp;__init__.py                                         | Flask application factory                       |
-| &nbsp;&nbsp;&nbs;db/                                                  | Database directory                              |
+| &nbsp;&nbsp;&nbsp;db/                                                 | Database directory                              |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;schema.sql                        | SQL database schema                             |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;createDB.py                       | Python script to initialize database            |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;populateDB.py                     | Python script to populate database              |
@@ -160,7 +160,7 @@ This project has the following directory tree:
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SAT_vocab.csv   | SAT vocabulary source data                      |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GRE_vocab.csv   | GRE vocabulary source data                      |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LSAT_vocab.csv  | LSAT vocabulary source data                     |
-| &nbsp;&nbsp;&nbs;templates/                                           | Web app templates directory                     |
+| &nbsp;&nbsp;&nbsp;templates/                                          | Web app templates directory                     |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.html                        | Main web app page                               |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;about.html                        | About web app page                              |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;decks/                            | Web app flashcard decks directory               |
@@ -170,7 +170,7 @@ This project has the following directory tree:
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;auth/                             | Web app user authentication directory           |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;login.html      | Web app user authentication login page          |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;register.html   | Web app user registration page                  |
-| &nbsp;&nbsp;&nbs;static/                                              | Web app static files directory                  |
+| &nbsp;&nbsp;&nbsp;static/                                             | Web app static files directory                  |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;style.css                         | Cascading style sheet                           |
 | tests/                                                                | Unit tests directory                            |
 | &nbsp;&nbsp;&nbsp;test_db.py                                          | Database unit tests Python script               |
