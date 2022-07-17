@@ -99,17 +99,11 @@ This project has the following directory tree:
 │   ├── __init__.py
 │   ├── db/
 │   │   ├── schema.sql
-│   │   ├── createDB.py
-│   │   ├── populateDB.py
-│   │   ├── addCard.py
-│   │   ├── editCard.py
-│   │   ├── removeCard.py
-│   │   ├── addDeck.py
-│   │   ├── editDeck.py
-│   │   ├── removeDeck.py
-│   │   ├── addUser.py
-│   │   ├── editUser.py
-│   │   ├── removeUser.py
+│   │   ├── makeDB.py
+│   │   ├── addData.py
+│   │   ├── getData.py
+│   │   ├── editData.py
+│   │   ├── removeData.py
 │   │   └── data
 │   │       ├── source_info.csv
 │   │       ├── SAT_vocab.csv
@@ -137,49 +131,42 @@ This project has the following directory tree:
 └── FINAL_REPORT.md 
 ```
 
-| File                                                                  | Description                                     |
-| --------------------------------------------------------------------- | ----------------------------------------------- |
-| wordsalad/                                                            | Application directory                           |
-| &nbsp;&nbsp;&nbsp;__init__.py                                         | Flask application factory                       |
-| &nbsp;&nbsp;&nbsp;db/                                                 | Database directory                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;schema.sql                        | SQL database schema                             |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;createDB.py                       | Python script to initialize database            |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;populateDB.py                     | Python script to populate database              |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;populateDB.py                     | Python script to populate database              |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;addCard.py                        | Python script to add flashcard to database      |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;editCard.py                       | Python script to edit flashcard in database     |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;removeCard.py                     | Python script to remove flashcard from database |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;addUser.py                        | Python script to add user to database           |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;editUser.py                       | Python script to edit user in database          |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;removeUser.py                     | Python script to remove user from database      |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;addDeck.py                        | Python script to add deck to database           |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;editDeck.py                       | Python script to edit deck in database          |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;removeDeck.py                     | Python script to remove deck from database      |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data/                             | Data directory                                  |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;source_info.csv | Source data information                         |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SAT_vocab.csv   | SAT vocabulary source data                      |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GRE_vocab.csv   | GRE vocabulary source data                      |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LSAT_vocab.csv  | LSAT vocabulary source data                     |
-| &nbsp;&nbsp;&nbsp;templates/                                          | Web app templates directory                     |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.html                        | Main web app page                               |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;about.html                        | About web app page                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;decks/                            | Web app flashcard decks directory               |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.html      | Web app flashcard decks main page               |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashcard.html  | Web app flashcard page                          |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;edit.html       | Web app create/edit flashcards/decks page       |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;auth/                             | Web app user authentication directory           |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;login.html      | Web app user authentication login page          |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;register.html   | Web app user registration page                  |
-| &nbsp;&nbsp;&nbsp;static/                                             | Web app static files directory                  |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;style.css                         | Cascading style sheet                           |
-| tests/                                                                | Unit tests directory                            |
-| &nbsp;&nbsp;&nbsp;test_db.py                                          | Database unit tests Python script               |
-| &nbsp;&nbsp;&nbsp;test_pages.py                                       | Web pages unit tests Python script              |
-| README.md                                                             | Summary of project                              |
-| WEEKLY_STATUS.md                                                      | Summary of weekly meeting, progress, tasks      |
-| PAGE_TESTING.md                                                       | Summary of web pages, testing to implement      |
-| SQL_TESTING.md                                                        | Summary of database schema, methods, testing    |
-| FINAL_REPORT.md                                                       | Final project report                            |
+| File                                                                  | Description                                         |
+| --------------------------------------------------------------------- | --------------------------------------------------- |
+| wordsalad/                                                            | Application directory                               |
+| &nbsp;&nbsp;&nbsp;__init__.py                                         | Flask application factory                           |
+| &nbsp;&nbsp;&nbsp;db/                                                 | Database directory                                  |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;schema.sql                        | SQL database schema                                 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;makeDB.py                         | Python script to initialize database                |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;addData.py                        | Python script to add card, deck, or user to DB      |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getData.py                        | Python script to get card, deck, or user from DB    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;editData.py                       | Python script to edit card, deck, or user in DB     |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;removeData.py                     | Python script to remove card, deck, or user from DB |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data/                             | Data directory                                      |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;source_info.csv | Source data information                             |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SAT_vocab.csv   | SAT vocabulary source data                          |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GRE_vocab.csv   | GRE vocabulary source data                          |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LSAT_vocab.csv  | LSAT vocabulary source data                         |
+| &nbsp;&nbsp;&nbsp;templates/                                          | Web app templates directory                         |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.html                        | Main web app page                                   |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;about.html                        | About web app page                                  |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;decks/                            | Web app flashcard decks directory                   |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.html      | Web app flashcard decks main page                   |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashcard.html  | Web app flashcard page                              |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;edit.html       | Web app create/edit flashcards/decks page           |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;auth/                             | Web app user authentication directory               |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;login.html      | Web app user authentication login page              |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;register.html   | Web app user registration page                      |
+| &nbsp;&nbsp;&nbsp;static/                                             | Web app static files directory                      |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;style.css                         | Cascading style sheet                               |
+| tests/                                                                | Unit tests directory                                |
+| &nbsp;&nbsp;&nbsp;test_db.py                                          | Database unit tests Python script                   |
+| &nbsp;&nbsp;&nbsp;test_pages.py                                       | Web pages unit tests Python script                  |
+| README.md                                                             | Summary of project                                  |
+| WEEKLY_STATUS.md                                                      | Summary of weekly meeting, progress, tasks          |
+| PAGE_TESTING.md                                                       | Summary of web pages, testing to implement          |
+| SQL_TESTING.md                                                        | Summary of database schema, methods, testing        |
+| FINAL_REPORT.md                                                       | Final project report                                |
 
 ### References: ###
 Ambler, S. W., & Holitza, M. (2012). _Agile for dummies, IBM limited edition._ Wiley.
