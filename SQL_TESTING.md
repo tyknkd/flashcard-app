@@ -1,6 +1,10 @@
 # SQL Design #
 
 ## Tables ##
+
+### Schematic Diagram ###
+<img src="https://github.com/ThomasJHLees/Team0Project/blob/main/images/db_schematic.png" width="400px">
+
 ###  Table 1 ###
 * Name
 * Table description
