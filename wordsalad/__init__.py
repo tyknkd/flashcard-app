@@ -38,14 +38,14 @@ def create_app(test_config=None):
 
 
 #Create Database as flashcards.db
-#dbName = "flashcards.db"
-#sql = createDB.getSQL(".\dbScripts\MySQLCreate.sql")
-#createDB.createDB(dbName, sql)
+#dbName = "wordsalad.db"
+#sql = makeDB.getSQL("/db/schema.sql")
+#makeDB.createDB(dbName, sql)
 #print('Database', dbName, "created successfully")
 
-#Populate tables with decks in Decks folder
+#Populate tables with decks in /db/data folder
 #decks = ["GRE_vocab.csv", "LSAT_vocab.csv","SAT_vocab.csv"]
-#initialPopulate.addWordSaladSuperUser("flashcards.db")
+#makeDB.addWordSaladSuperUser(dbName)
 #for deck in decks:
-#    initialPopulate.populateCards("flashcards.db", deck)
+#    makeDB.populateCards(dbName, deck)
 #    print(deck, "used to successfully populate tables")
