@@ -149,7 +149,7 @@ This project has the following directory tree:
 | File                                                                  | Description                                         |
 | --------------------------------------------------------------------- | --------------------------------------------------- |
 | wordsalad/                                                            | Application directory                               |
-| &nbsp;&nbsp;&nbsp;__init__.py                                         | Flask application factory                           |
+| &nbsp;&nbsp;&nbsp;`__init__.py`                                         | Flask application factory                           |
 | &nbsp;&nbsp;&nbsp;db/                                                 | Database directory                                  |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;schema.sql                        | SQL database schema                                 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;makeDB.py                         | Python script to initialize database                |
