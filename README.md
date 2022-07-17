@@ -131,10 +131,10 @@ This project has the following directory tree:
 │   ├── test_db.py  
 │   └── test_pages.py  
 ├── README.md 
-├── FINAL_REPORT.md 
+├── WEEKLY_STATUS.md 
 ├── PAGE_TESTING.md 
 ├── SQL_TESTING.md 
-└── WEEKLY_STATUS.md 
+└── FINAL_REPORT.md 
 ```
 
 | File                                                                  | Description                                     |
@@ -176,8 +176,10 @@ This project has the following directory tree:
 | &nbsp;&nbsp;&nbsp;test_db.py                                          | Database unit tests Python script               |
 | &nbsp;&nbsp;&nbsp;test_pages.py                                       | Web pages unit tests Python script              |
 | README.md                                                             | Summary of project                              |
-| ...                                                                   | ...                                             |
-
+| WEEKLY_STATUS.md                                                      | Summary of weekly meeting, progress, tasks      |
+| PAGE_TESTING.md                                                       | Summary of web pages, testing to implement      |
+| SQL_TESTING.md                                                        | Summary of database schema, methods, testing    |
+| FINAL_REPORT.md                                                       | Final project report                            |
 
 ### References: ###
 Ambler, S. W., & Holitza, M. (2012). _Agile for dummies, IBM limited edition._ Wiley.
