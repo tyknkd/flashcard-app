@@ -5,7 +5,7 @@
 ### Schematic Diagram ###
 <img src="https://github.com/ThomasJHLees/Team0Project/blob/main/images/db_schematic.png" width="500px">
 
-###  Table 1 ###
+### Table 1 ###
 * Name: `flashcards`
 * Table description: Data for each flashcard: the clue/question for the "front" of the card, the corresponding answer for the "back" of the card, the category (e.g., SAT vocabulary study set, GRE vocabulary, etc.), and notes (e.g., part-of-speech, frequency, etc.)
 * Fields (name and description):
@@ -22,7 +22,7 @@
     * `notes` matches source data notes
   * After initial populate, only rows in source data are in table (i.e., no extra data points from unknown sources)
 
-###  Table 2 ###
+### Table 2 ###
 * Name: `users`
 * Table description: User information, including name, username, email address, and password
 * Fields (name and description):
@@ -31,12 +31,12 @@
   * `username`: alphanumeric, username
   * `email`: alphanumeric, user email address
   * `password`: alphanumeric, user password
-* List of tests for verifying each table
+* List of tests for verifying each table:
   * Administrative super user account details are correct
   * After initial populate, only super user account exists
   * After adding new user, user account details are as expected
 
-###  Table 3 ###
+### Table 3 ###
 * Name: `decks`
 * Table description: Data describing each deck/set of flashcards: name, category (e.g., SAT vocabulary, GRE vocabulary, elementary Spanish)
 * Fields (name and description):
@@ -46,7 +46,7 @@
   * `owner_id`: integer, references `user_id` from `users` table of user which created the deck
   * `public`: boolean, indicates whether deck is public (true) or private (false)
   * `description`: alphanumeric, description of deck
-* List of tests for verifying each table
+* List of tests for verifying each table:
   * After initial populate, a deck exists for each flashcard source data CSV
   * After initial populate, each row and column as expected:
     * `name` matches human-readable source data name in `/Decks/source_info.csv`
@@ -54,6 +54,17 @@
     * `owner_id` matches `user_id` of administrative superuser
     * `public` set to true
     * `description` matches brief description in `/Decks/source_info.csv`
+
+### Table 4 ###
+* Name: `cards_in_deck`
+* Table description: Contains `card_id` for each flashcard and its corresponding `deck_id` based on the card's category
+* Fields (name and description):
+  * `id`: integer, unique index key
+  * `card_id`: integer, references unique `card_id` in `flashcards` table
+  * `deck_id`: integer, references `deck_id` in `decks` table
+* List of tests for verifying each table:
+  * After initial populate, the number of entries matches the number of entries in `flashcards`
+  * After initial populate, for each `card_id`, `deck_id` matches `deck_id` in `decks` with same `category` as the corresponding `card_id` in `flashcards`   
 
 ## Data Access Methods
 ### Table 1 Access Method 1 ### 
