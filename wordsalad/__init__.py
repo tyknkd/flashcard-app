@@ -1,5 +1,5 @@
 # Flask development web server application factory for Word Salad flashcards project
-#
+# Note: Filename `__init__.py` tells Python that `wordsalad` directory is a package 
 # Reference: https://flask.palletsprojects.com/en/2.1.x/tutorial/factory/
 #
 # Import Flask, template, reverse URL class
