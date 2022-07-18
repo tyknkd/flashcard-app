@@ -99,6 +99,7 @@ This project has the following directory tree:
 │   ├── __init__.py
 │   ├── db/
 │   │   ├── schema.sql
+│   │   ├── db.py
 │   │   ├── makeDB.py
 │   │   ├── addData.py
 │   │   ├── getData.py
@@ -149,9 +150,10 @@ This project has the following directory tree:
 | File                                                                  | Description                                         |
 | --------------------------------------------------------------------- | --------------------------------------------------- |
 | wordsalad/                                                            | Application directory                               |
-| &nbsp;&nbsp;&nbsp;`__init__.py`                                         | Flask application factory                           |
+| &nbsp;&nbsp;&nbsp;`__init__.py`                                       | Flask application factory                           |
 | &nbsp;&nbsp;&nbsp;db/                                                 | Database directory                                  |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;schema.sql                        | SQL database schema                                 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;db.py                             | Database connection Python script                   |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;makeDB.py                         | Python script to initialize database                |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;addData.py                        | Python script to add card, deck, or user to DB      |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getData.py                        | Python script to get card, deck, or user from DB    |
