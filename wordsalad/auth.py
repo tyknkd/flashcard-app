@@ -122,7 +122,7 @@ def load_logged_in_user():
     else:
         # Query database for user info
         g.user = get_db().execute(
-            'SELECT * FROM user WHERE id = ?', (user_id,)
+            'SELECT * FROM users WHERE id = ?', (user_id,)
         ).fetchone()
 
 @bp.route('/logout')
