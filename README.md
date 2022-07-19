@@ -111,7 +111,7 @@ This project has the following directory tree:
 │   │   ├── about.html
 │   │   ├── decks/
 │   │   │   ├── index.html
-│   │   │   ├── flashcard.html
+│   │   │   ├── deck_name.html
 │   │   │   └── edit.html
 │   │   └── auth/
 │   │       ├── login.html
@@ -159,7 +159,7 @@ This project has the following directory tree:
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;about.html                        | About web app page                                  |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;decks/                            | Web app flashcard decks directory                   |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.html      | Web app flashcard decks main page                   |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashcard.html  | Web app flashcard page                              |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;deck_name.html  | Web app flashcard page for deck_name                |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;edit.html       | Web app create/edit flashcards/decks page           |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;auth/                             | Web app user authentication directory               |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;login.html      | Web app user authentication login page              |
