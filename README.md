@@ -100,17 +100,11 @@ This project has the following directory tree:
 │   ├── db.py
 │   ├── schema.sql
 │   ├── auth.py
-│   ├── dbScripts/
-│   │   ├── populateDB.py
-│   │   ├── addData.py
-│   │   ├── getData.py
-│   │   ├── editData.py
-│   │   ├── removeData.py
-│   │   └── data
-│   │       ├── source_info.csv
-│   │       ├── SAT_vocab.csv
-│   │       ├── GRE_vocab.csv
-│   │       └── LSAT_vocab.csv
+│   ├── data/
+│   │   ├── source_info.csv
+│   │   ├── SAT_vocab.csv
+│   │   ├── GRE_vocab.csv
+│   │   └── LSAT_vocab.csv
 │   ├── templates/
 │   │   ├── base.html
 │   │   ├── index.html
@@ -155,17 +149,6 @@ This project has the following directory tree:
 | &nbsp;&nbsp;&nbsp;`db.py`                                             | Database initialization script                      |
 | &nbsp;&nbsp;&nbsp;`schema.sql`                                        | SQL database schema                                 |
 | &nbsp;&nbsp;&nbsp;`auth.py`                                           | Blueprint to handle authorization requests          |
-| &nbsp;&nbsp;&nbsp;dbScripts/                                          | Database scripts directory                          |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;populateDB.py                     | Python script to populate database                  |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;addData.py                        | Python script to add card, deck, or user to DB      |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getData.py                        | Python script to get card, deck, or user from DB    |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;editData.py                       | Python script to edit card, deck, or user in DB     |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;removeData.py                     | Python script to remove card, deck, or user from DB |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data/                             | Data directory                                      |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;source_info.csv | Source data information                             |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SAT_vocab.csv   | SAT vocabulary source data                          |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GRE_vocab.csv   | GRE vocabulary source data                          |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LSAT_vocab.csv  | LSAT vocabulary source data                         |
 | &nbsp;&nbsp;&nbsp;templates/                                          | Web app templates directory                         |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;base.html                         | Base web app page template                          |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.html                        | Main web app page                                   |
