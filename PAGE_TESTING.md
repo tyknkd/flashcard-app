@@ -55,8 +55,6 @@
     * Tips on best usage
     * Footer with Contact
 
-        <!-- <img src="images/homepage.jpg" alt="Home Page Screenshot" style="float: left; margin-right: 10px;" /> -->
-
 * Parameters needed for the page
 
     * Tips on best usage
@@ -125,7 +123,7 @@
 
 * List of tests for verifying the rendering of the page
 
-    * Page can be accessed via `/login/` and `/login`
+    * Page can be accessed via `/auth/login/` and `/auth/login`
     * Correct page title
     * Correct page contents
     * All links lead to correct pages
@@ -259,7 +257,7 @@
 
 
 * List of tests for verifying the rendering of the page
-    * Page can be accessed via `/edit/<deck_name>/` and `/edit/<deck_name>`
+    * Page can be accessed via `/decks/edit/<deck_name>/` and `/decks/edit/<deck_name>`
     * Correct page title
     * All links lead to correct pages
     * Drop down menus display when clicked
