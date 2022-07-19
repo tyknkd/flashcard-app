@@ -41,6 +41,31 @@ def create_app(test_config=None):
     def index():
         return render_template('index.html')
 
+    # Set route to about page
+    @app.route('/about/')
+    def about():
+        return render_template('about.html')
+
+    # Set route to login page
+    @app.route('/login/')
+    def login():
+        return render_template('login.html')
+
+    # Set route to decks page
+    @app.route('/decks/')
+    def decks():
+        return render_template('decks.html')
+
+    # Set route to /decks/<deck_name> page
+    @app.route('/decks/<deck_name>')
+    def show_deck(deck_name):
+        return render_template('<deck_name>.html')
+
+    # Set route to /edit/<deck_name> page
+    @app.route('/edit/<deck_name>')
+    def edit_deck(deck_name):
+        return render_template('edit.html')
+
     return app
 
 
