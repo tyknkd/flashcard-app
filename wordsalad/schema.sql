@@ -11,7 +11,8 @@ CREATE TABLE `decks` (
   `name` varchar(255),
   `category` varchar(255),
   `owner_id` int,
-  `public` bool
+  `public` bool,
+  `description` varchar(255)
 );
 
 CREATE TABLE `users` (
