@@ -25,6 +25,7 @@ def decks():
     '''
     Display available decks
     '''
+    # Get deck names, descriptions, public status from database
     db = get_db()
     decks = db.execute(
         'SELECT name, description, public FROM decks'
