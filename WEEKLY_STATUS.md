@@ -64,15 +64,17 @@
 
 ### Week 7 (July 18-24) ###
 * Completed:
-  * Atreyu:
-  * Janet:
-  * Thomas:
-  * Tyler:
+  * Atreyu: Started coding web pages
+  * Janet: Drafted web page mockups
+  * Thomas: Coded database access scripts
+  * Tyler: Started drafting SQL_TESTING.md, changed/documented project directory tree to accommodate new
 * Next tasks:
-  * Atreyu:
-  * Janet:
-  * Thomas:
-  * Tyler:
+  * Atreyu: Apply Flask app tutorials to project app, continue coding web pages
+  * Janet: Apply Flask app tutorials to project app, draft SQL_TESTING.md
+  * Thomas: Apply Flask app tutorials to project app, draft SQL_TESTING.md
+  * Tyler: Apply Flask app tutorials to project app, draft SQL_TESTING.md
+  
+  <img src="https://github.com/ThomasJHLees/Team0Project/blob/main/images/kanban/kanban20220718.png" width="300">
 
 ### Week 8 (July 24-31) ###
 * Completed:
