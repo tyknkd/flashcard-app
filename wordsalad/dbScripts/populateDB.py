@@ -5,19 +5,24 @@
 import sqlite3
 import csv
 
-def getSQL(filename):
-    file = open(filename, 'r')
-    sql = file.read()
-    file.close()
-    return sql
+# Use db.py to initialize database
+#def getSQL(filename):
+#    file = open(filename, 'r')
+#    sql = file.read()
+#    file.close()
+#    return sql
+#
+#def createDB(dbName, sql):
+#    db = "./database/"+dbName
+#    conn = sqlite3.connect(db)
+#    c = conn.cursor()
+#
+#    c.executescript(sql)
+#    conn.commit()
+#
 
-def createDB(dbName, sql):
-    db = "./database/"+dbName
-    conn = sqlite3.connect(db)
-    c = conn.cursor()
-
-    c.executescript(sql)
-    conn.commit()
+## TO DO: Change database path relative to Flask instance
+## See: https://flask.palletsprojects.com/en/2.1.x/tutorial/database/
 
 #Helper function to read the deck csv files
 def readCSVFile(filename):
