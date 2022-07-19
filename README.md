@@ -100,7 +100,7 @@ This project has the following directory tree:
 │   ├── dbScripts/
 │   │   ├── schema.sql
 │   │   ├── db.py
-│   │   ├── makeDB.py
+│   │   ├── populateDB.py
 │   │   ├── addData.py
 │   │   ├── getData.py
 │   │   ├── editData.py
@@ -154,7 +154,7 @@ This project has the following directory tree:
 | &nbsp;&nbsp;&nbsp;dbScripts/                                          | Database scripts directory                          |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;schema.sql                        | SQL database schema                                 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;db.py                             | Python script to initialize database                |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;makeDB.py                         | Python script to populate database                  |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;populateDB.py                     | Python script to populate database                  |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;addData.py                        | Python script to add card, deck, or user to DB      |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getData.py                        | Python script to get card, deck, or user from DB    |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;editData.py                       | Python script to edit card, deck, or user in DB     |
