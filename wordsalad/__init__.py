@@ -76,7 +76,7 @@ def create_app(test_config=None):
     app.add_url_rule('/decks/', endpoint='decks.index')
 
     # Import/register home/main Blueprint
-    from . import decks
+    from . import home
     app.register_blueprint(home.bp)
     app.add_url_rule('/', endpoint='index')
 
