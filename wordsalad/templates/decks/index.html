@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!-- Page to display decks choices -->
+<!-- Reference: https://flask.palletsprojects.com/en/2.1.x/tutorial/blog/ -->
+
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Decks{% endblock %}</h1>
+  {% if g.user %}
+    <a class="action" href="{{ url_for('deck.edit') }}">Create/Edit Deck </a>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  {% for deck in decks %}
+    <section class="decks">
+      <header>
+        <div>
+          <h1>{{ deck['name'] }}</h1>
+        </div>
+      </header>
+      <p class="description">{{ deck['description'] }}</p>
+    </section>
+    {% if not loop.last %}
+      <hr>
+    {% endif %}
+  {% endfor %}
+{% endblock %}
