@@ -99,7 +99,7 @@ def login():
         if error is None:
             session.clear()
             # Store `user_id` in signed cookie sent to browser
-            session['user_id'] = users['user_id']
+            session['user_id'] = user['user_id']
             return redirect(url_for('index'))
         
         # Store errors to retrieve when rendering template
