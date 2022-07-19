@@ -62,13 +62,18 @@ def create_app(test_config=None):
     def edit_deck(deck_name):
         return render_template('edit.html')
 
-    # Register database initialization script
+    # Import/register database initialization script
     from . import db
     db.init_app(app)
     
-    # Register authentication Blueprint
+    # Import/register authentication Blueprint
     from . import auth
     app.register_blueprint(auth.bp)
+    
+    # Import/register decks Blueprint
+    from . import decks
+    app.register_blueprint(decks.bp)
+    app.add_url_rule('/decks/', endpoint='index')
 
     return app
 
