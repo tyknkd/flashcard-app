@@ -25,6 +25,7 @@ def index():
     '''
     Home/main page route
     '''
+    # Get deck names, descriptions, public status from database
     db = get_db()
     posts = db.execute(
         'SELECT name, description, public FROM decks'
