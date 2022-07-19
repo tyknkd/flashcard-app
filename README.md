@@ -100,6 +100,7 @@ This project has the following directory tree:
 │   ├── db.py
 │   ├── schema.sql
 │   ├── auth.py
+│   ├── home.py
 │   ├── decks.py
 │   ├── cards.py
 │   ├── data/
@@ -145,49 +146,50 @@ This project has the following directory tree:
 └── FINAL_REPORT.md 
 ```
 
-| File                                                                  | Description                                         |
-| --------------------------------------------------------------------- | --------------------------------------------------- |
-| wordsalad/                                                            | Application directory                               |
-| &nbsp;&nbsp;&nbsp;`__init__.py`                                       | Flask application factory                           |
-| &nbsp;&nbsp;&nbsp;db.py                                               | Database initialization script                      |
-| &nbsp;&nbsp;&nbsp;schema.sql                                          | SQL database schema                                 |
-| &nbsp;&nbsp;&nbsp;auth.py                                             | Blueprint to handle authorization requests          |
-| &nbsp;&nbsp;&nbsp;decks.py                                            | Blueprint to handle deck add/edit/delete requests   |
-| &nbsp;&nbsp;&nbsp;cards.py                                            | Blueprint to handle card add/edit/delete requests   |
-| &nbsp;&nbsp;&nbsp;data/                                               | Flashcard CSV data directory                        |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;source_info.csv                   | Source data information                             |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SAT_vocab.csv                     | SAT vocabulary source data                          |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GRE_vocab.csv                     | GRE vocabulary source data                          |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LSAT_vocab.csv                    | LSAT vocabulary source data                         |
-| &nbsp;&nbsp;&nbsp;templates/                                          | Web app templates directory                         |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;base.html                         | Base web app page template                          |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.html                        | Main web app page                                   |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;about.html                        | About web app page                                  |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;decks/                            | Web app flashcard decks directory                   |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.html      | Web app flashcard decks main page                   |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;deck_name.html  | Web app flashcard page for deck_name                |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;edit.html       | Web app create/edit flashcards/decks page           |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;auth/                             | Web app user authentication directory               |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;login.html      | Web app user authentication login page              |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;register.html   | Web app user registration page                      |
-| &nbsp;&nbsp;&nbsp;static/                                             | Web app static files directory                      |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;style.css                         | Cascading style sheet                               |
-| tests/                                                                | Unit tests directory                                |
-| &nbsp;&nbsp;&nbsp;test_db.py                                          | Database unit tests Python script                   |
-| &nbsp;&nbsp;&nbsp;test_pages.py                                       | Web pages unit tests Python script                  |
-| images/                                                               | Documentation images directory                      |
-| &nbsp;&nbsp;&nbsp;db_schematic.png                                    | Database schematic diagram                          |
-| &nbsp;&nbsp;&nbsp;kanban/                                             | Kanban screenshots directory                        |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kanban2022\*.png                  | Weekly Kanban screenshots                           |
-| &nbsp;&nbsp;&nbsp;mockups/                                            | Web page mockup directory                           |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\*.png                            | Web page mockups                                    |
-| setup.py                                                              | Script to install app                               |
-| MANIFEST.in                                                           | List of other files to include at installation      |
-| README.md                                                             | Summary of project                                  |
-| WEEKLY_STATUS.md                                                      | Summary of weekly meeting, progress, tasks          |
-| PAGE_TESTING.md                                                       | Summary of web pages, testing to implement          |
-| SQL_TESTING.md                                                        | Summary of database schema, methods, testing        |
-| FINAL_REPORT.md                                                       | Final project report                                |
+| File                                                                  | Description                                            |
+| --------------------------------------------------------------------- | ------------------------------------------------------ |
+| wordsalad/                                                            | Application directory                                  |
+| &nbsp;&nbsp;&nbsp;`__init__.py`                                       | Flask application factory                              |
+| &nbsp;&nbsp;&nbsp;db.py                                               | Database initialization script                         |
+| &nbsp;&nbsp;&nbsp;schema.sql                                          | SQL database schema                                    |
+| &nbsp;&nbsp;&nbsp;auth.py                                             | Blueprint to handle authorization requests             |
+| &nbsp;&nbsp;&nbsp;home.py                                             | Blueprint to handle home/about page requests           |
+| &nbsp;&nbsp;&nbsp;decks.py                                            | Blueprint to handle view/add/edit/delete deck requests |
+| &nbsp;&nbsp;&nbsp;cards.py                                            | Blueprint to handle view/add/edit/delete card requests |
+| &nbsp;&nbsp;&nbsp;data/                                               | Flashcard CSV data directory                           |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;source_info.csv                   | Source data information                                |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SAT_vocab.csv                     | SAT vocabulary source data                             |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GRE_vocab.csv                     | GRE vocabulary source data                             |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LSAT_vocab.csv                    | LSAT vocabulary source data                            |
+| &nbsp;&nbsp;&nbsp;templates/                                          | Web app templates directory                            |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;base.html                         | Base web app page template                             |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.html                        | Main web app page                                      |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;about.html                        | About web app page                                     |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;decks/                            | Web app flashcard decks directory                      |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.html      | Web app flashcard decks main page                      |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;deck_name.html  | Web app flashcard page for deck_name                   |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;edit.html       | Web app create/edit flashcards/decks page              |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;auth/                             | Web app user authentication directory                  |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;login.html      | Web app user authentication login page                 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;register.html   | Web app user registration page                         |
+| &nbsp;&nbsp;&nbsp;static/                                             | Web app static files directory                         |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;style.css                         | Cascading style sheet                                  |
+| tests/                                                                | Unit tests directory                                   |
+| &nbsp;&nbsp;&nbsp;test_db.py                                          | Database unit tests Python script                      |
+| &nbsp;&nbsp;&nbsp;test_pages.py                                       | Web pages unit tests Python script                     |
+| images/                                                               | Documentation images directory                         |
+| &nbsp;&nbsp;&nbsp;db_schematic.png                                    | Database schematic diagram                             |
+| &nbsp;&nbsp;&nbsp;kanban/                                             | Kanban screenshots directory                           |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kanban2022\*.png                  | Weekly Kanban screenshots                              |
+| &nbsp;&nbsp;&nbsp;mockups/                                            | Web page mockup directory                              |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\*.png                            | Web page mockups                                       |
+| setup.py                                                              | Script to install app                                  |
+| MANIFEST.in                                                           | List of other files to include at installation         |
+| README.md                                                             | Summary of project                                     |
+| WEEKLY_STATUS.md                                                      | Summary of weekly meeting, progress, tasks             |
+| PAGE_TESTING.md                                                       | Summary of web pages, testing to implement             |
+| SQL_TESTING.md                                                        | Summary of database schema, methods, testing           |
+| FINAL_REPORT.md                                                       | Final project report                                   |
 
 ### References: ###
 Ambler, S. W., & Holitza, M. (2012). _Agile for dummies, IBM limited edition._ Wiley.
