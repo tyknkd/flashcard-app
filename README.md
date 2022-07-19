@@ -100,6 +100,8 @@ This project has the following directory tree:
 │   ├── db.py
 │   ├── schema.sql
 │   ├── auth.py
+│   ├── decks.py
+│   ├── cards.py
 │   ├── data/
 │   │   ├── source_info.csv
 │   │   ├── SAT_vocab.csv
@@ -145,9 +147,11 @@ This project has the following directory tree:
 | --------------------------------------------------------------------- | --------------------------------------------------- |
 | wordsalad/                                                            | Application directory                               |
 | &nbsp;&nbsp;&nbsp;`__init__.py`                                       | Flask application factory                           |
-| &nbsp;&nbsp;&nbsp;db.py                                             | Database initialization script                      |
-| &nbsp;&nbsp;&nbsp;schema.sql                                        | SQL database schema                                 |
-| &nbsp;&nbsp;&nbsp;auth.py                                           | Blueprint to handle authorization requests          |
+| &nbsp;&nbsp;&nbsp;db.py                                               | Database initialization script                      |
+| &nbsp;&nbsp;&nbsp;schema.sql                                          | SQL database schema                                 |
+| &nbsp;&nbsp;&nbsp;auth.py                                             | Blueprint to handle authorization requests          |
+| &nbsp;&nbsp;&nbsp;decks.py                                            | Blueprint to handle deck add/edit/delete requests   |
+| &nbsp;&nbsp;&nbsp;cards.py                                            | Blueprint to handle card add/edit/delete requests   |
 | &nbsp;&nbsp;&nbsp;data/                                               | Flashcard CSV data directory                        |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;source_info.csv                   | Source data information                             |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SAT_vocab.csv                     | SAT vocabulary source data                          |
