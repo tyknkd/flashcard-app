@@ -125,8 +125,7 @@ This project has the following directory tree:
 │   ├── db_schematic.png  
 │   ├── kanban/  
 │   │       ├── kanban20220627.png
-│   │       ├── kanban20220710.png
-│   │       └── kanban20220711.png
+│   │       └── kanban202207*.png
 │   └── mockups/  
 │           ├── about.png
 │           ├── createcard.png
