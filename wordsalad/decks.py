@@ -9,7 +9,7 @@ from flask import (
     Blueprint, flash, g, redirect, render_template, request, url_for
 )
 
-# Authentication/security
+# https://werkzeug.palletsprojects.com/en/2.1.x/utils/
 from werkzeug.exceptions import abort
 
 # Require login function
@@ -19,3 +19,14 @@ from wordsalad.auth import login_required
 from wordsalad.db import get_db
 
 bp = Blueprint('decks', __name__)
+
+@bp.route('/decks/')
+def decks():
+    '''
+    Display available decks
+    '''
+    db = get_db()
+    decks = db.execute(
+        'SELECT name, description, public FROM decks'
+    ).fetchall()
+    return render_template('decks/index.html', decks=decks)
