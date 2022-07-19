@@ -149,6 +149,11 @@ This project has the following directory tree:
 | &nbsp;&nbsp;&nbsp;`db.py`                                             | Database initialization script                      |
 | &nbsp;&nbsp;&nbsp;`schema.sql`                                        | SQL database schema                                 |
 | &nbsp;&nbsp;&nbsp;`auth.py`                                           | Blueprint to handle authorization requests          |
+| &nbsp;&nbsp;&nbsp;data/                                               | Flashcard CSV data directory                        |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;source_info.csv                   | Source data information                             |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SAT_vocab.csv                     | SAT vocabulary source data                          |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GRE_vocab.csv                     | GRE vocabulary source data                          |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LSAT_vocab.csv                    | LSAT vocabulary source data                         |
 | &nbsp;&nbsp;&nbsp;templates/                                          | Web app templates directory                         |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;base.html                         | Base web app page template                          |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.html                        | Main web app page                                   |
