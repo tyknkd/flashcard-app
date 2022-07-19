@@ -5,7 +5,8 @@
 #
 # Import Flask, template, reverse URL class
 from flask import Flask, render_template, url_for
-
+#
+# Library to handle operating system paths
 import os
 
 def create_app(test_config=None):
@@ -35,33 +36,6 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-
-    # # Set root URL to index page
-    # @app.route('/')
-    # @app.route('/index.html')
-    # def index():
-    #     return render_template('index.html')
-
-    # # Set route to about page
-    # @app.route('/about/')
-    # def about():
-    #     return render_template('about.html')
-
-    # # Set route to decks page
-    # @app.route('/decks/')
-    # def decks():
-    #    return render_template('decks.html')
-
-    # # Set route to /decks/<deck_name> page
-    # @app.route('/decks/<deck_name>')
-    # def show_deck(deck_name):
-    #    return render_template('<deck_name>.html')
-
-    # # Set route to /edit/<deck_name> page
-    # @app.route('/decks/edit/<deck_name>')
-    # def edit_deck(deck_name):
-    #     return render_template('edit.html')
-
     # Import/register database initialization script
     from . import db
     db.init_app(app)
@@ -70,15 +44,15 @@ def create_app(test_config=None):
     from . import auth
     app.register_blueprint(auth.bp)
     
+    # Import/register home Blueprint
+    from . import home
+    app.register_blueprint(home.bp)
+    app.add_url_rule('/', endpoint='index')
+
     # Import/register decks Blueprint
     from . import decks
     app.register_blueprint(decks.bp)
     app.add_url_rule('/decks/', endpoint='decks.index')
-
-    # Import/register home/main Blueprint
-    from . import home
-    app.register_blueprint(home.bp)
-    app.add_url_rule('/', endpoint='index')
 
     return app
 
