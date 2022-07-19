@@ -153,8 +153,8 @@ This project has the following directory tree:
 | &nbsp;&nbsp;&nbsp;`__init__.py`                                       | Flask application factory                           |
 | &nbsp;&nbsp;&nbsp;db/                                                 | Database directory                                  |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;schema.sql                        | SQL database schema                                 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;db.py                             | Database connection Python script                   |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;makeDB.py                         | Python script to initialize database                |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;db.py                             | Python script to initialize database                |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;makeDB.py                         | Python script to populate database                  |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;addData.py                        | Python script to add card, deck, or user to DB      |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getData.py                        | Python script to get card, deck, or user from DB    |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;editData.py                       | Python script to edit card, deck, or user in DB     |
