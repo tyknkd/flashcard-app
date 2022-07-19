@@ -27,7 +27,7 @@ def index():
     '''
     # Get deck names, descriptions, public status from database
     db = get_db()
-    posts = db.execute(
+    decks = db.execute(
         'SELECT name, description, public FROM decks'
     ).fetchall()
     return render_template('index.html', decks=decks)
