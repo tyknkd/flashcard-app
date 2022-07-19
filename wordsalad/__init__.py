@@ -47,11 +47,6 @@ def create_app(test_config=None):
     def about():
         return render_template('about.html')
 
-    # Set route to login page
-    @app.route('/login/')
-    def login():
-        return render_template('login.html')
-
     # Set route to decks page
     @app.route('/decks/')
     def decks():
@@ -77,16 +72,3 @@ def create_app(test_config=None):
 
     return app
 
-
-#Create Database as flashcards.db
-#dbName = "wordsalad.db"
-#sql = makeDB.getSQL("/db/schema.sql")
-#makeDB.createDB(dbName, sql)
-#print('Database', dbName, "created successfully")
-
-#Populate tables with decks in /db/data folder
-#decks = ["GRE_vocab.csv", "LSAT_vocab.csv","SAT_vocab.csv"]
-#makeDB.addWordSaladSuperUser(dbName)
-#for deck in decks:
-#    makeDB.populateCards(dbName, deck)
-#    print(deck, "used to successfully populate tables")
