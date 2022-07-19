@@ -97,10 +97,10 @@ This project has the following directory tree:
 .  
 ├── wordsalad/
 │   ├── __init__.py
+│   ├── db.py
+│   ├── schema.sql
 │   ├── auth.py
 │   ├── dbScripts/
-│   │   ├── schema.sql
-│   │   ├── db.py
 │   │   ├── populateDB.py
 │   │   ├── addData.py
 │   │   ├── getData.py
@@ -152,10 +152,10 @@ This project has the following directory tree:
 | --------------------------------------------------------------------- | --------------------------------------------------- |
 | wordsalad/                                                            | Application directory                               |
 | &nbsp;&nbsp;&nbsp;`__init__.py`                                       | Flask application factory                           |
+| &nbsp;&nbsp;&nbsp;`db.py`                                             | Database initialization script                      |
+| &nbsp;&nbsp;&nbsp;`schema.sql`                                        | SQL database schema                                 |
 | &nbsp;&nbsp;&nbsp;`auth.py`                                           | Blueprint to handle authorization requests          |
 | &nbsp;&nbsp;&nbsp;dbScripts/                                          | Database scripts directory                          |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;schema.sql                        | SQL database schema                                 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;db.py                             | Python script to initialize database                |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;populateDB.py                     | Python script to populate database                  |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;addData.py                        | Python script to add card, deck, or user to DB      |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getData.py                        | Python script to get card, deck, or user from DB    |
