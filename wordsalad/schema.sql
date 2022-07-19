@@ -18,7 +18,8 @@ CREATE TABLE `users` (
   `user_id` INTEGER PRIMARY KEY,
   `name` varchar(255),
   `username` varchar(255),
-  `email` varchar(255)
+  `email` varchar(255),
+  `password` varchar(255)
 );
 
 CREATE TABLE `cards_in_deck` (
