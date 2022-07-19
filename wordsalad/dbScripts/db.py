@@ -43,7 +43,7 @@ def init_db():
     db = get_db()
 
     # Open `schema.sql` relative to app pointed to by `current_app`
-    with current_app.open_resource('schema.sql') as f:
+    with current_app.open_resource('dbScripts/schema.sql') as f:
         # Execute SQL commands in `schema.sql` 
         db.executescript(f.read().decode('utf8'))
 

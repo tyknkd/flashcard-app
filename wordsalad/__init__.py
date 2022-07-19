@@ -68,7 +68,7 @@ def create_app(test_config=None):
         return render_template('edit.html')
 
     # Initialize database
-    from .import db
+    from .dbScripts import db
     db.init_app(app)
 
     return app
