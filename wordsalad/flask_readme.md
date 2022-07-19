@@ -9,6 +9,7 @@ To view the project website locally:
     ```
     $ export FLASK_APP=wordsalad
     $ export FLASK_ENV=development
+    $ flask init-db
     $ flask run
     ```
  4. Open `http://127.0.0.1:5000/` in a web browser.
