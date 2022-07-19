@@ -9,8 +9,13 @@ from flask import Flask, render_template, url_for
 import os
 
 def create_app(test_config=None):
-    # create and configure the app
+    # Create and configure app instance
+    # __name__: name of current Python module
+    # instance_relative_config=True: config files in instance folder above /wordsalad/
     app = Flask(__name__, instance_relative_config=True)
+    # Set default configuration
+    # SECRET_KEY should be made more secure (i.e., random) when deploying
+    # DATABASE: path to SQLite database file 
     app.config.from_mapping(
         SECRET_KEY='dev',
         DATABASE=os.path.join(app.instance_path, 'wordsalad.sqlite'),
