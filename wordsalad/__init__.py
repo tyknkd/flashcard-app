@@ -35,6 +35,7 @@ def create_app(test_config=None):
     except OSError:
         pass
 
+
     # Set root URL to index page
     @app.route('/')
     @app.route('/index.html')
@@ -65,6 +66,10 @@ def create_app(test_config=None):
     @app.route('/edit/<deck_name>')
     def edit_deck(deck_name):
         return render_template('edit.html')
+
+    # Initialize database
+    from . import db
+    db.init_app(app)
 
     return app
 
