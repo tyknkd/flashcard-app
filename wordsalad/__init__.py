@@ -58,7 +58,7 @@ def create_app(test_config=None):
         return render_template('<deck_name>.html')
 
     # Set route to /edit/<deck_name> page
-    @app.route('/edit/<deck_name>')
+    @app.route('/decks/edit/<deck_name>')
     def edit_deck(deck_name):
         return render_template('edit.html')
 
