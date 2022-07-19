@@ -68,7 +68,7 @@ def create_app(test_config=None):
         return render_template('edit.html')
 
     # Register database initialization script
-    from .dbScripts import db
+    from . import db
     db.init_app(app)
     
     # Register authentication Blueprint
