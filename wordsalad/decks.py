@@ -31,3 +31,45 @@ def decks():
         'SELECT name, description, public FROM decks'
     ).fetchall()
     return render_template('decks/index.html', decks=decks)
+
+
+@bp.route('/decks/create', methods=('GET', 'POST'))
+@login_required
+def create():
+    '''
+    Create new flashcard deck
+    '''
+    if request.method == 'POST':
+        name = request.form['name']
+        category = request.form['category']
+        description = request.form['description']
+        public = request.form['public']
+        error = None
+
+        # Handle missing info
+        if not name:
+            error = 'Deck name is required.'
+            
+        elif not category:
+            error = 'Category is required.'
+            
+        elif not description:
+            error = 'Description is required.'
+
+        elif not public:
+            error = 'Public/private is required.'
+        
+        if error is not None:
+            flash(error)
+        else:
+            # Add deck to database
+            db = get_db()
+            db.execute(
+                'INSERT INTO decks (name, category, owner_id, public, description)'
+                ' VALUES (?, ?, ?, ?, ?)',
+                (name, category, g.user['user_id'], public, description)
+            )
+            db.commit()
+            return redirect(url_for('blog.index'))
+
+    return render_template('decks/create.html')
