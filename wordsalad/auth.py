@@ -12,7 +12,7 @@ from flask import (
 # https://werkzeug.palletsprojects.com/en/2.1.x/utils/
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from wordsalad.dbScripts.db import get_db
+from wordsalad.db import get_db
 
 # Create Blueprint
 bp = Blueprint('auth', __name__, url_prefix='/auth')
