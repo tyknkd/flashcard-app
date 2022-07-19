@@ -97,6 +97,7 @@ This project has the following directory tree:
 .  
 ├── wordsalad/
 │   ├── __init__.py
+│   ├── auth.py
 │   ├── dbScripts/
 │   │   ├── schema.sql
 │   │   ├── db.py
@@ -151,6 +152,7 @@ This project has the following directory tree:
 | --------------------------------------------------------------------- | --------------------------------------------------- |
 | wordsalad/                                                            | Application directory                               |
 | &nbsp;&nbsp;&nbsp;`__init__.py`                                       | Flask application factory                           |
+| &nbsp;&nbsp;&nbsp;`auth.py`                                           | Blueprint to handle authorization requests          |
 | &nbsp;&nbsp;&nbsp;dbScripts/                                          | Database scripts directory                          |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;schema.sql                        | SQL database schema                                 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;db.py                             | Python script to initialize database                |
