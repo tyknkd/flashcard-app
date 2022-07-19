@@ -136,6 +136,8 @@ This project has the following directory tree:
 │           ├── home.png
 │           ├── homepage.jpg
 │           └── login.png
+├── setup.py 
+├── MANIFEST.in 
 ├── README.md 
 ├── WEEKLY_STATUS.md 
 ├── PAGE_TESTING.md 
@@ -179,6 +181,8 @@ This project has the following directory tree:
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kanban2022\*.png                  | Weekly Kanban screenshots                           |
 | &nbsp;&nbsp;&nbsp;mockups/                                            | Web page mockup directory                           |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\*.png                            | Web page mockups                                    |
+| setup.py                                                              | Script to install app                               |
+| MANIFEST.in                                                           | List of other files to include at installation      |
 | README.md                                                             | Summary of project                                  |
 | WEEKLY_STATUS.md                                                      | Summary of weekly meeting, progress, tasks          |
 | PAGE_TESTING.md                                                       | Summary of web pages, testing to implement          |
