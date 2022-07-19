@@ -67,9 +67,13 @@ def create_app(test_config=None):
     def edit_deck(deck_name):
         return render_template('edit.html')
 
-    # Initialize database
+    # Register database initialization script
     from .dbScripts import db
     db.init_app(app)
+    
+    # Register authentication Blueprint
+    from . import auth
+    app.register_blueprint(auth.bp)
 
     return app
 
