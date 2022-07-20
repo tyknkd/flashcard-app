@@ -137,3 +137,15 @@ def edit(deck_id):
             return redirect(url_for('decks.index'))
 
     return render_template('decks/edit.html', deck=deck)
+    
+@bp.route('/<int:id>/delete', methods=('POST',))
+@login_required
+def delete(id):
+    '''
+    Delete deck
+    '''
+    get_deck(deck_id)
+    db = get_db()
+    db.execute('DELETE FROM decks WHERE deck_id = ?', (deck_id,))
+    db.commit()
+    return redirect(url_for('decks.index'))  
