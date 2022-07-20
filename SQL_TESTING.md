@@ -130,38 +130,50 @@
   * Unable to login with invalid credentials
 
 ### Table 3 Access Method 1 ### 
-* Name: Add deck
-* Description: Add new deck via `/decks/create`
-* Parameters:
-* Return values:
+* Name: `decks.get_deck(deck_id, check_owner=True)`
+* Description: Retrieve deck information for specified `deck_id` and optionally check if requesting user is owner of deck
+* Parameters: `deck_id`, `check_owner`
+* Return values: `name`, `category`,`owner_id`, `public`, `description`  
 * List of tests for verifying each access method:
-  * Able to add multiple decks
-  * Attempting to add invalid deck parameters fails
-  * Query returns expected data for all rows and columns
+  * Return expected values for existent decks
+  * Attempting to retrieve non-existent deck fails
 
 ### Table 3 Access Method 2 ### 
-* Name: Edit deck
-* Description: Edit existing deck via `/decks/edit`
-* Parameters:
-* Return values:
-* List of tests for verifying each access method
+* Name: `decks.create()`
+* Description: Add new deck via `/decks/create` form
+* Parameters: None
+* Return values: Added deck posts to `/decks`
+* List of tests for verifying each access method:
+  * Adding valid deck information results in deck displaying
+  * Attempting to add invalid deck values fails
 
 ### Table 3 Access Method 3 ### 
-* Name: Remove deck
-* Description: Remove existing deck via `/decks/edit`
-* Parameters
-* Return values
+* Name: `decks.edit(deck_id)`
+* Description: Edit existing deck via `/decks/edit`
+* Parameters: `deck_id`
+* Return values: Edited deck posts to `/decks`
 * List of tests for verifying each access method
+  * Valid deck information results in edited deck displaying
+  * Attempting to updated with invalid deck values fails
+
+### Table 3 Access Method 4 ### 
+* Name: `decks.delete(deck_id)`
+* Description: Remove existing deck via `/decks/edit`
+* Parameters: `deck_id`
+* Return values: Deck no longer posted to `/decks`
+* List of tests for verifying each access method
+  * Removing existent deck results in deck removed from decks
+  * Attempting to remove non-existent deck results in no change
 
 ### Table 4 Access Method 1 ### 
-* Name: View cards in deck
+* Name: 
 * Description: View cards for a particular deck via `/decks/<deck_id>`
 * Parameters
 * Return values
 * List of tests for verifying each access method
 
 ### Table 5 Access Method 1 ### 
-* Name: View cards created by user
+* Name: 
 * Description: View cards for particular user via `/decks/<deck_id>`
 * Parameters
 * Return values
