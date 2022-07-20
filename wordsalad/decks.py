@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 
 # Python script to create Blueprint to handle flashcard deck requests 
-# to `/decks/`, `/decks/<deck_name>`, and `/decks/edit/*` 
+# to `/decks/`, `/decks/<deck_name>`, `/decks/create/`, `/decks/edit/`,
+# and `/decks/delete/`
 # Reference: https://flask.palletsprojects.com/en/2.1.x/tutorial/views/
 # https://flask.palletsprojects.com/en/2.1.x/tutorial/blog/
 
@@ -73,3 +74,23 @@ def create():
             return redirect(url_for('decks.index'))
 
     return render_template('decks/create.html')
+    
+def get_deck(deck_id, check_owner=True):
+    '''
+    Fetch deck by deck_id
+    :check_owner=True: Check if user is owner
+    '''
+    deck = get_db().execute(
+        'SELECT deck_id, name, category, owner_id, public, description'
+        ' FROM decks WHERE deck_id = ?',
+        (deck_id,)
+    ).fetchone()
+
+    if post is None:
+        abort(404, f"Deck id {deck_id} doesn't exist.")
+
+    # Check that user is owner of deck
+    if check_owner and deck['owner_id'] != g.user['user_id']:
+        abort(403)
+    
+    return deck
