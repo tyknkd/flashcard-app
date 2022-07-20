@@ -111,7 +111,7 @@ This project has the following directory tree:
 │   │   │   ├── index.html
 │   │   │   ├── create.html
 │   │   │   ├── edit.html
-│   │   │   └── <deck_name>/
+│   │   │   └── cards/
 |   │   │       ├── index.html
 |   │   │       ├── add.html
 │   |   │       └── edit.html
@@ -174,8 +174,8 @@ This project has the following directory tree:
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.html                  | Web app flashcard decks main page                      |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;create.html                 | Web app page to add new deck                           |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;edit.html                   | Web app page to edit existing deck                     |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<deck_name>/                | Web app flashcard deck directory                       |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.html| Web app flashcard deck page                            |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cards/                      | Web app flashcard deck directory                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.html| Web app flashcard deck cards page                      |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;add.html  | Web app page to add flashcards to deck (incl. via CSV) |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;edit.html | Web app page to edit flashcard in deck                 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;auth/                                         | Web app user authentication directory                  |
