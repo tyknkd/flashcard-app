@@ -74,24 +74,39 @@
 ## Data Access Methods
 ### Table 1 Access Method 1 ### 
 * Name: Add flashcard
-* Description: 
-* Parameters
-* Return values
-* List of tests for verifying each access method
+* Description: Add new flashcard via post to `/decks/<deck_id>/add/` 
+* Parameters: 
+* Return values: 
+* List of tests for verifying each access method:
+  * Able to add multiple flashcards of test data
+  * Query returns expected data for all rows and columns
 
 ### Table 1 Access Method 2 ### 
-* Name: Edit flashcard
-* Description: 
-* Parameters
-* Return values
-* List of tests for verifying each access method
+* Name: View flashcard
+* Description: View flashcards via request to `/decks/<deck_id>/add/`
+* Parameters:
+* Return values:
+* List of tests for verifying each access method:
+  * Retrieved data for all rows and columns as expected 
+  * Attempting to retrieve non-existent card results in error message
 
 ### Table 1 Access Method 3 ### 
+* Name: Edit flashcard
+* Description: Edit flashcard via request to `/decks/<deck_name>/edit`
+* Parameters:
+* Return values:
+* List of tests for verifying each access method:
+  * Retrieved data for all edited rows as expected
+  * Attempting to edit non-existent card results in error message
+
+### Table 1 Access Method 4 ### 
 * Name: Remove flashcard
-* Description: 
-* Parameters
-* Return values
-* List of tests for verifying each access method
+* Description: Remove flashcard via request to `/decks/<deck_name>/edit`
+* Parameters:
+* Return values:
+* List of tests for verifying each access method:
+  * Removed flashcard no longer exists
+  * Attempting to remove non-existent card results in error message
 
 ### Table 2 Access Method 1 ### 
 * Name: Register user
