@@ -140,7 +140,7 @@ def edit(deck_id):
     
 @bp.route('/<int:id>/delete', methods=('POST',))
 @login_required
-def delete(id):
+def delete(deck_id):
     '''
     Delete deck
     '''
