@@ -15,12 +15,9 @@
   * `back`: (alphanumeric) answer/response/definition/translation for "back" of card
   * `notes`: (alphanumeric) additional information (e.g., part-of-speech, frequency, etc.)
 * List of tests for verifying each table:
-  * After database initialization, for each row and column in flashcard source CSVs specified in `/wordsalad/data/source_info.csv`, data is in table:
-    * `category` matches source data category code in `/wordsalad/data/source_info.csv`
-    * `front` matches source data prompt/word
-    * `back` matches source data answer/definition
-    * `notes` matches source data notes
-  * After database initialization, only rows in source data are in table (i.e., no extra data points from unknown sources)
+  * Table is empty after initialization 
+  * Able to insert multiple rows of alphanumeric test data
+  * Query returns expected data for all rows and columns
 
 ### Table 2 ###
 * Name: `users`
@@ -32,8 +29,9 @@
   * `email`: (alphanumeric) user email address
   * `password`: (alphanumeric) user password
 * List of tests for verifying each table:
-  * Administrative super user account details are correct
-  * After database initialization, only super user account exists
+  * Table is empty after initialization 
+  * Able to insert multiple rows of alphanumeric test data
+  * Query returns expected data for all rows and columns
 
 ### Table 3 ###
 * Name: `decks`
@@ -46,14 +44,10 @@
   * `public`: (boolean) indicates whether deck is public (true) or private (false)
   * `description`: (alphanumeric) description of deck
 * List of tests for verifying each table:
-  * After database initialization, a deck exists for each flashcard source data CSV
-  * After database initialization, each row and column as expected:
-    * `name` matches human-readable source data name in `/wordsalad/data/source_info.csv`
-    * `category` matches source data category code in `/wordsalad/data/source_info.csv`
-    * `owner_id` matches `user_id` of administrative superuser
-    * `public` set to true
-    * `description` matches brief description in `/wordsalad/data/source_info.csv`
-
+  * Table is empty after initialization 
+  * Able to insert multiple rows of test data
+  * Query returns expected data for all rows and columns
+    
 ### Table 4 ###
 * Name: `cards_in_deck`
 * Table description: Contains `card_id` for each flashcard and its corresponding `deck_id` based on the card's category
@@ -62,8 +56,8 @@
   * `card_id`: (integer) references unique `card_id` in `flashcards` table
   * `deck_id`: (integer) references `deck_id` in `decks` table
 * List of tests for verifying each table:
-  * After database initialization, the number of entries matches the number of entries in `flashcards`
-  * After database initialization, for each `card_id`, `deck_id` matches `deck_id` in `decks` with same `category` as the corresponding `card_id` in `flashcards`   
+  * Table is empty after initialization 
+  * After inserting multiple rows of test data in `flashcards` and `decks`, query returns expected data for all rows and columns
 
 ### Table 5 ###
 * Name: `cards_created_by_users`
@@ -74,9 +68,8 @@
   * `card_id`: (integer) references unique `card_id` in `flashcards` table
   * `category`: (alphanumeric) references `category` in `flashcards` table
 * List of tests for verifying each table:
-  * After database initialization, the number of entries matches the number of entries in `flashcards`
-  * After database initialization, the only `user_id` is corresponds `user_id` of administrative super user in `users` table 
-  * After database initialization, for each `card_id`, `category` matches `category` in `flashcards`
+  * Table is empty after initialization 
+  * After inserting multiple rows of test data in `flashcards` and `users`, query returns expected data for all rows and columns
 
 ## Data Access Methods
 ### Table 1 Access Method 1 ### 
