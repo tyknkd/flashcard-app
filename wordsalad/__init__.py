@@ -36,6 +36,11 @@ def create_app(test_config=None):
     except OSError:
         pass
 
+    # Hello page for unit testing app factory
+    @app.route('/hello')
+    def hello():
+        return 'Hello, World!'
+
     # Import/register database initialization script
     from . import db
     db.init_app(app)
