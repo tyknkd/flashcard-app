@@ -1,5 +1,28 @@
+<!DOCTYPE html>
+<!-- Home page -->
+<!-- Reference: https://flask.palletsprojects.com/en/2.1.x/tutorial/blog/ -->
+
 {% extends 'base.html' %}
-{% block title %}Home{% endblock title %}
+
+{% block header %}
+  <h1>{% block title %}Home{% endblock %}</h1>
+  {% if g.user %}
+   
+  {% endif %}
+{% endblock %}
+
 {% block content %}
-	<p>Under construction</p>
-{% endblock content %}
+  {% for deck in decks %}
+    <section class="decks">
+      <header>
+        <div>
+          <h1>{{ deck['name'] }}</h1>
+        </div>
+      </header>
+      <p class="description">{{ deck['description'] }}</p>
+    </section>
+    {% if not loop.last %}
+      <hr>
+    {% endif %}
+  {% endfor %}
+{% endblock %}
