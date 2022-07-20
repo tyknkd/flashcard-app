@@ -103,11 +103,6 @@ This project has the following directory tree:
 │   ├── home.py
 │   ├── decks.py
 │   ├── cards.py
-│   ├── data/
-│   │   ├── source_info.csv
-│   │   ├── SAT_vocab.csv
-│   │   ├── GRE_vocab.csv
-│   │   └── LSAT_vocab.csv
 │   ├── templates/
 │   │   ├── base.html
 │   │   ├── index.html
@@ -126,8 +121,19 @@ This project has the following directory tree:
 │   └── static/
 │       └── style.css
 ├── tests/  
+│   ├── data.sql  
+│   ├── conftest.py  
+│   ├── setup.cfg  
+│   ├── test_factory.py  
 │   ├── test_db.py  
+│   ├── test_auth.py  
+│   ├── test_decks.py  
 │   └── test_pages.py  
+├── data/
+│   ├── source_info.csv
+│   ├── SAT_vocab.csv
+│   ├── GRE_vocab.csv
+│   └── LSAT_vocab.csv
 ├── images/  
 │   ├── db_schematic.png  
 │   ├── kanban/  
@@ -160,11 +166,6 @@ This project has the following directory tree:
 | &nbsp;&nbsp;&nbsp;home.py                                                         | Blueprint to handle home/about page requests           |
 | &nbsp;&nbsp;&nbsp;decks.py                                                        | Blueprint to handle view/add/edit/delete deck requests |
 | &nbsp;&nbsp;&nbsp;cards.py                                                        | Blueprint to handle view/add/edit/delete card requests |
-| &nbsp;&nbsp;&nbsp;data/                                                           | Flashcard CSV data directory                           |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;source_info.csv                               | Source data information                                |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SAT_vocab.csv                                 | SAT vocabulary source data                             |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GRE_vocab.csv                                 | GRE vocabulary source data                             |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LSAT_vocab.csv                                | LSAT vocabulary source data                            |
 | &nbsp;&nbsp;&nbsp;templates/                                                      | Web app templates directory                            |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;base.html                                     | Base web app page template                             |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.html                                    | Main web app page                                      |
@@ -175,7 +176,7 @@ This project has the following directory tree:
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;edit.html                   | Web app page to edit existing deck                     |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<deck_name>/                | Web app flashcard deck directory                       |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.html| Web app flashcard deck page                            |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;add.html  | Web app page to add flashcard to deck                  |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;add.html  | Web app page to add flashcard(s) to deck               |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;edit.html | Web app page to edit flashcard in deck                 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;auth/                                         | Web app user authentication directory                  |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;login.html                  | Web app user authentication login page                 |
@@ -183,8 +184,19 @@ This project has the following directory tree:
 | &nbsp;&nbsp;&nbsp;static/                                                         | Web app static files directory                         |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;style.css                                     | Cascading style sheet                                  |
 | tests/                                                                            | Unit tests directory                                   |
-| &nbsp;&nbsp;&nbsp;test_db.py                                                      | Database unit tests Python script                      |
-| &nbsp;&nbsp;&nbsp;test_pages.py                                                   | Web pages unit tests Python script                     |
+| &nbsp;&nbsp;&nbsp;data.sql                                                        | Unit test SQL data                                     |
+| &nbsp;&nbsp;&nbsp;conftest.py                                                     | Unit test configuration script (runs for every test)   |
+| &nbsp;&nbsp;&nbsp;setup.cfg                                                       | Unit test setup configuration file                     |
+| &nbsp;&nbsp;&nbsp;test_factory.py                                                 | App factory unit tests                                 |
+| &nbsp;&nbsp;&nbsp;test_db.py                                                      | Database unit tests                                    |
+| &nbsp;&nbsp;&nbsp;test_auth.py                                                    | Authentication unit tests                              |
+| &nbsp;&nbsp;&nbsp;test_decks.py                                                   | Decks unit tests                                       |
+| &nbsp;&nbsp;&nbsp;test_pages.py                                                   | Additional pages unit tests                            |
+| data/                                                                             | Flashcard CSV data directory                           |
+| &nbsp;&nbsp;&nbsp;source_info.csv                                                 | Source data information                                |
+| &nbsp;&nbsp;&nbsp;SAT_vocab.csv                                                   | SAT vocabulary source data                             |
+| &nbsp;&nbsp;&nbsp;GRE_vocab.csv                                                   | GRE vocabulary source data                             |
+| &nbsp;&nbsp;&nbsp;LSAT_vocab.csv                                                  | LSAT vocabulary source data                            |
 | images/                                                                           | Documentation images directory                         |
 | &nbsp;&nbsp;&nbsp;db_schematic.png                                                | Database schematic diagram                             |
 | &nbsp;&nbsp;&nbsp;kanban/                                                         | Kanban screenshots directory                           |
