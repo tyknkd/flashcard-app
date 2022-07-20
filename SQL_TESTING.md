@@ -74,16 +74,17 @@
 ## Data Access Methods
 ### Table 1 Access Method 1 ### 
 * Name: Add flashcard
-* Description: Add new flashcard via post to `/decks/<deck_id>/add/` 
+* Description: Add new flashcard via post to `/decks/<deck_id>/add` 
 * Parameters: 
 * Return values: 
 * List of tests for verifying each access method:
   * Able to add multiple flashcards of test data
+  * Unable to add incomplete/invalid data
   * Query returns expected data for all rows and columns
 
 ### Table 1 Access Method 2 ### 
 * Name: View flashcard
-* Description: View flashcards via request to `/decks/<deck_id>/add/`
+* Description: View flashcards via request to `/decks/<deck_id>`
 * Parameters:
 * Return values:
 * List of tests for verifying each access method:
@@ -92,7 +93,7 @@
 
 ### Table 1 Access Method 3 ### 
 * Name: Edit flashcard
-* Description: Edit flashcard via request to `/decks/<deck_name>/edit`
+* Description: Edit flashcard via request to `/decks/<deck_id>/edit`
 * Parameters:
 * Return values:
 * List of tests for verifying each access method:
@@ -101,7 +102,7 @@
 
 ### Table 1 Access Method 4 ### 
 * Name: Remove flashcard
-* Description: Remove flashcard via request to `/decks/<deck_name>/edit`
+* Description: Remove flashcard via request to `/decks/<deck_id>/edit`
 * Parameters:
 * Return values:
 * List of tests for verifying each access method:
@@ -110,30 +111,39 @@
 
 ### Table 2 Access Method 1 ### 
 * Name: Register user
-* Description
-* Parameters
-* Return values
-* List of tests for verifying each access method
+* Description: Create new user account via `/auth/register`
+* Parameters:
+* Return values:
+* List of tests for verifying each access method:
+  * Able to add multiple users with valid parameters
+  * Registering with invalid arguments fails
+  * Query returns expected data for all rows and columns
 
 ### Table 2 Access Method 2 ### 
 * Name: Authenticate user
-* Description
-* Parameters
-* Return values
-* List of tests for verifying each access method
+* Description: Log in via `/auth/login`
+* Parameters:
+* Return values:
+* List of tests for verifying each access method:
+  * Able to login with valid credentials
+  * Username returned after valid login
+  * Unable to login with invalid credentials
 
 ### Table 3 Access Method 1 ### 
 * Name: Add deck
-* Description
-* Parameters
-* Return values
-* List of tests for verifying each access method
+* Description: Add new deck via `/decks/create`
+* Parameters:
+* Return values:
+* List of tests for verifying each access method:
+  * Able to add multiple decks
+  * Attempting to add invalid deck parameters fails
+  * Query returns expected data for all rows and columns
 
 ### Table 3 Access Method 2 ### 
 * Name: Edit deck
-* Description
-* Parameters
-* Return values
+* Description:
+* Parameters:
+* Return values:
 * List of tests for verifying each access method
 
 ### Table 3 Access Method 3 ### 
