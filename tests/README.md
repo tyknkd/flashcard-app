@@ -4,12 +4,12 @@ References:
 [https://flask.palletsprojects.com/en/2.1.x/tutorial/tests/](https://flask.palletsprojects.com/en/2.1.x/tutorial/tests/)
 
 
-1. Install `wordsalad` project in the virtual environment (venv):
+1. [Install `wordsalad` project in the virtual environment (venv)](https://flask.palletsprojects.com/en/2.1.x/tutorial/install/):
 ```
 $ pip install -e .
 ```
 
-2. Install pytest and coverage in the virtual environment:
+2. [Install pytest and coverage in the virtual environment](https://flask.palletsprojects.com/en/2.1.x/tutorial/tests/):
 ```
 $ pip install pytest coverage
 ```
