@@ -70,6 +70,6 @@ def create():
                 (name, category, g.user['user_id'], public, description)
             )
             db.commit()
-            return redirect(url_for('blog.index'))
+            return redirect(url_for('decks.index'))
 
     return render_template('decks/create.html')
