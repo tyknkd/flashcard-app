@@ -141,28 +141,28 @@
 
 ### Table 3 Access Method 2 ### 
 * Name: Edit deck
-* Description:
+* Description: Edit existing deck via `/decks/edit`
 * Parameters:
 * Return values:
 * List of tests for verifying each access method
 
 ### Table 3 Access Method 3 ### 
 * Name: Remove deck
-* Description
+* Description: Remove existing deck via `/decks/edit`
 * Parameters
 * Return values
 * List of tests for verifying each access method
 
 ### Table 4 Access Method 1 ### 
 * Name: View cards in deck
-* Description
+* Description: View cards for a particular deck via `/decks/<deck_id>`
 * Parameters
 * Return values
 * List of tests for verifying each access method
 
 ### Table 5 Access Method 1 ### 
 * Name: View cards created by user
-* Description
+* Description: View cards for particular user via `/decks/<deck_id>`
 * Parameters
 * Return values
 * List of tests for verifying each access method
@@ -178,7 +178,4 @@
    3. 
    4. 
 * Expected result
-* Actual result
-* Status (Pass/Fail)
-* Notes
 * Post-conditions
