@@ -1,28 +1,35 @@
 # Unit testing
-Reference: [https://flask.palletsprojects.com/en/2.1.x/tutorial/tests/](https://flask.palletsprojects.com/en/2.1.x/tutorial/tests/)
+References: 
+[https://flask.palletsprojects.com/en/2.1.x/tutorial/install/](https://flask.palletsprojects.com/en/2.1.x/tutorial/install/)
+[https://flask.palletsprojects.com/en/2.1.x/tutorial/tests/](https://flask.palletsprojects.com/en/2.1.x/tutorial/tests/)
 
 
-Install pytest and coverage:
+1. Install `wordsalad` project in the virtual environment (venv):
+```
+$ pip install -e .
+```
+
+2. Install pytest and coverage in the virtual environment:
 ```
 $ pip install pytest coverage
 ```
 
-To run tests:
+3. Run tests:
 ```
 $ pytest
 ```
 
-To measure code coverage:
+4. Measure code coverage:
 ```
 $ coverage run -m pytest
 ```
 
-View coverage report in terminal:
+5. View coverage report in terminal:
 ```
 $ coverage report
 ```
 
-View coverage report in htmlcov/index.html
+Or view coverage report in htmlcov/index.html
 ```
 $ coverage html
 ```
