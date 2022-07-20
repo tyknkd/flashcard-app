@@ -18,6 +18,9 @@
         <div>
           <h1>{{ deck['name'] }}</h1>
         </div>
+        {% if g.user['user_id'] == deck['owner_id'] %}
+          <a class="action" href="{{ url_for('decks.edit', deck_id=deck['deck_id']) }}">Edit</a>
+        {% endif %}
       </header>
       <p class="description">{{ deck['description'] }}</p>
     </section>
