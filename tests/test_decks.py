@@ -167,7 +167,7 @@ def test_delete(client, auth, app):
     auth.login()
     
     # Delete Deck 1
-    response = client.post('decks/1/delete')
+    response = client.post('/decks/1/delete')
     
     # Confirm redirect to decks page
     assert response.headers["Location"] == "/decks"
