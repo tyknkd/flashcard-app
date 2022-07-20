@@ -78,7 +78,7 @@ def create():
 def get_deck(deck_id, check_owner=True):
     '''
     Fetch deck by deck_id
-    :check_owner=True: Check if user is owner
+    :check_owner=True: Abort if user is not owner
     '''
     deck = get_db().execute(
         'SELECT deck_id, name, category, owner_id, public, description'
@@ -94,3 +94,46 @@ def get_deck(deck_id, check_owner=True):
         abort(403)
     
     return deck
+
+@bp.route('/<int:deck_id>/edit', methods=('GET', 'POST'))
+@login_required
+def edit(deck_id):
+    '''
+    Edit info of a deck with deck_id
+    '''
+    deck = get_deck(deck_id)
+
+    if request.method == 'POST':
+        name = request.form['name']
+        category = request.form['category']
+        description = request.form['description']
+        public = request.form['public']
+        error = None
+
+        # Handle missing info
+        if not name:
+            error = 'Deck name is required.'
+            
+        elif not category:
+            error = 'Category is required.'
+            
+        elif not description:
+            error = 'Description is required.'
+
+        elif not public:
+            error = 'Public/private is required.'
+
+        if error is not None:
+            flash(error)
+        else:
+            # Update database
+            db = get_db()
+            db.execute(
+                'UPDATE decks SET name = ?, category = ?, description = ?, public = ?'
+                ' WHERE deck_id = ?',
+                (name, category, description, public, deck_id)
+            )
+            db.commit()
+            return redirect(url_for('decks.index'))
+
+    return render_template('decks/edit.html', deck=deck)
