@@ -36,8 +36,8 @@ def test_register(client, app):
 @pytest.mark.parametrize(('name','email','username', 'password', 'message'), (
     ('', '', '', '', b'Name is required.'),
     ('Bilbo', '', '', '', b'Email is required.'),
-    ('Bilbo', 'bilbo@example.com', '', b'Username is required.'),
-    ('Bilbo', 'bilbo@example.com', 'bilbao', '', b'Password is required.'),
+    ('Bilbo', 'bilbo@shire.com', '', '', b'Username is required.'),
+    ('Bilbo', 'bilbo@shire.com', 'baggins', '', b'Password is required.'),
     ('test', 'test@test.com', 'test', 'test', b'already registered'),
 ))
 def test_register_validate_input(client, name, email, username, password, message):
@@ -46,7 +46,7 @@ def test_register_validate_input(client, name, email, username, password, messag
     '''
     response = client.post(
         '/auth/register',
-        data={'name': name, 'email': email, 'username': username, 'password': password}
+        data={'name': name, 'email': email, 'username': username, 'password': password, ''}
     )
     assert message in response.data
     
