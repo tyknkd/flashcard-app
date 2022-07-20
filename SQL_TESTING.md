@@ -108,7 +108,7 @@
   * Valid card information results in edited card displaying
   * Attempting to update with invalid card values fails
 
-### Table 1 Access Method 4 ### 
+### Table 1 Access Method 5 ### 
 * Name: `cards.delete(card_id)`
 * Description: Remove existing card via `/decks/<deck_id>/edit`
 * Parameters: `card_id`
@@ -118,23 +118,23 @@
   * Attempting to remove non-existent card results in no change
 
 ### Table 2 Access Method 1 ### 
-* Name: Register user
+* Name: `auth.register()`
 * Description: Create new user account via `/auth/register`
-* Parameters:
-* Return values:
+* Parameters: N
+* Return values: 
 * List of tests for verifying each access method:
-  * Able to add multiple users with valid parameters
-  * Registering with invalid arguments fails
+  * Able to add multiple users with valid user values
+  * Registering with invalid user values fails
   * Query returns expected data for all rows and columns
 
 ### Table 2 Access Method 2 ### 
-* Name: Authenticate user
+* Name: `auth.login()`
 * Description: Log in via `/auth/login`
-* Parameters:
-* Return values:
+* Parameters: 
+* Return values: 
 * List of tests for verifying each access method:
   * Able to login with valid credentials
-  * Username returned after valid login
+  * Username posts to `/` after valid login
   * Unable to login with invalid credentials
 
 ### Table 3 Access Method 1 ### 
