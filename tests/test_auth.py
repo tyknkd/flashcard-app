@@ -46,7 +46,7 @@ def test_register_validate_input(client, name, email, username, password, messag
     '''
     response = client.post(
         '/auth/register',
-        data={'name': name, 'email': email, 'username': username, 'password': password, ''}
+        data={'name': name, 'email': email, 'username': username, 'password': password}
     )
     assert message in response.data
     
