@@ -1,7 +1,7 @@
 
 #!/usr/bin/python3
 
-# Decks page unit tests 
+# Decks pages unit tests 
 # Reference: https://flask.palletsprojects.com/en/2.1.x/tutorial/tests/
 
 import pytest
@@ -32,9 +32,9 @@ def test_decks(client, auth):
 
 # Repeat following test with different arguments
 @pytest.mark.parametrize('path', (
-    '/create',
-    '/1/edit',
-    '/1/delete',
+    '/decks/create',
+    '/decks/1/edit',
+    '/decks/1/delete',
 ))
 def test_login_required(client, path):
     '''
@@ -63,8 +63,8 @@ def test_owner_required(app, client, auth):
 
 # Repeat following test with different arguments
 @pytest.mark.parametrize('path', (
-    '/2/edit',
-    '/2/delete',
+    '/decks/2/edit',
+    '/decks/2/delete',
 ))
 def test_exists_required(client, auth, path):
     '''
@@ -72,3 +72,89 @@ def test_exists_required(client, auth, path):
     '''
     auth.login()
     assert client.post(path).status_code == 404
+
+def test_create(client, auth, app):
+    '''
+    Test deck creation
+    '''
+    auth.login()
+
+    # Confirm /decks/create/ loads
+    assert client.get('/decks/create').status_code == 200
+    
+    # Add new deck
+    client.post(
+        '/decks/create', 
+        data={
+            'name': 'New Deck', 
+            'category': 'new_category', 
+            'public': 'TRUE', 
+            'description': 'New deck description.'
+        }
+    )
+
+    # Confirm two decks now exist in database
+    with app.app_context():
+        db = get_db()
+        
+        ### WHY IS [0] NEEDED IN THE FOLLOWING CODE? ###
+        
+        count = db.execute('SELECT COUNT(deck_id) FROM decks').fetchone()[0] 
+        assert count == 2
+
+def test_edit(client, auth, app):
+    '''
+    Test deck editing
+    '''
+    auth.login()
+
+    # Confirm /decks/1/edit/ loads
+    assert client.get('/decks/1/edit').status_code == 200
+    
+    # Edit deck
+    client.post(
+        '/decks/1/edit', 
+        data={
+            'name': 'Updated Test Title', 
+            'category': 'updated_category', 
+            'public': 'TRUE', 
+            'description': 'Updated test deck description.'
+        }
+    )
+
+    # Confirm deck updated
+    with app.app_context():
+        db = get_db()
+        deck = db.execute('SELECT * FROM decks WHERE deck_id = 1').fetchone()
+        assert deck['name'] == 'Updated Test Title'
+        assert deck['category'] == 'updated_category'
+        
+        ### SHOULD 'TRUE' BE REPLACED WITH 1 IN FOLLOWING LINE? ###
+        
+        assert deck['public'] == 'TRUE'  
+        
+        assert deck['description'] == 'Updated test deck description'
+        
+        
+   ## ALSO TEST THAT OTHER FIELDS REMAIN SAME WHEN ONLY ONE FIELD IS EDITED? ##
+
+# Repeat following test with different arguments
+@pytest.mark.parametrize('path', (
+    '/decks/create',
+    '/decks/1/edit',
+))
+def test_create_edit_validate(client, auth, path):
+    '''
+    Confirm valid entry required
+    '''
+    auth.login()
+    
+    # Attempt to enter blank fields
+    response = client.post(
+        path, data={'name': '', 'category': '', 'public': '', 'description': ''}
+    )
+    assert b'Deck name is required.' in response.data
+    
+    ## TO DO: CHECK THAT ERROR MESSAGES FOR OTHER FIELDS DISPLAY WHEN PRECEDING FIELDS VALID ##
+    
+  
