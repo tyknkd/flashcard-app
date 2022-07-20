@@ -5,7 +5,7 @@ VALUES
 
 INSERT INTO decks (name, category, owner_id, public, description)
 VALUES
-  ('test title', 'test_category', 1, 'TRUE', 'test description');
+  ('Test Title', 'test_category', 1, 'TRUE', 'This is a test deck description.');
   
 INSERT INTO flashcards (category, front, back, notes)
 VALUES
