@@ -73,21 +73,70 @@
 
 ## Data Access Methods
 ### Table 1 Access Method 1 ### 
-* Name
-* Description
+* Name: Add flashcard
+* Description: 
+* Parameters
+* Return values
+* List of tests for verifying each access method
+
+### Table 1 Access Method 2 ### 
+* Name: Edit flashcard
+* Description: 
+* Parameters
+* Return values
+* List of tests for verifying each access method
+
+### Table 1 Access Method 3 ### 
+* Name: Remove flashcard
+* Description: 
 * Parameters
 * Return values
 * List of tests for verifying each access method
 
 ### Table 2 Access Method 1 ### 
-* Name
+* Name: Register user
+* Description
+* Parameters
+* Return values
+* List of tests for verifying each access method
+
+### Table 2 Access Method 2 ### 
+* Name: Authenticate user
 * Description
 * Parameters
 * Return values
 * List of tests for verifying each access method
 
 ### Table 3 Access Method 1 ### 
-* Name
+* Name: Add deck
+* Description
+* Parameters
+* Return values
+* List of tests for verifying each access method
+
+### Table 3 Access Method 2 ### 
+* Name: Edit deck
+* Description
+* Parameters
+* Return values
+* List of tests for verifying each access method
+
+### Table 3 Access Method 3 ### 
+* Name: Remove deck
+* Description
+* Parameters
+* Return values
+* List of tests for verifying each access method
+
+### Table 4 Access Method 1 ### 
+* Name: View cards in deck
+* Description
+* Parameters
+* Return values
+* List of tests for verifying each access method
+
+### Table 5 Access Method 1 ### 
+* Name: View cards created by user
 * Description
 * Parameters
 * Return values
