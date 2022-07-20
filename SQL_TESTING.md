@@ -73,41 +73,49 @@
 
 ## Data Access Methods
 ### Table 1 Access Method 1 ### 
-* Name: Add flashcard
-* Description: Add new flashcard via post to `/decks/<deck_id>/add` 
-* Parameters: 
-* Return values: 
+* Name: `cards.get_card(card_id)`
+* Description: Retrieve card information for specified `card_id`
+* Parameters: `card_id`
+* Return values: `front`, `category`,`back`, `notes`  
 * List of tests for verifying each access method:
-  * Able to add multiple flashcards of test data
-  * Unable to add incomplete/invalid data
-  * Query returns expected data for all rows and columns
+  * Return expected values for existent cards
+  * Attempting to retrieve non-existent card fails
 
 ### Table 1 Access Method 2 ### 
-* Name: View flashcard
-* Description: View flashcards via request to `/decks/<deck_id>`
-* Parameters:
-* Return values:
+* Name: `cards.create(deck_id)`
+* Description: Add new card via `/decks/<deck_id>/create` form
+* Parameters: None
+* Return values: Added card posts to `/decks/<deck_id>`
 * List of tests for verifying each access method:
-  * Retrieved data for all rows and columns as expected 
-  * Attempting to retrieve non-existent card results in error message
+  * Adding valid card information results in card displaying
+  * Attempting to add invalid card values fails
 
 ### Table 1 Access Method 3 ### 
-* Name: Edit flashcard
-* Description: Edit flashcard via request to `/decks/<deck_id>/edit`
-* Parameters:
-* Return values:
+* Name: `cards.upload(csv_path)`
+* Description: Bulk upload cards from CSV via `/decks/<deck_id>/create` form
+* Parameters: `csv_path`
+* Return values: Added cards post to `/decks/<deck_id>`
 * List of tests for verifying each access method:
-  * Retrieved data for all edited rows as expected
-  * Attempting to edit non-existent card results in error message
+  * Uploading valid CSV results in cards displaying
+  * Attempting to add invalid CSV fails
 
 ### Table 1 Access Method 4 ### 
-* Name: Remove flashcard
-* Description: Remove flashcard via request to `/decks/<deck_id>/edit`
-* Parameters:
-* Return values:
-* List of tests for verifying each access method:
-  * Removed flashcard no longer exists
-  * Attempting to remove non-existent card results in error message
+* Name: `cards.edit(card_id)`
+* Description: Edit existing deck via `/decks/<deck_id>/edit`
+* Parameters: `card_id`
+* Return values: Edited card posts to `/decks/<deck_id>`
+* List of tests for verifying each access method
+  * Valid card information results in edited card displaying
+  * Attempting to update with invalid card values fails
+
+### Table 1 Access Method 4 ### 
+* Name: `cards.delete(card_id)`
+* Description: Remove existing card via `/decks/<deck_id>/edit`
+* Parameters: `card_id`
+* Return values: Card no longer posted to `/decks/<deck_id>`
+* List of tests for verifying each access method
+  * Removing existent card results in card removed
+  * Attempting to remove non-existent card results in no change
 
 ### Table 2 Access Method 1 ### 
 * Name: Register user
