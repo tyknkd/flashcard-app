@@ -9,4 +9,4 @@ VALUES
   
 INSERT INTO flashcards (category, front, back, notes)
 VALUES
-  ('test_category', 'test front', 'test back', 'test notes');
+  ('test_category', 'test card front', 'test card back', 'test card notes');
