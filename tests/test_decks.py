@@ -57,11 +57,11 @@ def test_owner_required(app, client, auth):
     auth.login()
     
     # Confirm current user cannot modify other user's deck
-    assert client.post('/1/edit').status_code == 403
-    assert client.post('/1/delete').status_code == 403
+    assert client.post('/decks/1/edit').status_code == 403
+    assert client.post('/decks/1/delete').status_code == 403
     
     # Confirm current user does not see edit link
-    assert b'href="/1/edit"' not in client.get('/decks').data
+    assert b'href="/decks/1/edit"' not in client.get('/decks').data
 
 # Repeat following test with different arguments
 @pytest.mark.parametrize('path', (
@@ -175,5 +175,5 @@ def test_delete(client, auth, app):
     # Confirm deck does not exist
     with app.app_context():
         db = get_db()
-        post = db.execute('SELECT * FROM decks WHERE deck_id = 1').fetchone()
-        assert post is None
+        deck = db.execute('SELECT * FROM decks WHERE deck_id = 1').fetchone()
+        assert deck is None
