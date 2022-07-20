@@ -170,7 +170,7 @@ def test_delete(client, auth, app):
     response = client.post('decks/1/delete')
     
     # Confirm redirect to decks page
-    assert response.headers["Location"] == "/Decks"
+    assert response.headers["Location"] == "/decks"
 
     # Confirm deck does not exist
     with app.app_context():
