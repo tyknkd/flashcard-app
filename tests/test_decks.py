@@ -40,6 +40,8 @@ def test_login_required(client, path):
     '''
     Confirm login required
     '''
+    # Confirm redirected to login page 
+    # when accessing page requiring login
     response = client.post(path)
     assert response.headers["Location"] == "/auth/login"
 
@@ -158,3 +160,20 @@ def test_create_edit_validate(client, auth, path):
     ## TO DO: CHECK THAT ERROR MESSAGES FOR OTHER FIELDS DISPLAY WHEN PRECEDING FIELDS VALID ##
     
   
+def test_delete(client, auth, app):
+    '''
+    Test deck deletion
+    '''
+    auth.login()
+    
+    # Delete Deck 1
+    response = client.post('decks/1/delete')
+    
+    # Confirm redirect to decks page
+    assert response.headers["Location"] == "/Decks"
+
+    # Confirm deck does not exist
+    with app.app_context():
+        db = get_db()
+        post = db.execute('SELECT * FROM decks WHERE deck_id = 1').fetchone()
+        assert post is None
