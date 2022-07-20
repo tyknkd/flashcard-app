@@ -1,0 +1,5 @@
+include wordsalad/schema.sql
+graft wordsalad/static
+graft wordsalad/templates
+graft wordsalad/data
+global-exclude *.pyc
