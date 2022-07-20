@@ -31,7 +31,7 @@ def decks():
     decks = db.execute(
         'SELECT name, description, public FROM decks'
     ).fetchall()
-    return render_template('decks/index.html', decks=decks)
+    return render_template('decks/index.html', post=decks)
 
 
 @bp.route('/decks/create', methods=('GET', 'POST'))
@@ -136,7 +136,7 @@ def edit(deck_id):
             db.commit()
             return redirect(url_for('decks.index'))
 
-    return render_template('decks/edit.html', deck=deck)
+    return render_template('decks/edit.html', post=deck)
     
 @bp.route('/<int:id>/delete', methods=('POST',))
 @login_required
