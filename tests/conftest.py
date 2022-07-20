@@ -60,6 +60,7 @@ class AuthActions(object):
     def __init__(self, client):
         self._client = client
     
+    # Login as test user inserted from data.sql
     def login(self, username='test', password='test'):
         return self._client.post(
             '/auth/login',
