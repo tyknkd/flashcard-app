@@ -127,8 +127,8 @@ This project has the following directory tree:
 │   ├── test_factory.py  
 │   ├── test_db.py  
 │   ├── test_auth.py  
-│   ├── test_decks.py  
-│   └── test_pages.py  
+│   ├── test_home.py  
+│   └── test_decks.py  
 ├── data/
 │   ├── source_info.csv
 │   ├── SAT_vocab.csv
@@ -190,8 +190,8 @@ This project has the following directory tree:
 | &nbsp;&nbsp;&nbsp;test_factory.py                                                 | App factory unit tests                                 |
 | &nbsp;&nbsp;&nbsp;test_db.py                                                      | Database unit tests                                    |
 | &nbsp;&nbsp;&nbsp;test_auth.py                                                    | Authentication unit tests                              |
-| &nbsp;&nbsp;&nbsp;test_decks.py                                                   | Decks unit tests                                       |
-| &nbsp;&nbsp;&nbsp;test_pages.py                                                   | Additional pages unit tests                            |
+| &nbsp;&nbsp;&nbsp;test_home.py                                                    | Home page unit tests                                   |
+| &nbsp;&nbsp;&nbsp;test_decks.py                                                   | Decks pages unit tests                                 |
 | data/                                                                             | Flashcard CSV data directory                           |
 | &nbsp;&nbsp;&nbsp;source_info.csv                                                 | Source data information                                |
 | &nbsp;&nbsp;&nbsp;SAT_vocab.csv                                                   | SAT vocabulary source data                             |
