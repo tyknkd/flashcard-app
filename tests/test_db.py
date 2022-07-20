@@ -1,48 +1,41 @@
 #!/usr/bin/python3
 
-# https://docs.python.org/3/library/unittest.html
-import unittest
+# Database unit tests 
+# Reference: https://flask.palletsprojects.com/en/2.1.x/tutorial/tests/
+
 import sqlite3
-import os
-import dbScripts
 
-def get_cursor(dbname):
+import pytest
+from wordsalad.db import get_db
+
+def test_get_close_db(app):
     '''
-    Get cursor to specified database
-    :dbname: Database file
-    :return: Cursor to database
+    Confirm get_db always returns same connection
     '''
-    # Connection to database
-    connection = sqlite3.connect(dbname)
-                                  
-    # Return cursor to interact with database
-    return connection.cursor()
+    with app.app_context():
+        db = get_db()
+        assert db is get_db()
 
-# Name of database to test 
-dbName = 'test.db'
+    with pytest.raises(sqlite3.ProgrammingError) as e:
+        db.execute('SELECT 1')
 
-class StoreDBTestCase(unittest.TestCase):
-            
-    @classmethod
-    def setUpClass(cls):
-        pass
+    assert 'closed' in str(e.value)
+    
+def test_init_db_command(runner, monkeypatch):
+    '''
+    Confirm init-db calls init_db
+    '''
+    class Recorder(object):
+        called = False
 
-    @classmethod
-    def tearDownClass(cls):
-        pass
-
-    def setUp(self):
-        # Create test database
-        dbScripts.createDB(dbName)
-        dbScripts.initialPopulate(dbName)
-
-    def tearDown(self):
-        # Remove test database
-        if os.path.exists(dbName):
-            os.remove(dbName)
-
-                                                                                                            def test_init(self):
+    def fake_init_db():
         '''
-        Test initialization of database
+        Fake init_db that records if called
         '''
-        self.assertTrue(os.path.exists(dbName))
+        Recorder.called = True
+
+    # Replace init_db with fake_init_db
+    monkeypatch.setattr('wordsalad.db.init_db', fake_init_db)
+    result = runner.invoke(args=['init-db'])
+    assert 'Initialized' in result.output
+    assert Recorder.called    
