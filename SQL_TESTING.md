@@ -82,109 +82,99 @@
   * Attempting to retrieve non-existent card fails
 
 ### Table 1 Access Method 2 ### 
-* Name: `cards.create(deck_id)`
-* Description: Add new card via `/decks/<deck_id>/create` form
-* Parameters: None
-* Return values: Added card posts to `/decks/<deck_id>`
+* Name: `cards.add_card(front, category, back, notes)`
+* Description: Add new card to table
+* Parameters: `front`, `category`,`back`, `notes`
+* Return values: Boolean
 * List of tests for verifying each access method:
-  * Adding valid card information results in card displaying
+  * Valid parameters results in row correctly added to table
   * Attempting to add invalid card values fails
 
 ### Table 1 Access Method 3 ### 
-* Name: `cards.upload(csv_path)`
-* Description: Bulk upload cards from CSV via `/decks/<deck_id>/create` form
-* Parameters: `csv_path`
-* Return values: Added cards post to `/decks/<deck_id>`
-* List of tests for verifying each access method:
-  * Uploading valid CSV results in cards displaying
-  * Attempting to add invalid CSV fails
-
-### Table 1 Access Method 4 ### 
-* Name: `cards.edit(card_id)`
-* Description: Edit existing deck via `/decks/<deck_id>/edit`
-* Parameters: `card_id`
-* Return values: Edited card posts to `/decks/<deck_id>`
+* Name: `cards.update(card_id, front, category, back, notes)`
+* Description: Update existing card with `card_id`
+* Parameters: `card_id`, `front`, `category`,`back`, `notes`
+* Return values: Boolean
 * List of tests for verifying each access method
-  * Valid card information results in edited card displaying
+  * Valid parameters results in update to `card_id` row
   * Attempting to update with invalid card values fails
 
-### Table 1 Access Method 5 ### 
+### Table 1 Access Method 4 ### 
 * Name: `cards.delete(card_id)`
-* Description: Remove existing card via `/decks/<deck_id>/edit`
+* Description: Remove existing card with `card_id`
 * Parameters: `card_id`
-* Return values: Card no longer posted to `/decks/<deck_id>`
+* Return values: Boolean
 * List of tests for verifying each access method
-  * Removing existent card results in card removed
+  * Removing existent card results in card removed from table
   * Attempting to remove non-existent card results in no change
 
 ### Table 2 Access Method 1 ### 
-* Name: `auth.register()`
-* Description: Create new user account via `/auth/register`
-* Parameters: N
-* Return values: 
+* Name: `auth.add_user(name, email, username, password)`
+* Description: Add new user to table`
+* Parameters: `name`, `email`, `username`, `password`
+* Return values: Boolean
 * List of tests for verifying each access method:
-  * Able to add multiple users with valid user values
-  * Registering with invalid user values fails
-  * Query returns expected data for all rows and columns
+  * Adding new user with valid user values results in row correctly added to table
+  * Duplicate users not permitted
+  * Attempting to add invalid user values fails
 
 ### Table 2 Access Method 2 ### 
-* Name: `auth.login()`
-* Description: Log in via `/auth/login`
-* Parameters: 
-* Return values: 
+* Name: `auth.get_user(username, password)`
+* Description: Get user information for 
+* Parameters: `username`, `password`
+* Return values: `user_id`, `name`, `email` 
 * List of tests for verifying each access method:
-  * Able to login with valid credentials
-  * Username posts to `/` after valid login
-  * Unable to login with invalid credentials
+  * Return expected values for existent users
+  * Nothing returned for incorrect username and/or password
 
 ### Table 3 Access Method 1 ### 
-* Name: `decks.get_deck(deck_id, check_owner=True)`
-* Description: Retrieve deck information for specified `deck_id` and optionally check if requesting user is owner of deck
-* Parameters: `deck_id`, `check_owner`
+* Name: `decks.get_deck(deck_id)`
+* Description: Retrieve deck information for specified `deck_id`
+* Parameters: `deck_id`
 * Return values: `name`, `category`,`owner_id`, `public`, `description`  
 * List of tests for verifying each access method:
   * Return expected values for existent decks
   * Attempting to retrieve non-existent deck fails
 
 ### Table 3 Access Method 2 ### 
-* Name: `decks.create()`
-* Description: Add new deck via `/decks/create` form
-* Parameters: None
-* Return values: Added deck posts to `/decks`
+* Name: `decks.add_deck(name, category, owner_id, public, description)`
+* Description: Add new deck
+* Parameters: `name`, `category`, `owner_id`, `public`, `description`
+* Return values: Boolean
 * List of tests for verifying each access method:
-  * Adding valid deck information results in deck displaying
+  * Valid parameters results in row correctly added to table
   * Attempting to add invalid deck values fails
 
 ### Table 3 Access Method 3 ### 
-* Name: `decks.edit(deck_id)`
-* Description: Edit existing deck via `/decks/edit`
-* Parameters: `deck_id`
-* Return values: Edited deck posts to `/decks`
+* Name: `decks.update(deck_id, name, category, owner_id, public, description)`
+* Description: Update existing deck with `deck_id`
+* Parameters: `deck_id`, `name`, `category`, `owner_id`, `public`, `description`
+* Return values: Boolean
 * List of tests for verifying each access method
-  * Valid deck information results in edited deck displaying
-  * Attempting to updated with invalid deck values fails
+  * Valid parameters results in update to `deck_id` row
+  * Attempting to update with invalid deck values fails
 
 ### Table 3 Access Method 4 ### 
 * Name: `decks.delete(deck_id)`
-* Description: Remove existing deck via `/decks/edit`
+* Description: Remove existing deck `deck_id`
 * Parameters: `deck_id`
-* Return values: Deck no longer posted to `/decks`
+* Return values: Boolean
 * List of tests for verifying each access method
   * Removing existent deck results in deck removed from decks
   * Attempting to remove non-existent deck results in no change
 
 ### Table 4 Access Method 1 ### 
-* Name: 
-* Description: View cards for a particular deck via `/decks/<deck_id>`
-* Parameters
-* Return values
+* Name: `cards.cards(deck_id)`
+* Description: Get cards associated with `deck_id`
+* Parameters: `deck_id`
+* Return values: 
 * List of tests for verifying each access method
 
 ### Table 5 Access Method 1 ### 
-* Name: 
-* Description: View cards for particular user via `/decks/<deck_id>`
-* Parameters
-* Return values
+* Name: `cards.user_cards(user_id)`
+* Description: Get cards associated with `user_id`
+* Parameters:
+* Return values:
 * List of tests for verifying each access method
 
 ## Test Descriptions ##
