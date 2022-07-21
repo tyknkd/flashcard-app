@@ -109,24 +109,24 @@
 * Name: `cards.get_card(card_id)`
 * Description: Retrieve card information for specified `card_id`
 * Parameters: `card_id`
-* Return values: `front`, `category`,`back`, `notes`  
+* Return values: `deck_id`, `front`, `back`, `notes`  
 * List of tests for verifying each access method:
   * Return expected values for existent cards
   * Attempting to retrieve non-existent card fails
 
 ### Table 3 Access Method 2 ### 
-* Name: `cards.add_card(deck_id, front, category, back, notes)`
+* Name: `cards.add_card(deck_id, front, back, notes)`
 * Description: Add new card to table
-* Parameters: `deck_id`, `front`, `category`,`back`, `notes`
+* Parameters: `deck_id`, `front`, `back`, `notes`
 * Return values: Boolean
 * List of tests for verifying each access method:
   * Valid parameters results in row correctly added to table
   * Attempting to add invalid card values fails
 
 ### Table 3 Access Method 3 ### 
-* Name: `cards.update(card_id, front, category, back, notes)`
+* Name: `cards.update(card_id, front, back, notes)`
 * Description: Update existing card with `card_id`
-* Parameters: `card_id`, `front`, `category`,`back`, `notes`
+* Parameters: `card_id`, `front`, `back`, `notes`
 * Return values: Boolean
 * List of tests for verifying each access method
   * Valid parameters results in update to `card_id` row
