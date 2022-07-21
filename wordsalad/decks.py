@@ -26,10 +26,10 @@ def decks():
     '''
     Display available decks
     '''
-    # Get deck names, descriptions, public status from database
+    # Get deck titles, descriptions, public status from database
     db = get_db()
     decks = db.execute(
-        'SELECT name, description, public FROM decks'
+        'SELECT title, description, public FROM decks'
     ).fetchall()
     return render_template('decks/index.html', post=decks)
 
@@ -41,15 +41,15 @@ def create():
     Create new flashcard deck
     '''
     if request.method == 'POST':
-        name = request.form['name']
+        title = request.form['title']
         category = request.form['category']
         description = request.form['description']
         public = request.form['public']
         error = None
 
         # Handle missing info
-        if not name:
-            error = 'Deck name is required.'
+        if not title:
+            error = 'Title is required.'
             
         elif not category:
             error = 'Category is required.'
@@ -58,7 +58,7 @@ def create():
             error = 'Description is required.'
 
         elif not public:
-            error = 'Public/private is required.'
+            error = 'Public is required.'
         
         if error is not None:
             flash(error)
@@ -66,9 +66,9 @@ def create():
             # Add deck to database
             db = get_db()
             db.execute(
-                'INSERT INTO decks (name, category, owner_id, public, description)'
+                'INSERT INTO decks (owner_id, title, category, description, public)'
                 ' VALUES (?, ?, ?, ?, ?)',
-                (name, category, g.user['user_id'], public, description)
+                (g.user['user_id'], title, category, description, public)
             )
             db.commit()
             return redirect(url_for('decks.index'))
@@ -81,7 +81,7 @@ def get_deck(deck_id, check_owner=True):
     :check_owner=True: Abort if user is not owner
     '''
     deck = get_db().execute(
-        'SELECT deck_id, name, category, owner_id, public, description'
+        'SELECT deck_id, owner_id, title, category, description, public'
         ' FROM decks WHERE deck_id = ?',
         (deck_id,)
     ).fetchone()
@@ -104,15 +104,15 @@ def edit(deck_id):
     deck = get_deck(deck_id)
 
     if request.method == 'POST':
-        name = request.form['name']
+        title = request.form['title']
         category = request.form['category']
         description = request.form['description']
         public = request.form['public']
         error = None
 
         # Handle missing info
-        if not name:
-            error = 'Deck name is required.'
+        if not title:
+            error = 'Title is required.'
             
         elif not category:
             error = 'Category is required.'
@@ -121,7 +121,7 @@ def edit(deck_id):
             error = 'Description is required.'
 
         elif not public:
-            error = 'Public/private is required.'
+            error = 'Public is required.'
 
         if error is not None:
             flash(error)
@@ -129,9 +129,9 @@ def edit(deck_id):
             # Update database
             db = get_db()
             db.execute(
-                'UPDATE decks SET name = ?, category = ?, description = ?, public = ?'
+                'UPDATE decks SET title = ?, category = ?, description = ?, public = ?'
                 ' WHERE deck_id = ?',
-                (name, category, description, public, deck_id)
+                (deck_id, title, category, description, public)
             )
             db.commit()
             return redirect(url_for('decks.index'))

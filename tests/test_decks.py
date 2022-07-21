@@ -25,7 +25,7 @@ def test_decks(client, auth):
     # Confirm "Log Out" on page
     assert b'Log Out' in response.data
     
-    # Confirm deck name and description from tests/data.sql displayed on page
+    # Confirm deck title and description from tests/data.sql displayed on page
     assert b'Test Title' in response.data
     assert b'This is a test deck description.' in response.data
 
@@ -88,10 +88,10 @@ def test_create(client, auth, app):
     client.post(
         '/decks/create', 
         data={
-            'name': 'New Deck', 
+            'title': 'New Deck', 
             'category': 'new_category', 
-            'public': 'TRUE', 
-            'description': 'New deck description.'
+            'description': 'New deck description.', 
+            'public': 'TRUE'
         }
     )
 
@@ -117,10 +117,10 @@ def test_edit(client, auth, app):
     client.post(
         '/decks/1/edit', 
         data={
-            'name': 'Updated Test Title', 
+            'title': 'Updated Test Title', 
             'category': 'updated_category', 
-            'public': 'TRUE', 
-            'description': 'Updated test deck description.'
+            'description': 'Updated test deck description.', 
+            'public': 'TRUE'
         }
     )
 
@@ -128,7 +128,7 @@ def test_edit(client, auth, app):
     with app.app_context():
         db = get_db()
         deck = db.execute('SELECT * FROM decks WHERE deck_id = 1').fetchone()
-        assert deck['name'] == 'Updated Test Title'
+        assert deck['title'] == 'Updated Test Title'
         assert deck['category'] == 'updated_category'
         
         ### SHOULD 'TRUE' BE REPLACED WITH 1 IN FOLLOWING LINE? ###
@@ -153,9 +153,9 @@ def test_create_edit_validate(client, auth, path):
     
     # Attempt to enter blank fields
     response = client.post(
-        path, data={'name': '', 'category': '', 'public': '', 'description': ''}
+        path, data={'title': '', 'category': '', 'description': '', 'public': ''}
     )
-    assert b'Deck name is required.' in response.data
+    assert b'Title is required.' in response.data
     
     ## TO DO: CHECK THAT ERROR MESSAGES FOR OTHER FIELDS DISPLAY WHEN PRECEDING FIELDS VALID ##
     

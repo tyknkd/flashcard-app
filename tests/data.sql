@@ -3,10 +3,10 @@ VALUES
   ('test', 'test@test.com', 'test', 'pbkdf2:sha256:50000$TCI4GzcX$0de171a4f4dac32e3364c7ddc7c14f3e2fa61f2d17574483f7ffbb431b4acb2f'),
   ('other', 'other@test.com', 'other', 'pbkdf2:sha256:50000$kJPKsz6N$d2d4784f1b030a9761f5ccaeeaca413f27f2ecb76d6168407af962ddce849f79');
 
-INSERT INTO decks (name, category, owner_id, public, description)
+INSERT INTO decks (owner_id, name, category, description, public)
 VALUES
-  ('Test Title', 'test_category', 1, 'TRUE', 'This is a test deck description.');
+  (1, 'Test Title', 'test_category', 'This is a test deck description.', 'TRUE');
   
-INSERT INTO flashcards (category, front, back, notes)
+INSERT INTO cards (front, back, notes)
 VALUES
-  ('test_category', 'test card front', 'test card back', 'test card notes');
+  ('test card front', 'test card back', 'test card notes');
