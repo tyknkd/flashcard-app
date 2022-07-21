@@ -1,17 +1,17 @@
 CREATE TABLE users (
-  user_id INT PRIMARY KEY,
-  name VARCHAR,
-  email VARCHAR,
-  username VARCHAR,
-  password VARCHAR
+  user_id INTEGER PRIMARY KEY,
+  name VARCHAR(255),
+  email VARCHAR(255),
+  username VARCHAR(255),
+  password VARCHAR(255)
 );
 
 CREATE TABLE decks (
-  deck_id INT PRIMARY KEY,
-  owner_id INT, 
-  title VARCHAR,
-  category VARCHAR,
-  description VARCHAR,
+  deck_id INTEGER PRIMARY KEY,
+  owner_id INTEGER, 
+  title VARCHAR(255),
+  category VARCHAR(255),
+  description VARCHAR(255),
   public BOOLEAN, 
   FOREIGN KEY (owner_id) 
     REFERENCES users (user_id)
@@ -20,11 +20,11 @@ CREATE TABLE decks (
 );
 
 CREATE TABLE cards (
-  card_id INT PRIMARY KEY,
-  deck_id INT, 
-  front VARCHAR,
-  back VARCHAR,
-  notes VARCHAR,
+  card_id INTEGER PRIMARY KEY,
+  deck_id INTEGER, 
+  front VARCHAR(255),
+  back VARCHAR(255),
+  notes VARCHAR(255),
   FOREIGN KEY (deck_id) 
     REFERENCES decks (deck_id)
       ON DELETE CASCADE
