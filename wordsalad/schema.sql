@@ -12,7 +12,7 @@ CREATE TABLE decks (
   title VARCHAR,
   category VARCHAR,
   description VARCHAR,
-  public BOOLEAN, 
+  'public' BOOLEAN, 
   FOREIGN KEY (owner_id) 
     REFERENCES users (user_id)
 );

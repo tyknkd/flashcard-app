@@ -30,4 +30,4 @@ def index():
     decks = db.execute(
         'SELECT name, description, public FROM decks'
     ).fetchall()
-    return render_template('index.html', decks=decks)
+    return render_template('index.html', post=decks)
