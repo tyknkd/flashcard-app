@@ -19,6 +19,7 @@ CREATE TABLE decks (
 
 CREATE TABLE cards (
   card_id INT PRIMARY KEY,
+  deck_id INT, 
   front VARCHAR,
   back VARCHAR,
   notes VARCHAR,
