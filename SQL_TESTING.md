@@ -35,7 +35,7 @@
   * Query returns expected data for all rows and columns
     
 ### Table 3 ###
-* Name: `flashcards`
+* Name: `cards`
 * Table description: Data for each flashcard: the clue/question for the "front" of the card, the corresponding answer for the "back" of the card, the category (e.g., SAT vocabulary study set, GRE vocabulary, etc.), and notes (e.g., part-of-speech, frequency, etc.)
 * Fields (name and description):
   * `card_id`: (integer) unique index key
