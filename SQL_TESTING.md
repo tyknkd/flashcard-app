@@ -11,8 +11,8 @@
 * Fields (name and description):
   * `user_id`: (integer) unique index key
   * `name`: (alphanumeric) user's name
-  * `username`: (alphanumeric) username
   * `email`: (alphanumeric) user email address
+  * `username`: (alphanumeric) username
   * `password`: (alphanumeric) user password
 * List of tests for verifying each table:
   * Table is empty after initialization 
@@ -49,7 +49,6 @@
   * Able to insert multiple rows of alphanumeric test data
   * Query returns expected data for all rows and columns
 
-
 ## Data Access Methods
 ### Table 1 Access Method 1 ### 
 * Name: `auth.add_user(name, email, username, password)`
@@ -74,24 +73,24 @@
 * Name: `decks.get_deck(deck_id)`
 * Description: Retrieve deck information for specified `deck_id`
 * Parameters: `deck_id`
-* Return values: `name`, `category`,`owner_id`, `public`, `description`  
+* Return values: `owner_id`, `title`, `category`, `description`, `public`  
 * List of tests for verifying each access method:
   * Return expected values for existent decks
   * Attempting to retrieve non-existent deck fails
 
 ### Table 2 Access Method 2 ### 
-* Name: `decks.add_deck(name, category, owner_id, public, description)`
+* Name: `decks.add_deck(owner_id, title, category, description, public)`
 * Description: Add new deck
-* Parameters: `name`, `category`, `owner_id`, `public`, `description`
+* Parameters: `owner_id`, `title`, `category`, `description`, `public`
 * Return values: Boolean
 * List of tests for verifying each access method:
   * Valid parameters results in row correctly added to table
   * Attempting to add invalid deck values fails
 
 ### Table 2 Access Method 3 ### 
-* Name: `decks.update(deck_id, name, category, owner_id, public, description)`
+* Name: `decks.update(deck_id, owner_id, title, category, description, public)`
 * Description: Update existing deck with `deck_id`
-* Parameters: `deck_id`, `name`, `category`, `owner_id`, `public`, `description`
+* Parameters: `deck_id`, `owner_id`, `title`, `category`, `description`, `public`
 * Return values: Boolean
 * List of tests for verifying each access method
   * Valid parameters results in update to `deck_id` row
@@ -116,9 +115,9 @@
   * Attempting to retrieve non-existent card fails
 
 ### Table 3 Access Method 2 ### 
-* Name: `cards.add_card(front, category, back, notes)`
+* Name: `cards.add_card(deck_id, front, category, back, notes)`
 * Description: Add new card to table
-* Parameters: `front`, `category`,`back`, `notes`
+* Parameters: `deck_id`, `front`, `category`,`back`, `notes`
 * Return values: Boolean
 * List of tests for verifying each access method:
   * Valid parameters results in row correctly added to table
