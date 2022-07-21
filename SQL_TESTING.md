@@ -159,7 +159,7 @@
 * Description: Remove existing deck `deck_id`
 * Parameters: `deck_id`
 * Return values: Boolean
-* List of tests for verifying each access method
+* List of tests for verifying each access method:
   * Removing existent deck results in deck removed from decks
   * Attempting to remove non-existent deck results in no change
 
@@ -175,17 +175,4 @@
 * Description: Get cards associated with `user_id`
 * Parameters:
 * Return values:
-* List of tests for verifying each access method
-
-## Test Descriptions ##
-### Test 1 ###
-* Use case name
-* Description
-* Pre-conditions
-* Test steps
-   1. 
-   2. 
-   3. 
-   4. 
-* Expected result
-* Post-conditions
+* List of tests for verifying each access method:
