@@ -13,7 +13,7 @@ CREATE TABLE decks (
   category VARCHAR,
   description VARCHAR,
   public BOOL, 
-  FOREIGN KEY (owner_id) INT 
+  FOREIGN KEY (owner_id) 
     REFERENCES users (user_id)
 );
 
@@ -22,6 +22,6 @@ CREATE TABLE cards (
   front VARCHAR,
   back VARCHAR,
   notes VARCHAR,
-  FOREIGN KEY (deck_id) INT
+  FOREIGN KEY (deck_id) 
     REFERENCES decks (deck_id)
 ); 
