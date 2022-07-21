@@ -15,6 +15,8 @@ CREATE TABLE decks (
   public BOOLEAN, 
   FOREIGN KEY (owner_id) 
     REFERENCES users (user_id)
+      ON DELETE CASCADE
+      ON UPDATE CASCADE
 );
 
 CREATE TABLE cards (
@@ -25,4 +27,6 @@ CREATE TABLE cards (
   notes VARCHAR,
   FOREIGN KEY (deck_id) 
     REFERENCES decks (deck_id)
+      ON DELETE CASCADE
+      ON UPDATE CASCADE
 ); 
