@@ -10,8 +10,8 @@
 
 {% block content %}
   <form method="post">
-    <label for="name">Deck name</label>
-    <input name="name" id="name" value="{{ request.form['name'] }}" required>
+    <label for="title">Title</label>
+    <input name="title" id="title" value="{{ request.form['title'] }}" required>
     <label for="category">Category</label>
     <input name="category" id="category" value ="{{ request.form['category'] }}" required>
     <label for="description">Description</label>
