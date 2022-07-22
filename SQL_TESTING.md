@@ -52,9 +52,9 @@
 ## Data Access Methods
 ### Table 1 Access Method 1 ### 
 * Name: `auth.add_user(name, email, username, password)`
-* Description: Add new user to table`
+* Description: Add new user to table
 * Parameters: `name`, `email`, `username`, `password`
-* Return values: Boolean
+* Return values: `error` string (empty if successful)
 * List of tests for verifying each access method:
   * Adding new user with valid user values results in row correctly added to table
   * Duplicate users not permitted
@@ -62,7 +62,7 @@
 
 ### Table 1 Access Method 2 ### 
 * Name: `auth.get_user(username, password)`
-* Description: Get user information for 
+* Description: Get user information
 * Parameters: `username`, `password`
 * Return values: `user_id`, `name`, `email` 
 * List of tests for verifying each access method:
@@ -82,7 +82,7 @@
 * Name: `decks.add_deck(owner_id, title, category, description, public)`
 * Description: Add new deck
 * Parameters: `owner_id`, `title`, `category`, `description`, `public`
-* Return values: Boolean
+* Return values: `error` string (empty if successful)
 * List of tests for verifying each access method:
   * Valid parameters results in row correctly added to table
   * Attempting to add invalid deck values fails
@@ -91,7 +91,7 @@
 * Name: `decks.update(deck_id, owner_id, title, category, description, public)`
 * Description: Update existing deck with `deck_id`
 * Parameters: `deck_id`, `owner_id`, `title`, `category`, `description`, `public`
-* Return values: Boolean
+* Return values: `error` string (empty if successful)
 * List of tests for verifying each access method
   * Valid parameters results in update to `deck_id` row
   * Attempting to update with invalid deck values fails
@@ -100,7 +100,7 @@
 * Name: `decks.delete(deck_id)`
 * Description: Remove existing deck `deck_id`
 * Parameters: `deck_id`
-* Return values: Boolean
+* Return values: `error` string (empty if successful)
 * List of tests for verifying each access method:
   * Removing existent deck results in deck removed from decks
   * Attempting to remove non-existent deck results in no change
@@ -118,7 +118,7 @@
 * Name: `cards.add_card(deck_id, front, back, notes)`
 * Description: Add new card to table
 * Parameters: `deck_id`, `front`, `back`, `notes`
-* Return values: Boolean
+* Return values: `error` string (empty if successful)
 * List of tests for verifying each access method:
   * Valid parameters results in row correctly added to table
   * Attempting to add invalid card values fails
@@ -127,7 +127,7 @@
 * Name: `cards.update(card_id, front, back, notes)`
 * Description: Update existing card with `card_id`
 * Parameters: `card_id`, `front`, `back`, `notes`
-* Return values: Boolean
+* Return values: `error` string (empty if successful)
 * List of tests for verifying each access method
   * Valid parameters results in update to `card_id` row
   * Attempting to update with invalid card values fails
@@ -136,7 +136,7 @@
 * Name: `cards.delete(card_id)`
 * Description: Remove existing card with `card_id`
 * Parameters: `card_id`
-* Return values: Boolean
+* Return values: `error` string (empty if successful)
 * List of tests for verifying each access method
   * Removing existent card results in card removed from table
   * Attempting to remove non-existent card results in no change
