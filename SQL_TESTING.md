@@ -90,7 +90,7 @@
 * Name: `decks.get_deck(deck_id)`
 * Description: Retrieve deck information for specified `deck_id`
 * Parameters: `deck_id`
-* Return values: dict of `owner_id`, `title`, `category`, `description`, `public`  
+* Return values: dict of `deck_id`, `owner_id`, `title`, `category`, `description`, `public`  
 * List of tests for verifying each access method:
   * Return expected values for existent decks
   * Attempting to retrieve non-existent deck fails
@@ -105,9 +105,9 @@
   * Attempting to add invalid deck values fails
 
 ### Table 2 Access Method 4 ### 
-* Name: `decks.update(deck_id, owner_id, title, category, description, public)`
+* Name: `decks.update(deck_id, title, category, description, public)`
 * Description: Update existing deck with `deck_id`
-* Parameters: `deck_id`, `owner_id`, `title`, `category`, `description`, `public`
+* Parameters: `deck_id`, `title`, `category`, `description`, `public`
 * Return values: `error` string (None if successful)
 * List of tests for verifying each access method
   * Valid parameters results in update to `deck_id` row
