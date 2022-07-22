@@ -64,7 +64,7 @@
 * Name: `auth.get_user(username)`
 * Description: Get user information
 * Parameters: `username`
-* Return values: `user_id`, `name`, `email`, `username`, `password` 
+* Return values: dict of `user_id`, `name`, `email`, `username`, `password` 
 * List of tests for verifying each access method:
   * Return expected values for existent users
   * Nothing returned for non-existent user
@@ -73,21 +73,29 @@
 * Name: `auth.get_user_from_id(user_id)`
 * Description: Get user information
 * Parameters: `user_id`
-* Return values: `user_id`, `name`, `email`, `username`, `password` 
+* Return values: dict of `user_id`, `name`, `email`, `username`, `password` 
 * List of tests for verifying each access method:
   * Return expected values for existent users
   * Nothing returned for non-existent user
 
 ### Table 2 Access Method 1 ### 
+* Name: `decks.get_decks()`
+* Description: Retrieve deck information for all decks`
+* Parameters: None
+* Return values: dict of `deck_id`, `owner_id`, `title`, `category`, `description`, `public`  
+* List of tests for verifying each access method:
+  * Return expected values for all existent decks
+
+### Table 2 Access Method 2 ### 
 * Name: `decks.get_deck(deck_id)`
 * Description: Retrieve deck information for specified `deck_id`
 * Parameters: `deck_id`
-* Return values: `owner_id`, `title`, `category`, `description`, `public`  
+* Return values: dict of `owner_id`, `title`, `category`, `description`, `public`  
 * List of tests for verifying each access method:
   * Return expected values for existent decks
   * Attempting to retrieve non-existent deck fails
 
-### Table 2 Access Method 2 ### 
+### Table 2 Access Method 3 ### 
 * Name: `decks.add_deck(owner_id, title, category, description, public)`
 * Description: Add new deck
 * Parameters: `owner_id`, `title`, `category`, `description`, `public`
@@ -96,7 +104,7 @@
   * Valid parameters results in row correctly added to table
   * Attempting to add invalid deck values fails
 
-### Table 2 Access Method 3 ### 
+### Table 2 Access Method 4 ### 
 * Name: `decks.update(deck_id, owner_id, title, category, description, public)`
 * Description: Update existing deck with `deck_id`
 * Parameters: `deck_id`, `owner_id`, `title`, `category`, `description`, `public`
@@ -105,7 +113,7 @@
   * Valid parameters results in update to `deck_id` row
   * Attempting to update with invalid deck values fails
 
-### Table 2 Access Method 4 ### 
+### Table 2 Access Method 5 ### 
 * Name: `decks.delete(deck_id)`
 * Description: Remove existing deck `deck_id`
 * Parameters: `deck_id`
@@ -118,7 +126,7 @@
 * Name: `cards.get_card(card_id)`
 * Description: Retrieve card information for specified `card_id`
 * Parameters: `card_id`
-* Return values: `deck_id`, `front`, `back`, `notes`  
+* Return values: dict of `deck_id`, `front`, `back`, `notes`  
 * List of tests for verifying each access method:
   * Return expected values for existent cards
   * Attempting to retrieve non-existent card fails
