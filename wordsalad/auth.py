@@ -88,7 +88,7 @@ def register():
 
         # Check that input fields are not empty
         if not name:
-            error = 'Name is required'
+            error = 'Name is required.'
         elif not email:
             error = 'Email is required.'
         elif not username:
