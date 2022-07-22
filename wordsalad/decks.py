@@ -31,7 +31,7 @@ def decks():
     decks = db.execute(
         'SELECT title, description, public FROM decks'
     ).fetchall()
-    return render_template('decks/index.html', post=decks)
+    return render_template('decks/index.html', decks=decks)
 
 
 @bp.route('/decks/create', methods=('GET', 'POST'))
@@ -86,7 +86,7 @@ def get_deck(deck_id, check_owner=True):
         (deck_id,)
     ).fetchone()
 
-    if post is None:
+    if deck is None:
         abort(404, f"Deck id {deck_id} doesn't exist.")
 
     # Check that user is owner of deck
@@ -136,7 +136,7 @@ def edit(deck_id):
             db.commit()
             return redirect(url_for('decks.index'))
 
-    return render_template('decks/edit.html', post=deck)
+    return render_template('decks/edit.html', deck=deck)
     
 @bp.route('/<int:id>/delete', methods=('POST',))
 @login_required
