@@ -72,7 +72,7 @@ def get_user_from_id(user_id: int) -> dict:
 
 
 # Wrapper to associate `/register` with `register` function
-@bp.route('/register', methods=('GET', 'POST'))
+@bp.route('/register/', methods=('GET', 'POST'))
 def register():
     '''
     Register new user
@@ -112,7 +112,7 @@ def register():
     return render_template('auth/register.html')
 
 # Associate `/login` with `login` function
-@bp.route('/login', methods=('GET', 'POST'))
+@bp.route('/login/', methods=('GET', 'POST'))
 def login():
     '''
     Verify user login
@@ -162,7 +162,7 @@ def load_logged_in_user():
         g.user = get_user_from_id(user_id)
 
 
-@bp.route('/logout')
+@bp.route('/logout/')
 def logout():
     '''
     Log out user
