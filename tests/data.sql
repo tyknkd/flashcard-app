@@ -7,6 +7,6 @@ INSERT INTO decks (owner_id, title, category, description, public)
 VALUES
   (1, 'Test Title', 'test_category', 'This is a test deck description.', 'TRUE');
   
-INSERT INTO cards (front, back, notes)
+INSERT INTO cards (deck_id, front, back, notes)
 VALUES
-  ('test card front', 'test card back', 'test card notes');
+  (1, 'test card front', 'test card back', 'test card notes');
