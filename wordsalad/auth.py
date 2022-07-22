@@ -42,10 +42,10 @@ def add_user(name: str, email: str, username: str, password: str) -> str:
     else:
         return None
 
-def get_user(username: str) -> tuple:
+def get_user(username: str) -> dict:
     '''
     Get user details from `users` table in database
-    :return: (user_id, name, email, username, password) or None if no such username or password 
+    :return: dict with user_id, name, email, username, password or None if no such username 
     '''
     
     # Connect to database
@@ -56,10 +56,10 @@ def get_user(username: str) -> tuple:
             'SELECT * FROM users WHERE username = ?', (username,)
         ).fetchone()
     
-def get_user_from_id(user_id: int) -> tuple:
+def get_user_from_id(user_id: int) -> dict:
     '''
     Get user details from `users` table in database
-    :return: (user_id, name, email, username, password) or None if no such username or password 
+    :return: dict with user_id, name, email, username, password or None if no such user_id 
     '''
     
     # Connect to database
