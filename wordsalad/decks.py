@@ -33,9 +33,32 @@ def get_decks() -> dict:
     # Return dict of all decks rows
     return db.execute('SELECT * FROM decks').fetchall()
 
+def add_deck(owner_id: int, title: str, category: str, description: str, public: bool) -> str:
+    '''
+    Insert row in `decks` table of database
+    :return: Error message (None if successful)
+    '''
+    # Connect to database
+    db = get_db()
+    
+    try:
+        # Insert new row in database
+        db.execute(
+            'INSERT INTO decks (owner_id, title, category, description, public)'
+            ' VALUES (?, ?, ?, ?, ?)',
+            (owner_id, title, category, description, public)
+        )
+        db.commit()
 
-# Wrapper to associate `/decks/` route with `decks()` function
-@bp.route('/decks/')
+    # If error raised
+    except db.Error as error:
+        return f"Failed to add deck {error}"
+
+    else:
+        return None
+
+# Wrapper to associate `/decks` route with `decks()` function
+@bp.route('/decks')
 def decks():
     '''
     Render HTML template with all available decks
@@ -72,18 +95,16 @@ def create():
         elif not public:
             error = 'Public is required.'
         
-        if error is not None:
-            flash(error)
-        else:
+        if error is None:
             # Add deck to database
-            db = get_db()
-            db.execute(
-                'INSERT INTO decks (owner_id, title, category, description, public)'
-                ' VALUES (?, ?, ?, ?, ?)',
-                (g.user['user_id'], title, category, description, public)
-            )
-            db.commit()
-            return redirect(url_for('decks.index'))
+            error = add_deck(g.user['user_id'], title, category, description, public)
+
+            if error is None:
+                # Redirect to decks page
+                return redirect(url_for('decks.index'))
+
+        # Store error to retrieve when rendering template
+        flash(error)
 
     return render_template('decks/create.html')
     
@@ -107,7 +128,7 @@ def get_deck(deck_id, check_owner=True):
     
     return deck
 
-@bp.route('/<int:deck_id>/edit', methods=('GET', 'POST'))
+@bp.route('/decks/<int:deck_id>/edit', methods=('GET', 'POST'))
 @login_required
 def edit(deck_id):
     '''
@@ -150,7 +171,7 @@ def edit(deck_id):
 
     return render_template('decks/edit.html', deck=deck)
     
-@bp.route('/<int:id>/delete', methods=('POST',))
+@bp.route('/decks/<int:id>/delete', methods=('POST',))
 @login_required
 def delete(deck_id):
     '''

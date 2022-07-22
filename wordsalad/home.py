@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-# Python script to create Blueprint to handle home/main and about page requests 
+# Python script to create Blueprint to handle homeand about page requests 
 # to `/` and `/about/` 
 # Reference: https://flask.palletsprojects.com/en/2.1.x/tutorial/views/
 # https://flask.palletsprojects.com/en/2.1.x/tutorial/blog/
@@ -16,7 +16,7 @@ from werkzeug.exceptions import abort
 from wordsalad.auth import login_required
 
 # Database connection function
-from wordsalad.db import get_db
+from wordsalad.decks import get_decks
 
 bp = Blueprint('home', __name__)
 
@@ -25,9 +25,6 @@ def index():
     '''
     Home/main page route
     '''
-    # Get deck names, descriptions, public status from database
-    db = get_db()
-    decks = db.execute(
-        'SELECT title, description, public FROM decks'
-    ).fetchall()
+    # Get info for all decks from database
+    decks = get_decks()
     return render_template('index.html', decks=decks)
