@@ -17,6 +17,31 @@ from wordsalad.db import get_db
 # Create Blueprint
 bp = Blueprint('auth', __name__, url_prefix='/auth')
 
+# Database Access Support Functions
+def add_user(name: str, email: str, username: str, password: str) -> str:
+    '''
+    Add new user to `users` table in database
+    :return: Error message (None if successful) 
+    '''
+    
+    # Connect to database
+    db = get_db()
+
+    try:
+        # Insert new user data into `users` table of database
+        db.execute(
+            "INSERT INTO users (name, email, username, password) VALUES (?, ?, ?, ?)",
+            (name, email, username, generate_password_hash(password)),
+        )
+        db.commit()
+               
+    # If user already exists
+    except db.IntegrityError:
+        return f"User {username} is already registered."
+
+    else:
+        return None
+
 # Associate `/register` with `register` function
 @bp.route('/register', methods=('GET', 'POST'))
 def register():
@@ -29,9 +54,6 @@ def register():
         email = request.form['email']
         username = request.form['username']
         password = request.form['password']
-        
-        # Connect to database
-        db = get_db()
         
         # Initialize error message
         error = None
@@ -47,24 +69,17 @@ def register():
             error = 'Password is required.'
 
         if error is None:
-            try:
-                # Insert new user data into `users` table of database
-                db.execute(
-                    "INSERT INTO users (name, username, email, password) VALUES (?, ?, ?, ?)",
-                    (name, username, email, generate_password_hash(password)),
-                )
-                db.commit()
-                
-            # If user already exists
-            except db.IntegrityError:
-                error = f"User {username} is already registered."
-            else:
+            # Add user to database
+            error = add_user(name, email, username, password)
+
+            if error is None:     
                 # Redirect to login page
                 return redirect(url_for("auth.login"))
 
         # Store errors to retrieve when rendering template
         flash(error)
 
+    # Unsuccessful, so render registration page again
     return render_template('auth/register.html')
 
 # Associate `/login` with `login` function
