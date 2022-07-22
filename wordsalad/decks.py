@@ -21,16 +21,28 @@ from wordsalad.db import get_db
 
 bp = Blueprint('decks', __name__)
 
+# Database Access Support Functions
+def get_decks() -> dict:
+    '''
+    Gets data for all decks in `decks` table of database
+    :return: dict of deck_id, owner_id, title, category, description, public
+    '''
+    # Connect to database
+    db = get_db()
+
+    # Return dict of all decks rows
+    return db.execute('SELECT * FROM decks').fetchall()
+
+
+# Wrapper to associate `/decks/` route with `decks()` function
 @bp.route('/decks/')
 def decks():
     '''
-    Display available decks
+    Render HTML template with all available decks
     '''
-    # Get deck titles, descriptions, public status from database
-    db = get_db()
-    decks = db.execute(
-        'SELECT title, description, public FROM decks'
-    ).fetchall()
+    # Get dict of all cols of all rows in decks table of database
+    decks = get_decks()
+
     return render_template('decks/index.html', decks=decks)
 
 
