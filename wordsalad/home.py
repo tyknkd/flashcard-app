@@ -16,7 +16,7 @@ from werkzeug.exceptions import abort
 from wordsalad.auth import login_required
 
 # Database connection function
-from wordsalad.decks import get_public_decks
+from wordsalad.decks import get_decks
 
 bp = Blueprint('home', __name__)
 
@@ -26,8 +26,14 @@ def index():
     '''
     Render home page 
     '''
-    # Get dict of all public decks and decks belonging to user if logged in 
-    decks = get_decks(g.user['user_id'])
+    # If user not logged in
+    if g.user is None:
+        # Get only public decks
+        decks = get_decks(None)
+    else:
+        # Get all public decks and decks belonging to user
+        decks = get_decks(g.user['user_id'])
+
     return render_template('index.html', decks=decks)
 
 @bp.route('/about/')

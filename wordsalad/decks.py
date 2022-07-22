@@ -41,17 +41,6 @@ def get_decks(owner_id) -> dict:
                 'SELECT * FROM decks WHERE deck_id = ? OR owner_id = ?', 
                 ('TRUE', owner_id)).fetchall()
 
-def get_public_decks() -> dict:
-    '''
-    Gets data for all public decks in `decks` table of database
-    :returns: dict of deck_id, owner_id, title, category, description, public
-    '''
-    # Connect to database
-    db = get_db()
-
-    # Return dict of all public decks rows
-    return db.execute('SELECT * FROM decks WHERE public = ?', ('TRUE',)).fetchall()
-
 def get_deck(deck_id: int) -> dict:
     '''
     Fetch deck by deck_id
@@ -157,8 +146,13 @@ def decks():
     '''
     Render HTML template with all decks available to user
     '''
-    # Get dict of all public decks and decks belonging to user if logged in 
-    decks = get_decks(g.user['user_id'])
+    # If user not logged in
+    if g.user is None:
+        # Get only public decks
+        decks = get_decks(None)
+    else:
+        # Get all public decks and decks belonging to user
+        decks = get_decks(g.user['user_id'])
 
     return render_template('decks/index.html', decks=decks)
 
