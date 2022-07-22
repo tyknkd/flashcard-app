@@ -30,7 +30,7 @@ def index():
     decks = get_decks()
     return render_template('index.html', decks=decks)
 
-@bp.route('/about')
+@bp.route('/about/')
 def about():
     '''
     Render about page 
