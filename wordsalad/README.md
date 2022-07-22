@@ -13,5 +13,11 @@ To view the project website locally:
     $ flask run
     ```
  4. Open `http://127.0.0.1:5000/` in a web browser.
+ 
+ Note: If you need to reset the local database:
+    ```
+    $ rm -r instance
+    $ flask init-db
+    ```
 
 See [https://flask.palletsprojects.com/en/2.1.x/tutorial/factory/](https://flask.palletsprojects.com/en/2.1.x/tutorial/factory/) for more information. 
