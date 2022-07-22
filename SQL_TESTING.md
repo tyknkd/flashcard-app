@@ -57,7 +57,7 @@
 * Return values: `error` string (empty if successful)
 * List of tests for verifying each access method:
   * Adding new user with valid user values results in row correctly added to table
-  * Duplicate users not permitted
+  * Duplicate usernames not permitted
   * Attempting to add invalid user values fails
 
 ### Table 1 Access Method 2 ### 
