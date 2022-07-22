@@ -25,7 +25,7 @@ bp = Blueprint('decks', __name__)
 def get_decks() -> dict:
     '''
     Gets data for all decks in `decks` table of database
-    :return: dict of deck_id, owner_id, title, category, description, public
+    :returns: dict of deck_id, owner_id, title, category, description, public
     '''
     # Connect to database
     db = get_db()
@@ -33,10 +33,40 @@ def get_decks() -> dict:
     # Return dict of all decks rows
     return db.execute('SELECT * FROM decks').fetchall()
 
+def get_deck(deck_id: int) -> dict:
+    '''
+    Fetch deck by deck_id
+    :returns: dict of data for deck_id (None if does not exist)
+    '''
+    # Connect to database
+    db = get_db()
+
+    # Get deck data (None if does not exist)
+    return db.execute('SELECT * FROM decks WHERE deck_id = ?', (deck_id,)).fetchone()
+
+def get_own_deck(deck_id: int, check_owner=True) -> dict:
+    '''
+    Fetch deck by deck_id
+    :param deck_id: deck_id of desired deck
+    :param check_owner=True: Abort if user is not owner
+    :returns: dict of deck data for deck_id (None if does not exist)
+    '''
+    # Get dict of deck data
+    deck = get_deck(deck_id) 
+
+    if deck is None:
+        abort(404, f"Deck id {deck_id} doesn't exist.")
+
+    # Check that user is owner of deck
+    if check_owner and deck['owner_id'] != g.user['user_id']:
+        abort(403)
+    
+        return deck
+
 def add_deck(owner_id: int, title: str, category: str, description: str, public: bool) -> str:
     '''
     Insert row in `decks` table of database
-    :return: Error message (None if successful)
+    :returns: Error message (None if successful)
     '''
     # Connect to database
     db = get_db()
@@ -47,6 +77,30 @@ def add_deck(owner_id: int, title: str, category: str, description: str, public:
             'INSERT INTO decks (owner_id, title, category, description, public)'
             ' VALUES (?, ?, ?, ?, ?)',
             (owner_id, title, category, description, public)
+        )
+        db.commit()
+
+    # If error raised
+    except db.Error as error:
+       return f"Failed to add deck {error}"
+
+    else:
+        return None
+
+def update(deck_id: int, title: str, category: str, description: str, public: bool) -> str:
+    '''
+    Update deck with deck_id
+    :returns: Error message (None if successful)
+    '''
+    # Connect to database
+    db = get_db()
+    
+    try:
+        # Update database
+        db.execute(
+            'UPDATE decks SET title = ?, category = ?, description = ?, public = ?'
+            ' WHERE deck_id = ?',
+            (title, category, description, public, deck_id)
         )
         db.commit()
 
@@ -110,33 +164,15 @@ def create():
 
     return render_template('decks/create.html')
     
-def get_deck(deck_id, check_owner=True):
-    '''
-    Fetch deck by deck_id
-    :check_owner=True: Abort if user is not owner
-    '''
-    deck = get_db().execute(
-        'SELECT deck_id, owner_id, title, category, description, public'
-        ' FROM decks WHERE deck_id = ?',
-        (deck_id,)
-    ).fetchone()
 
-    if deck is None:
-        abort(404, f"Deck id {deck_id} doesn't exist.")
-
-    # Check that user is owner of deck
-    if check_owner and deck['owner_id'] != g.user['user_id']:
-        abort(403)
-    
-    return deck
-
-@bp.route('/decks/<int:deck_id>/edit', methods=('GET', 'POST'))
+@bp.route('/decks/edit/', methods=('GET', 'POST'))
 @login_required
-def edit(deck_id):
+def edit(deck_id: int):
     '''
     Edit info of a deck with deck_id
     '''
-    deck = get_deck(deck_id)
+    # Get deck and check if user is owner
+    deck = get_own_deck(deck_id)
 
     if request.method == 'POST':
         title = request.form['title']
@@ -158,22 +194,20 @@ def edit(deck_id):
         elif not public:
             error = 'Public is required.'
 
-        if error is not None:
-            flash(error)
-        else:
-            # Update database
-            db = get_db()
-            db.execute(
-                'UPDATE decks SET title = ?, category = ?, description = ?, public = ?'
-                ' WHERE deck_id = ?',
-                (deck_id, title, category, description, public)
-            )
-            db.commit()
-            return redirect(url_for('decks.index'))
+        if error is None:
+            # Update deck 
+            error = update(deck_id, title, category, description, public)
+
+            if error is None:
+                # Redirect to decks page
+                return redirect(url_for('decks.index'))
+
+        # Store error to retrieve when rendering template
+        flash(error)
 
     return render_template('decks/edit.html', deck=deck)
     
-@bp.route('/decks/<int:id>/delete', methods=('POST',))
+@bp.route('/<int:deck_id>/delete/', methods=('POST',))
 @login_required
 def delete(deck_id):
     '''
