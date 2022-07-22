@@ -32,13 +32,13 @@ def get_decks(owner_id) -> dict:
     db = get_db()
 
     if owner_id is None:
-        # Return dict only decks rows
+        # Return dict of only public decks 
         return db.execute(
-                'SELECT * FROM decks WHERE deck_id = ?', ('TRUE',)).fetchall()
+                'SELECT * FROM decks WHERE public = ?', ('TRUE',)).fetchall()
     else: 
         # Return dict of public decks and decks belonging to owner_id
         return db.execute(
-                'SELECT * FROM decks WHERE deck_id = ? OR owner_id = ?', 
+                'SELECT * FROM decks WHERE public = ? OR owner_id = ?', 
                 ('TRUE', owner_id)).fetchall()
 
 def get_deck(deck_id: int) -> dict:
