@@ -52,19 +52,21 @@ def add_deck(owner_id: int, title: str, category: str, description: str, public:
 
     # If error raised
     except db.Error as error:
-        return f"Failed to add deck {error}"
+       return f"Failed to add deck {error}"
 
     else:
         return None
 
+
 # Wrapper to associate `/decks` route with `decks()` function
-@bp.route('/decks')
+@bp.route('/decks/')
 def decks():
     '''
     Render HTML template with all available decks
     '''
     # Get dict of all cols of all rows in decks table of database
     decks = get_decks()
+    print("In decks blueprint")
 
     return render_template('decks/index.html', decks=decks)
 
