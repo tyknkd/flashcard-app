@@ -22,16 +22,24 @@ from wordsalad.db import get_db
 bp = Blueprint('decks', __name__)
 
 # Database Access Support Functions
-def get_decks() -> dict:
+def get_decks(owner_id) -> dict:
     '''
-    Gets data for all decks in `decks` table of database
+    Gets data for all public and owned decks for owner_id from `decks` table of database
+    If owner_id = None, only public decks are returned
     :returns: dict of deck_id, owner_id, title, category, description, public
     '''
     # Connect to database
     db = get_db()
 
-    # Return dict of all decks rows
-    return db.execute('SELECT * FROM decks').fetchall()
+    if owner_id is None:
+        # Return dict only decks rows
+        return db.execute(
+                'SELECT * FROM decks WHERE deck_id = ?', ('TRUE',)).fetchall()
+    else: 
+        # Return dict of public decks and decks belonging to owner_id
+        return db.execute(
+                'SELECT * FROM decks WHERE deck_id = ? OR owner_id = ?', 
+                ('TRUE', owner_id)).fetchall()
 
 def get_public_decks() -> dict:
     '''
@@ -147,10 +155,10 @@ def remove(deck_id: int) -> str:
 @bp.route('/decks/')
 def decks():
     '''
-    Render HTML template with all available decks
+    Render HTML template with all decks available to user
     '''
-    # Get dict of all cols of all rows in decks table of database
-    decks = get_decks()
+    # Get dict of all public decks and decks belonging to user if logged in 
+    decks = get_decks(g.user['user_id'])
 
     return render_template('decks/index.html', decks=decks)
 

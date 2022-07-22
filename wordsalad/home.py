@@ -26,8 +26,8 @@ def index():
     '''
     Render home page 
     '''
-    # Get info for all public decks from database
-    decks = get_public_decks()
+    # Get dict of all public decks and decks belonging to user if logged in 
+    decks = get_decks(g.user['user_id'])
     return render_template('index.html', decks=decks)
 
 @bp.route('/about/')

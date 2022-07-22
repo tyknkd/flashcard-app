@@ -31,8 +31,7 @@ def add_user(name: str, email: str, username: str, password: str) -> str:
         # Insert new user data into `users` table of database
         db.execute(
             "INSERT INTO users (name, email, username, password) VALUES (?, ?, ?, ?)",
-            (name, email, username, generate_password_hash(password)),
-        )
+            (name, email, username, generate_password_hash(password)),)
         db.commit()
                
     # If user already exists
@@ -54,7 +53,7 @@ def get_user(username: str) -> dict:
     # Query database for user and return row (None if not found)
     return db.execute(
             'SELECT * FROM users WHERE username = ?', (username,)
-        ).fetchone()
+            ).fetchone()
     
 def get_user_from_id(user_id: int) -> dict:
     '''
@@ -68,7 +67,7 @@ def get_user_from_id(user_id: int) -> dict:
     # Query database for user and return row (None if not found)
     return db.execute(
             'SELECT * FROM users WHERE user_id= ?', (user_id,)
-        ).fetchone()
+            ).fetchone()
 
 
 # Wrapper to associate `/register` with `register` function
