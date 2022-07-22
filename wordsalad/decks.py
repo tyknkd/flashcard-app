@@ -157,7 +157,7 @@ def decks():
     return render_template('decks/index.html', decks=decks)
 
 
-@bp.route('/decks/create', methods=('GET', 'POST'))
+@bp.route('/decks/create/', methods=('GET', 'POST'))
 @login_required
 def create():
     '''
