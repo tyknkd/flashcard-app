@@ -13,17 +13,17 @@
 
 {% block content %}
   <h2><a href="/decks/">Decks</a></h2>
-  {% for deck in decks %}
-    <section class="decks">
+  <section class="decks">
+    {% for deck in decks %}
       <header>
         <div>
           <h1>{{ deck['title'] }}</h1>
         </div>
       </header>
       <p class="description">{{ deck['description'] }}</p>
-    </section>
-    {% if not loop.last %}
-      <hr>
-    {% endif %}
-  {% endfor %}
+      {% if not loop.last %}
+        <hr>
+      {% endif %}
+    {% endfor %}
+  </section>
 {% endblock %}
