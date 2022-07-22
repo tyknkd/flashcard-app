@@ -56,6 +56,20 @@ def get_user(username: str) -> tuple:
             'SELECT * FROM users WHERE username = ?', (username,)
         ).fetchone()
     
+def get_user_from_id(user_id: int) -> tuple:
+    '''
+    Get user details from `users` table in database
+    :return: (user_id, name, email, username, password) or None if no such username or password 
+    '''
+    
+    # Connect to database
+    db = get_db()
+
+    # Query database for user and return row (None if not found)
+    return db.execute(
+            'SELECT * FROM users WHERE user_id= ?', (user_id,)
+        ).fetchone()
+
 
 # Wrapper to associate `/register` with `register` function
 @bp.route('/register', methods=('GET', 'POST'))
@@ -132,7 +146,7 @@ def login():
     return render_template('auth/login.html')
     
 
-# Register function that runs before view function
+# Wrapper to register function that runs before view function
 @bp.before_app_request
 def load_logged_in_user():
     '''
@@ -145,9 +159,8 @@ def load_logged_in_user():
         g.user = None
     else:
         # Query database for user info
-        g.user = get_db().execute(
-            'SELECT * FROM users WHERE user_id = ?', (user_id,)
-        ).fetchone()
+        g.user = get_user_from_id(user_id)
+
 
 @bp.route('/logout')
 def logout():
