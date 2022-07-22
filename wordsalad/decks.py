@@ -33,6 +33,17 @@ def get_decks() -> dict:
     # Return dict of all decks rows
     return db.execute('SELECT * FROM decks').fetchall()
 
+def get_public_decks() -> dict:
+    '''
+    Gets data for all public decks in `decks` table of database
+    :returns: dict of deck_id, owner_id, title, category, description, public
+    '''
+    # Connect to database
+    db = get_db()
+
+    # Return dict of all public decks rows
+    return db.execute('SELECT * FROM decks WHERE public = ?', ('TRUE',)).fetchall()
+
 def get_deck(deck_id: int) -> dict:
     '''
     Fetch deck by deck_id
@@ -140,7 +151,6 @@ def decks():
     '''
     # Get dict of all cols of all rows in decks table of database
     decks = get_decks()
-    print("In decks blueprint")
 
     return render_template('decks/index.html', decks=decks)
 
