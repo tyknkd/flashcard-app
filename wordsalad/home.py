@@ -20,11 +20,19 @@ from wordsalad.decks import get_decks
 
 bp = Blueprint('home', __name__)
 
+# Wrapper to associate '/' with index()
 @bp.route('/')
 def index():
     '''
-    Home/main page route
+    Render home page 
     '''
     # Get info for all decks from database
     decks = get_decks()
     return render_template('index.html', decks=decks)
+
+@bp.route('/about')
+def about():
+    '''
+    Render about page 
+    '''
+    return render_template('about.html')
