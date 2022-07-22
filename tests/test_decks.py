@@ -130,12 +130,8 @@ def test_edit(client, auth, app):
         deck = db.execute('SELECT * FROM decks WHERE deck_id = 1').fetchone()
         assert deck['title'] == 'Updated Test Title'
         assert deck['category'] == 'updated_category'
-        
-        ### SHOULD 'TRUE' BE REPLACED WITH 1 IN FOLLOWING LINE? ###
-        
         assert deck['public'] == 'TRUE'  
-        
-        assert deck['description'] == 'Updated test deck description'
+        assert deck['description'] == 'Updated test deck description.'
         
         
    ## ALSO TEST THAT OTHER FIELDS REMAIN SAME WHEN ONLY ONE FIELD IS EDITED? ##
