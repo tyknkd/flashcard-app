@@ -61,7 +61,7 @@ def get_own_deck(deck_id: int, check_owner=True) -> dict:
     if check_owner and deck['owner_id'] != g.user['user_id']:
         abort(403)
     
-        return deck
+    return deck
 
 def add_deck(owner_id: int, title: str, category: str, description: str, public: bool) -> str:
     '''
