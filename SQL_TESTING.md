@@ -114,7 +114,7 @@
   * Attempting to update with invalid deck values fails
 
 ### Table 2 Access Method 5 ### 
-* Name: `decks.delete(deck_id)`
+* Name: `decks.remove(deck_id)`
 * Description: Remove existing deck `deck_id`
 * Parameters: `deck_id`
 * Return values: `error` string (None if successful)
@@ -150,7 +150,7 @@
   * Attempting to update with invalid card values fails
 
 ### Table 3 Access Method 4 ### 
-* Name: `cards.delete(card_id)`
+* Name: `cards.remove(card_id)`
 * Description: Remove existing card with `card_id`
 * Parameters: `card_id`
 * Return values: `error` string (None if successful)
