@@ -67,7 +67,16 @@
 * Return values: `user_id`, `name`, `email`, `username`, `password` 
 * List of tests for verifying each access method:
   * Return expected values for existent users
-  * Nothing returned for non-existent username
+  * Nothing returned for non-existent user
+
+### Table 1 Access Method 3 ### 
+* Name: `auth.get_user_from_id(user_id)`
+* Description: Get user information
+* Parameters: `user_id`
+* Return values: `user_id`, `name`, `email`, `username`, `password` 
+* List of tests for verifying each access method:
+  * Return expected values for existent users
+  * Nothing returned for non-existent user
 
 ### Table 2 Access Method 1 ### 
 * Name: `decks.get_deck(deck_id)`
