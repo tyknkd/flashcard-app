@@ -52,12 +52,10 @@ def create_app(test_config=None):
     # Import/register home Blueprint
     from . import home
     app.register_blueprint(home.bp)
-    app.add_url_rule('/', endpoint='index')
 
     # Import/register decks Blueprint
     from . import decks
     app.register_blueprint(decks.bp)
-    app.add_url_rule('/decks/', endpoint='decks.index')
 
     return app
 
