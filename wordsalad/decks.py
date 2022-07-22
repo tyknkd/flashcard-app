@@ -164,8 +164,8 @@ def create():
 
     return render_template('decks/create.html')
     
-
-@bp.route('/decks/edit/', methods=('GET', 'POST'))
+# Associate  '/decks/<deck_id>/edit/' with edit(deck_id)
+@bp.route('/decks/<int:deck_id>/edit/', methods=('GET', 'POST'))
 @login_required
 def edit(deck_id: int):
     '''
@@ -205,15 +205,17 @@ def edit(deck_id: int):
         # Store error to retrieve when rendering template
         flash(error)
 
+    # Render page and pass deck data
     return render_template('decks/edit.html', deck=deck)
     
-@bp.route('/<int:deck_id>/delete/', methods=('POST',))
+# Associate '/decks/<deck_id>/delete/' with delete()
+@bp.route('/decks/<int:deck_id>/delete/', methods=('POST',))
 @login_required
 def delete(deck_id):
     '''
     Delete deck
     '''
-    get_deck(deck_id)
+    get_own_deck(deck_id)
     db = get_db()
     db.execute('DELETE FROM decks WHERE deck_id = ?', (deck_id,))
     db.commit()
