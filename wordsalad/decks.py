@@ -106,7 +106,27 @@ def update(deck_id: int, title: str, category: str, description: str, public: bo
 
     # If error raised
     except db.Error as error:
-       return f"Failed to add deck {error}"
+       return f"Failed to update deck {error}"
+
+    else:
+        return None
+
+def remove(deck_id: int) -> str:
+    '''
+    Remove deck with deck_id
+    :returns: Error message (None if successful)
+    '''
+    # Connect to database
+    db = get_db()
+    
+    try:
+        # Delete deck 
+        db.execute('DELETE FROM decks WHERE deck_id = ?', (deck_id,))
+        db.commit()
+
+    # If error raised
+    except db.Error as error:
+       return f"Failed to delete deck {error}"
 
     else:
         return None
@@ -215,8 +235,19 @@ def delete(deck_id):
     '''
     Delete deck
     '''
-    get_own_deck(deck_id)
-    db = get_db()
-    db.execute('DELETE FROM decks WHERE deck_id = ?', (deck_id,))
-    db.commit()
-    return redirect(url_for('decks.index'))  
+    # Get deck and check if user is owner
+    deck = get_own_deck(deck_id)
+
+    if deck is not None:
+        # Delete deck 
+        error = remove(deck_id)
+
+        if error is None:
+            # Redirect to decks page
+            return redirect(url_for('decks.index'))
+
+    # Store error to retrieve when rendering template
+    flash(error)
+
+    # Render page and pass deck data
+    return render_template('decks/edit.html', deck=deck)
