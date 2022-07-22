@@ -12,7 +12,7 @@ def test_decks(client, auth):
     Test decks page
     '''
     # Get response to decks view w/o logging in
-    response = client.get('/decks')
+    response = client.get('/decks/')
     
     # Confirm "Log In" and "Register" on page
     assert b"Log In" in response.data
@@ -20,7 +20,7 @@ def test_decks(client, auth):
 
     # Login and get response to decks view
     auth.login()
-    response = client.get('/decks')
+    response = client.get('/decks/')
     
     # Confirm "Log Out" on page
     assert b'Log Out' in response.data
@@ -32,9 +32,9 @@ def test_decks(client, auth):
 
 # Repeat following test with different arguments
 @pytest.mark.parametrize('path', (
-    '/decks/create',
-    '/decks/1/edit',
-    '/decks/1/delete',
+    '/decks/create/',
+    '/decks/1/edit/',
+    '/decks/1/delete/',
 ))
 def test_login_required(client, path):
     '''
@@ -43,7 +43,7 @@ def test_login_required(client, path):
     # Confirm redirected to login page 
     # when accessing page requiring login
     response = client.post(path)
-    assert response.headers["Location"] == "/auth/login"
+    assert response.headers["Location"] == "/auth/login/"
 
 
 def test_owner_required(app, client, auth):
@@ -57,16 +57,16 @@ def test_owner_required(app, client, auth):
     auth.login()
     
     # Confirm current user cannot modify other user's deck
-    assert client.post('/decks/1/edit').status_code == 403
-    assert client.post('/decks/1/delete').status_code == 403
+    assert client.post('/decks/1/edit/').status_code == 403
+    assert client.post('/decks/1/delete/').status_code == 403
     
     # Confirm current user does not see edit link
     assert b'href="/decks/1/edit"' not in client.get('/decks').data
 
 # Repeat following test with different arguments
 @pytest.mark.parametrize('path', (
-    '/decks/2/edit',
-    '/decks/2/delete',
+    '/decks/2/edit/',
+    '/decks/2/delete/',
 ))
 def test_exists_required(client, auth, path):
     '''
@@ -82,11 +82,11 @@ def test_create(client, auth, app):
     auth.login()
 
     # Confirm /decks/create/ loads
-    assert client.get('/decks/create').status_code == 200
+    assert client.get('/decks/create/').status_code == 200
     
     # Add new deck
     client.post(
-        '/decks/create', 
+        '/decks/create/', 
         data={
             'title': 'New Deck', 
             'category': 'new_category', 
@@ -111,11 +111,11 @@ def test_edit(client, auth, app):
     auth.login()
 
     # Confirm /decks/1/edit/ loads
-    assert client.get('/decks/1/edit').status_code == 200
+    assert client.get('/decks/1/edit/').status_code == 200
     
     # Edit deck
     client.post(
-        '/decks/1/edit', 
+        '/decks/1/edit/', 
         data={
             'title': 'Updated Test Title', 
             'category': 'updated_category', 
@@ -142,8 +142,8 @@ def test_edit(client, auth, app):
 
 # Repeat following test with different arguments
 @pytest.mark.parametrize('path', (
-    '/decks/create',
-    '/decks/1/edit',
+    '/decks/create/',
+    '/decks/1/edit/',
 ))
 def test_create_edit_validate(client, auth, path):
     '''
@@ -167,10 +167,10 @@ def test_delete(client, auth, app):
     auth.login()
     
     # Delete Deck 1
-    response = client.post('/decks/1/delete')
+    response = client.post('/decks/1/delete/')
     
     # Confirm redirect to decks page
-    assert response.headers["Location"] == "/decks"
+    assert response.headers["Location"] == "/decks/"
 
     # Confirm deck does not exist
     with app.app_context():

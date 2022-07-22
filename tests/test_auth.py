@@ -13,16 +13,16 @@ def test_register(client, app):
     Test user registration
     '''
     # Confirm register view renders correctly 
-    assert client.get('/auth/register').status_code == 200
+    assert client.get('/auth/register/').status_code == 200
     
     # Register valid user data 
     valid_user = {'name': 'Amos', 'email': 'amos@example.com', 'username': 'ajax', 'password': 'amazing'}
     response = client.post(
-        '/auth/register', data=valid_user
+        '/auth/register/', data=valid_user
     )
     
     # Confirm redirected to login page
-    assert response.headers["Location"] == "/auth/login"
+    assert response.headers["Location"] == "/auth/login/"
 
     # Confirm user now in database 
     with app.app_context():
@@ -45,7 +45,7 @@ def test_register_validate_input(client, name, email, username, password, messag
     Test form validation
     '''
     response = client.post(
-        '/auth/register',
+        '/auth/register/',
         data={'name': name, 'email': email, 'username': username, 'password': password}
     )
     assert message in response.data
@@ -55,7 +55,7 @@ def test_login(client, auth):
     Test login view
     '''
     # Confirm login view renders correctly 
-    assert client.get('/auth/login').status_code == 200
+    assert client.get('/auth/login/').status_code == 200
     
     # Confirm redirect to home page after valid login
     response = auth.login()

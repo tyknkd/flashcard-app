@@ -8,9 +8,9 @@ from wordsalad.db import get_db
 
 def test_home(client, auth):
     '''
-    Test home/index page
+    Test home page
     '''
-    # Get response to index/root view w/o logging in
+    # Get response to index view w/o logging in
     response = client.get('/')
     
     # Confirm "Log In" and "Register" on page

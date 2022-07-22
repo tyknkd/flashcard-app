@@ -48,6 +48,7 @@ def create_app(test_config=None):
     # Import/register authentication Blueprint
     from . import auth
     app.register_blueprint(auth.bp)
+    # app.add_url_rule('/auth/', endpoint='auth.index')
     
     # Import/register home Blueprint
     from . import home
