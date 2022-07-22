@@ -42,7 +42,22 @@ def add_user(name: str, email: str, username: str, password: str) -> str:
     else:
         return None
 
-# Associate `/register` with `register` function
+def get_user(username: str) -> tuple:
+    '''
+    Get user details from `users` table in database
+    :return: (user_id, name, email, username, password) or None if no such username or password 
+    '''
+    
+    # Connect to database
+    db = get_db()
+
+    # Query database for user and return row (None if not found)
+    return db.execute(
+            'SELECT * FROM users WHERE username = ?', (username,)
+        ).fetchone()
+    
+
+# Wrapper to associate `/register` with `register` function
 @bp.route('/register', methods=('GET', 'POST'))
 def register():
     '''
@@ -93,17 +108,11 @@ def login():
         username = request.form['username']
         password = request.form['password']
         
-        # Connect to database
-        db = get_db()
-        
         # Initialize error message
         error = None
         
-        # Query database for user
-        user = db.execute(
-            'SELECT * FROM users WHERE username = ?', (username,)
-        ).fetchone()
-        
+        user = get_user(username) 
+
         if user is None:
             error = 'Incorrect username.'
         
