@@ -12,7 +12,7 @@
   * `user_id`: (integer) unique index key
   * `name`: (alphanumeric) user's name
   * `email`: (alphanumeric) user email address
-  * `username`: (alphanumeric) username
+  * `username`: (alphanumeric) unique username
   * `password`: (alphanumeric) user password
 * List of tests for verifying each table:
   * Table is empty after initialization 
@@ -61,13 +61,13 @@
   * Attempting to add invalid user values fails
 
 ### Table 1 Access Method 2 ### 
-* Name: `auth.get_user(username, password)`
+* Name: `auth.get_user(username)`
 * Description: Get user information
-* Parameters: `username`, `password`
-* Return values: `user_id`, `name`, `email` 
+* Parameters: `username`
+* Return values: `user_id`, `name`, `email`, `username`, `password` 
 * List of tests for verifying each access method:
   * Return expected values for existent users
-  * Nothing returned for incorrect username and/or password
+  * Nothing returned for non-existent username
 
 ### Table 2 Access Method 1 ### 
 * Name: `decks.get_deck(deck_id)`
