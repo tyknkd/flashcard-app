@@ -30,7 +30,7 @@ def test_register(client, app):
             "SELECT * FROM users WHERE username = 'ajax'",
         ).fetchone() is not None
      
-    # TO DO: Confirm all cols of user data
+    ### TO DO: Confirm all cols of user data  ###
 
 # Repeat following test with different arguments
 @pytest.mark.parametrize(('name','email','username', 'password', 'message'), (
