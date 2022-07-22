@@ -16,7 +16,7 @@ from werkzeug.exceptions import abort
 from wordsalad.auth import login_required
 
 # Database connection function
-from wordsalad.decks import get_decks
+from wordsalad.decks import get_public_decks
 
 bp = Blueprint('home', __name__)
 
@@ -26,8 +26,8 @@ def index():
     '''
     Render home page 
     '''
-    # Get info for all decks from database
-    decks = get_decks()
+    # Get info for all public decks from database
+    decks = get_public_decks()
     return render_template('index.html', decks=decks)
 
 @bp.route('/about/')
