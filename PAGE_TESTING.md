@@ -212,7 +212,7 @@
 
 * List of tests for verifying the rendering of the page
 
-    * Page can be accessed via `/decks/<deck_name>/` and `/decks/<deck_name>`
+    * Page can be accessed via `/decks/<deck_id>/` and `/decks/<deck_id>`
     * Correct page title
     * All links lead to correct pages
     * Drop down menus display when menu item clicked
@@ -257,7 +257,7 @@
 
 
 * List of tests for verifying the rendering of the page
-    * Page can be accessed via `/decks/edit/<deck_name>/` and `/decks/edit/<deck_name>`
+    * Page can be accessed via `/decks/<deck_id>/edit/` and `/decks/<deck_id>/edit`
     * Correct page title
     * All links lead to correct pages
     * Drop down menus display when clicked
