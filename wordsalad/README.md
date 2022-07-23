@@ -20,6 +20,4 @@ To view the project website locally:
  $ flask init-db
  ```
 
-Important: When coding, all routes should end with `/` (e.g., `/decks/` not `/decks`). See this page for why: [https://flask.palletsprojects.com/en/2.1.x/quickstart/#unique-urls-redirection-behavior](https://flask.palletsprojects.com/en/2.1.x/quickstart/#unique-urls-redirection-behavior)
-
 See [https://flask.palletsprojects.com/en/2.1.x/tutorial/factory/](https://flask.palletsprojects.com/en/2.1.x/tutorial/factory/) for more information. 
