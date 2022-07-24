@@ -95,11 +95,11 @@
 
 =======================================================================
 
-### Page 3: Decks Viewing Page ###
+### Page 3: Decks Page ###
 
 * Page Description (include a mockup or hand drawn image of the page)
 
-    * Displays public and user-created decks
+    * Displays public decks and if logged in, user-owned private decks
     * Header with logo
     * Navigation menu to other pages
     * If logged in, button/link to create a new deck
@@ -149,7 +149,7 @@
 
 * Page Description (include a mockup or hand drawn image of the page)
 
-    * Displays flashcards for currently selected deck
+    * Displays flashcards for currently selected deck (must be public or owned by user)
     * THIS is the interactive USEABLE PAGE - the purpose of our software
     * Header with logo
     * Navigation menu
@@ -204,7 +204,7 @@
 
 * Page Description (include a mockup or hand drawn image of the page)
 
-    * Registered user login page
+    * Page for registered user to log in 
     * Header with small logo
     * Simple middle box with login form
         * Username field
@@ -248,11 +248,11 @@
 
 =======================================================================
 
-### Page 6: Registration Page ###
+### Page 6: Register Page ###
 
 * Page Description (include a mockup or hand drawn image of the page)
 
-    * New user registration page
+    * Page to register new user
     * Header with small logo
     * Simple middle box with registration form
         * Name field
@@ -296,7 +296,7 @@
 
 =======================================================================
 
-### Page 7: Deck Creation Page ###
+### Page 7: Create Deck Page ###
 * Page Description (include a mockup or hand drawn image of the page)
 
     * Page to create new deck (login required)
@@ -332,11 +332,12 @@
     * All links lead to correct pages
     * Drop down menus display when clicked
     * Valid input results in deck inserted correctly into DB
+    * Valid entry results in redirect to `/decks/<deck_id>/`
     * Error message displayed for invalid input
 
 =======================================================================
 
-### Page 8: Deck Editing Page ###
+### Page 8: Edit Deck Page ###
 * Page Description (include a mockup or hand drawn image of the page)
 
     * Page to edit existing deck owned by user (login required)
@@ -377,14 +378,15 @@
     * Drop down menus display when clicked
     * Current deck information displayed in form
     * Valid input results in deck correctly updated in DB
+    * Valid entry results in redirect to `/decks/<deck_id>/`
     * Error message displayed for invalid input
 
 =======================================================================
 
-### Page 9: Card Creation Page ###
+### Page 9: Add Card Page ###
 * Page Description (include a mockup or hand drawn image of the page)
 
-    * Page to add cards to deck owned by user (login required)
+    * Page to add card(s) to deck owned by user (login required)
     * Flash card creation form in the center
         * Card front field
         * Card back field
@@ -418,13 +420,14 @@
     * All links lead to correct pages
     * Drop down menus display when clicked
     * Valid input results in card inserted correctly for current deck into DB
+    * Valid entry results in redirect to `/decks/<deck_id>/`
     * Error message displayed for invalid input
  
 <img src="https://github.com/ThomasJHLees/Team0Project/blob/main/images/mockups/createcard.png?raw=true" width="1000">
 
 =======================================================================
 
-### Page 10: Card Editing Page ###
+### Page 10: Edit Card Page ###
 * Page Description (include a mockup or hand drawn image of the page)
 
     * Page to edit existing card in deck owned by user
@@ -463,8 +466,5 @@
     * Drop down menus display when clicked
     * Current card information displayed in form
     * Valid input results in card correctly updated in DB
+    * Valid entry results in redirect to `/decks/<deck_id>/`
     * Error message displayed for invalid input
- 
-<img src="https://github.com/ThomasJHLees/Team0Project/blob/main/images/mockups/createcard.png?raw=true" width="1000">
-
-
