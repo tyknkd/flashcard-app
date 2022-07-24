@@ -47,7 +47,7 @@
 
 <img src="https://github.com/ThomasJHLees/Team0Project/blob/main/images/mockups/home.png?raw=true" width="1000">
 
-=======================================================================
+---------------------------------
 
 
 ### Page 2: About Page ###
@@ -93,7 +93,7 @@
 
 <img src="https://github.com/ThomasJHLees/Team0Project/blob/main/images/mockups/about.png?raw=true" width="1000">
 
-=======================================================================
+---------------------------------
 
 ### Page 3: Decks Page ###
 
@@ -143,7 +143,8 @@
 
     <img src="https://github.com/ThomasJHLees/Team0Project/blob/main/images/mockups/decks.png?raw=true" width="1000">
 
-=======================================================================
+
+---------------------------------
 
 ### Page 4: Individual Deck Page - PAGE TO STUDY DECKS ###
 
@@ -198,7 +199,8 @@
 
 <img src="https://github.com/ThomasJHLees/Team0Project/blob/main/images/mockups/flashcard.png?raw=true" width="1000">
 
-=======================================================================
+
+---------------------------------
 
 ### Page 5: Login Page ###
 
@@ -246,7 +248,8 @@
 
 <img src="https://github.com/ThomasJHLees/Team0Project/blob/main/images/mockups/login.png?raw=true" width="1000">
 
-=======================================================================
+
+---------------------------------
 
 ### Page 6: Register Page ###
 
@@ -294,7 +297,8 @@
     * Valid user input results in redirect to login page
     * Error displayed for invalid input
 
-=======================================================================
+
+---------------------------------
 
 ### Page 7: Create Deck Page ###
 * Page Description (include a mockup or hand drawn image of the page)
@@ -335,7 +339,7 @@
     * Valid entry results in redirect to `/decks/<deck_id>/`
     * Error message displayed for invalid input
 
-=======================================================================
+---------------------------------
 
 ### Page 8: Edit Deck Page ###
 * Page Description (include a mockup or hand drawn image of the page)
@@ -381,7 +385,7 @@
     * Valid entry results in redirect to `/decks/<deck_id>/`
     * Error message displayed for invalid input
 
-=======================================================================
+---------------------------------
 
 ### Page 9: Add Card Page ###
 * Page Description (include a mockup or hand drawn image of the page)
@@ -425,7 +429,8 @@
  
 <img src="https://github.com/ThomasJHLees/Team0Project/blob/main/images/mockups/createcard.png?raw=true" width="1000">
 
-=======================================================================
+
+---------------------------------
 
 ### Page 10: Edit Card Page ###
 * Page Description (include a mockup or hand drawn image of the page)
