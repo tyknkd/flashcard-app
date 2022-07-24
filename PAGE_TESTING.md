@@ -3,11 +3,14 @@
 ### Page 1: Home Page ###
 * Page Description (include a mockup or hand drawn image of the page)
 
-    * Header with Links
-    * Single Column
-    * Description of Service
-    * Big Green Link to Deck Viewing Pages
-    * Footer with Contact
+    * Header with logo
+    * Navigation menu
+    * Single column
+    * Flashcard deck preview
+    * Description of service
+    * Prominent button to deck viewing page
+    * Login and register links or user name and logout link if logged in
+    * Footer with contact
 
 * Parameters needed for the page
 
@@ -17,20 +20,21 @@
 
 * Data needed to render the page
 
-    * Home Page HTML
-    * Deck Titles and Descriptions
+    * Home page HTML
+    * Deck IDs, titles, descriptions, categories, owner, and public status
+    * User login status
 
 * Link destinations for the page
 
     * Available
-        * Home
-        * All decks/Filter Page
-        * Individual Decks Interacting Page
+        * Home `/`
+        * About page `/about/`
+        * Decks page `/decks/`
     * Available If Logged In
-        * Personal Deck Page
-        * Personal Deck Creation/Editing Page
+        * Log out `/auth/logout/`
     * Available If Not Logged In
-        * Log In Page
+        * Log in `/auth/login/`
+        * Register `/auth/register/`
 
 * List of tests for verifying the rendering of the page
 
@@ -49,11 +53,12 @@
 ### Page 2: About Page ###
 * Page Description (include a mockup or hand drawn image of the page)
 
-    * Header with Links
-    * Single Column
-    * Description of Service
+    * Header with logo
+    * Navigation menu
+    * Single column
+    * Description of service
     * Tips on best usage
-    * Footer with Contact
+    * Footer with contact
 
 * Parameters needed for the page
 
@@ -63,20 +68,19 @@
 
 * Data needed to render the page
 
-    * Home Page HTML
-    * Deck Titles and Descriptions
+    * About page HTML
+    * User login status
 
 * Link destinations for the page
 
     * Available
-        * Home
-        * All decks/Filter Page
-        * Individual Decks Interacting Page
+        * Home `/`
+        * Decks page `/decks/`
     * Available If Logged In
-        * Personal Deck Page
-        * Personal Deck Creation/Editing Page
+        * Log out `/auth/logout/`
     * Available If Not Logged In
-        * Log In Page
+        * Log in `/auth/login/`
+        * Register `/auth/register/`
 
 * List of tests for verifying the rendering of the page
 
@@ -92,15 +96,19 @@
 =======================================================================
 
 
-### Page 3: Login Page ###
+### Page 3: Registration Page ###
 
 * Page Description (include a mockup or hand drawn image of the page)
 
-    * Small Logo
-    * Simple Middle Box with Login Form
-        * Username Box
-        * Password Box
-    * Small Footer with point of Contact
+    * New user registration page
+    * Header with small logo
+    * Simple middle box with registration form
+        * Name field
+        * Email field
+        * Username field
+        * Password field
+        * Register button
+    * Small Footer with point of contact
 
 * Parameters needed for the page
 
@@ -114,12 +122,60 @@
 * Link destinations for the page
 
     * Available
-        * Home
-        * All decks/Filter Page
-        * Individual Decks
-    * Not Available (Availible after logged in)
-        * Personal Deck Page
-        * Personal Deck Creation/Editing Page
+        * Home `/`
+        * About page `/about/`
+        * Decks page `/decks/`
+    * Available If Logged In
+        * Log out `/auth/logout/`
+    * Available If Not Logged In
+        * Log in `/auth/login/`
+        * Register `/auth/register/`
+
+
+* List of tests for verifying the rendering of the page
+
+    * Page can be accessed via `/auth/register/` and `/auth/register`
+    * Correct page title
+    * Correct page contents
+    * All links lead to correct pages
+    * Drop down menus display when menu item clicked
+    * Valid user input results in redirect to login page
+    * Error displayed for invalid input
+
+
+### Page 4: Login Page ###
+
+* Page Description (include a mockup or hand drawn image of the page)
+
+    * Registered user login page
+    * Header with small logo
+    * Simple middle box with login form
+        * Username field
+        * Password field
+        * Log in button
+    * Small footer with point of contact
+
+* Parameters needed for the page
+
+    * Logo
+    * Knowledge of HTML Forms
+
+* Data needed to render the page
+
+    * DB with login information and they're assosiated decks
+
+* Link destinations for the page
+
+    * Available
+        * Home `/`
+        * About page `/about/`
+        * Decks page `/decks/`
+    * Available If Logged In
+        * Log out `/auth/logout/`
+    * Available If Not Logged In
+        * Log in `/auth/login`
+        * Register `/auth/register/`
+
 
 * List of tests for verifying the rendering of the page
 
@@ -128,29 +184,29 @@
     * Correct page contents
     * All links lead to correct pages
     * Drop down menus display when menu item clicked
-    * Correct username and password results in authentication
-    * Error displayed for incorrect username/password
+    * Correct username and password results in authentication and redirects to decks page
+    * Error displayed for invalid username/password
 
 <img src="https://github.com/ThomasJHLees/Team0Project/blob/main/images/mockups/login.png?raw=true" width="1000">
 
 =======================================================================
 
 
-### Page 4: All Deck Viewing Page / Filter Page ###
+### Page 5: Decks Viewing Page ###
 
 * Page Description (include a mockup or hand drawn image of the page)
 
-    * !!!May include user created decks OR may have a separate page similar to this to show user created decks
-
-    * Header to other pages
-    * Page with all decks creates by World Salad
-    * Button to make a new Deck
-    * Includes filter to cycle through the decks
-    * Footer with Contact
+    * Displays public and user-created decks
+    * Header with logo
+    * Navigation menu to other pages
+    * If logged in, button/link to create a new deck
+    * If logged in, button/link to edit only decks owned by user
+    * Includes means to filter decks
+    * Footer with contact
 
 * Parameters needed for the page
 
-    * All decks written out
+    * All decks' details (deck_id, title, description, category, owner, public status)
     * Logo
     * Other pages with corresponding links
 
@@ -161,13 +217,18 @@
 * Link destinations for the page
 
     * Available
-        * Home
-        * Individual Decks
+        * Home `/`
+        * About page `/about/`
+        * Individual deck pages `/decks/<deck_id>/`
     * Available If Logged In
-        * Personal Deck Page
-        * Personal Deck Creation/Editing Page
+        * Log out `/auth/logout/`
+     * Available If Logged In and Owner of Deck
+        * Create deck `/decks/create/`
+        * Edit deck `/decks/<deck_id>/edit/`
+        * Log out `/auth/logout/`
     * Available If Not Logged In
-        * Log In Page
+        * Log in `/auth/login/`
+        * Register `/auth/register/`
 
 * List of tests for verifying the rendering of the page
 
@@ -183,32 +244,45 @@
 =======================================================================
 
 
-### Page 5: Individual Decks Interaction Page - PAGE TO STUDY DECKS ###
+### Page 6: Individual Deck Page - PAGE TO STUDY DECKS ###
 
 * Page Description (include a mockup or hand drawn image of the page)
 
-    * This is a page for interacting with the decks
+    * Displays flashcards for currently selected deck
     * THIS is the interactive USEABLE PAGE - the purpose of our software
+    * Header with logo
+    * Navigation menu
+    * User can toggle between front and back of flashcards
+    * User can create/edit cards and change deck information of user-owned decks
+    * User can bulk upload cards from CSV file
+    * This is the most challenging page
 
 * Parameters needed for the page
 
-    * All the created decks
+    * Logo
+    * Deck details for selected deck  (deck_id, title, description, category, owner, public status)
 
 * Data needed to render the page
 
-    * Decks and their corresponding info
+    * Deck details for selected deck  (deck_id, title, description, category, owner, public status)
+    * Details for cards in deck (card_id, front, back, notes)
 
 * Link destinations for the page
-
+ 
     * Available
-        * Home
-        * All decks/Filter Page
-        * Individual Decks Interacting Page <---- THIS IS THE PAGE
+        * Home `/`
+        * Decks page `/decks/`
+        * About page `/about/`
     * Available If Logged In
-        * Personal Deck Page
-        * Personal Deck Creation/Editing Page
+        * Log out `/auth/logout/`
+    * Available If Logged In and Owner of Current Deck
+        * Add card `/decks/<deck_id>/add/`
+        * Edit card `/decks/<deck_id>/<card_id>/edit/`
+        * Edit deck `/decks/<deck_id>/edit/`
+        * Log out `/auth/logout/`
     * Available If Not Logged In
-        * Log In Page
+        * Log in `/auth/login/`
+        * Register `/auth/register/`
 
 * List of tests for verifying the rendering of the page
 
@@ -224,37 +298,35 @@
 
 =======================================================================
 
-
-### Page 6: Deck Creation/Editing Page ###
+### Page 7: Deck Creation Page ###
 * Page Description (include a mockup or hand drawn image of the page)
 
-    * Flash Card Editing in the Center
-        * Use text boxes for primary editing software
-    * This is the most challenging page
+    * Page to create new deck (login required)
+    * Header with log
+    * Navigation menu
+    * Deck creation form in center
+        * Title field
+        * Category field
+        * Description field
+        * Public checkbox/toggle
+        * Save button
 
 * Parameters needed for the page
 
-    * Direct connection to the DB
-    * Preexisting Decks
+    * Logo
+    * User ID
 
 * Data needed to render the page
 
-    * Direct connection to the DB
-    * All decks and potential user login
+    * User ID
 
 * Link destinations for the page
 
     * Available
-        * Home
-        * All decks/Filter Page
-        * Individual Decks Interacting Page
-    * Available If Logged In
-        * Personal Deck Page
-        * Personal Deck Creation/Editing Page
-    * Available If Not Logged In
-        * Log In Page
-
-
+        * Home `/`
+        * Decks page `/decks/`
+        * About page `/about/`
+        * Log out `/auth/logout/`
 
 * List of tests for verifying the rendering of the page
     * Page can be accessed via `/decks/<deck_id>/edit/` and `/decks/<deck_id>/edit`
@@ -265,5 +337,50 @@
     * Card can be edited and uploaded to DB
     * Verified proper info was stored in the DB
     * Error message displayed when error occured etc.
+
+
+
+### Page 8: Card Creation/Editing Pages ###
+* Page Description (include a mockup or hand drawn image of the page)
+
+    * Page to add/edit cards in deck owned by user
+    * Flash card editing/creation form in the center
+        * Card front field
+        * Card back field
+        * Notes field
+        * Save button
+        
+* Parameters needed for the page
+
+    * Logo
+    * Existing deck
+
+* Data needed to render the page
+
+    * User ID
+    * Deck ID
+    * Card ID (if editing)
+
+* Link destinations for the page
+
+    * Available
+        * Home `/`
+        * Decks page `/decks/`
+        * About page `/about/`
+    * Available If Logged In and Owner of Current Deck
+        * Deck `/decks/<deck_id>`
+        * Log out `/auth/logout/`
+    
+* List of tests for verifying the rendering of the page
+    * Creation page can be accessed via `/decks/<deck_id>/add/` and `/decks/<deck_id>/add`
+    * Edit page can be accessed via `/decks/<deck_id>/<card_id>/edit/` and `/decks/<deck_id>/<card_id>/edit`
+    * Correct page title
+    * All links lead to correct pages
+    * Drop down menus display when clicked
+    * Valid input results in card inserted correctly for current deck into DB
+    * Error message displayed for invalid input
  
 <img src="https://github.com/ThomasJHLees/Team0Project/blob/main/images/mockups/createcard.png?raw=true" width="1000">
+
+
+
