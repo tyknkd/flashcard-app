@@ -67,7 +67,7 @@
   * Atreyu: Started coding web pages
   * Janet: Drafted web page mockups
   * Thomas: Coded database access scripts
-  * Tyler: Started drafting SQL_TESTING.md, changed/documented project directory tree to accommodate new
+  * Tyler: Started drafting SQL_TESTING.md, changed/documented project directory tree to accommodate new flask app factory
 * Next tasks:
   * Atreyu: Apply Flask app tutorials to project app, continue coding web pages
   * Janet: Apply Flask app tutorials to project app, draft SQL_TESTING.md
