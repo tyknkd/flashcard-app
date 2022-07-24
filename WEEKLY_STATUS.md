@@ -21,7 +21,7 @@
   * Tyler: HTML/Javascript, how we can design the pages themselves
 * New tasks have been assigned to each person, and those will finally have us starting on a little bit of code
 
-<img src="https://user-images.githubusercontent.com/105689655/174692326-ff4cb1bb-f405-45a3-aeba-3564b7c7a429.png" width="300">
+<img src="https://github.com/ThomasJHLees/Team0Project/blob/main/images/kanban/kanban20220620.png" width="300">
 
 
 ### Week 4 (June 27-July 3) ###
