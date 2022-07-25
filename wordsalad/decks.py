@@ -167,22 +167,28 @@ def create():
         title = request.form['title']
         category = request.form['category']
         description = request.form['description']
-        public = request.form['public']
+        public_check = request.form.get('public')
+        if public_check == None:
+            public = 'FALSE'
+        else:
+            public = 'TRUE'
+        error = None
+
         error = None
 
         # Handle missing info
         if not title:
             error = 'Title is required.'
-            
+
         elif not category:
             error = 'Category is required.'
-            
+
         elif not description:
             error = 'Description is required.'
 
         elif not public:
             error = 'Public is required.'
-        
+
         if error is None:
             # Add deck to database
             error = add_deck(g.user['user_id'], title, category, description, public)
@@ -210,16 +216,20 @@ def edit(deck_id: int):
         title = request.form['title']
         category = request.form['category']
         description = request.form['description']
-        public = request.form['public']
+        public_check = request.form.get('public')
+        if public_check == None:
+            public = 'FALSE'
+        else:
+            public = 'TRUE'
         error = None
 
         # Handle missing info
         if not title:
             error = 'Title is required.'
-            
+
         elif not category:
             error = 'Category is required.'
-            
+
         elif not description:
             error = 'Description is required.'
 
@@ -227,7 +237,7 @@ def edit(deck_id: int):
             error = 'Public is required.'
 
         if error is None:
-            # Update deck 
+            # Update deck
             error = update(deck_id, title, category, description, public)
 
             if error is None:
