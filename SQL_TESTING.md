@@ -18,6 +18,7 @@
   * Table is empty after initialization 
   * Able to insert multiple rows of alphanumeric test data
   * Query returns expected data for all rows and columns
+  * Check both access through flask app and table itself
 
 ### Table 2 ###
 * Name: `decks`
@@ -33,6 +34,7 @@
   * Table is empty after initialization 
   * Able to insert multiple rows of test data
   * Query returns expected data for all rows and columns
+  * Check both access through flask and values in table itself
     
 ### Table 3 ###
 * Name: `cards`
@@ -48,6 +50,7 @@
   * Table is empty after initialization 
   * Able to insert multiple rows of alphanumeric test data
   * Query returns expected data for all rows and columns
+  * Check access through flask and values in table itself
 
 ## Data Access Methods
 ### Table 1 Access Method 1 ### 
