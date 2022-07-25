@@ -174,8 +174,6 @@ def create():
             public = 'TRUE'
         error = None
 
-        error = None
-
         # Handle missing info
         if not title:
             error = 'Title is required.'
