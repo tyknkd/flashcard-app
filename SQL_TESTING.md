@@ -133,6 +133,15 @@
   * Attempting to retrieve non-existent card fails
 
 ### Table 3 Access Method 2 ### 
+* Name: `cards.get_cards(deck_id)`
+* Description: Retrieve all card information for specified `deck_id`
+* Parameters: `deck_id`
+* Return values: list of dicts of cards `front`, `back`, `notes`  
+* List of tests for verifying each access method:
+  * Return expected values for existent deck/cards
+  * Attempting to retrieve non-existent deck fails
+
+### Table 3 Access Method 3 ### 
 * Name: `cards.add_card(deck_id, front, back, notes)`
 * Description: Add new card to table
 * Parameters: `deck_id`, `front`, `back`, `notes`
@@ -141,7 +150,7 @@
   * Valid parameters results in row correctly added to table
   * Attempting to add invalid card values fails
 
-### Table 3 Access Method 3 ### 
+### Table 3 Access Method 4 ### 
 * Name: `cards.update(card_id, front, back, notes)`
 * Description: Update existing card with `card_id`
 * Parameters: `card_id`, `front`, `back`, `notes`
@@ -150,7 +159,7 @@
   * Valid parameters results in update to `card_id` row
   * Attempting to update with invalid card values fails
 
-### Table 3 Access Method 4 ### 
+### Table 3 Access Method 5 ### 
 * Name: `cards.remove(card_id)`
 * Description: Remove existing card with `card_id`
 * Parameters: `card_id`
