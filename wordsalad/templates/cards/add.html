@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!-- Page to create new card -->
+<!-- Reference: https://flask.palletsprojects.com/en/2.1.x/tutorial/blog/ -->
+
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}New Card{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="word">Word</label>
+    <input name="word" id="word" value="{{ request.form['word'] }}" required>
+    <label for="speech">Part of Speech</label>
+    <input name="speech" id="speech" value ="{{ request.form['speech'] }}" >
+    <label for="define">Definition</label>
+    <input name="define" id="define" value ="{{ request.form['define'] }}" required>
+    <label for="notes">Notes</label>
+    <input name="notes" id="notes" value="{{ request.form['notes'] }}">
+    <input type="submit" value="Save">
+  </form>
+  <h2><a class="action" href="{{ url_for('cards.cards', deck_id=deck['deck_id']) }}">Done</a>  </h2>
+{% endblock %}

@@ -60,5 +60,10 @@ def create_app(test_config=None):
     app.register_blueprint(decks.bp)
     app.add_url_rule('/decks/', endpoint='decks.index')
 
+    #Import/register cards Blueprint
+    from . import cards
+    app.register_blueprint(cards.bp)
+    
+
     return app
 

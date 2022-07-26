@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- Home page -->
+<!-- Reference: https://flask.palletsprojects.com/en/2.1.x/tutorial/blog/ -->
+
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}WordSalad{% endblock title %}</h1>
+  {% if g.user %}
+     
+  {% endif %}
+{% endblock %}
+{% block content %}
+  <h2>{{ deck['title'] }}</h2>
+  <h3><p><a href="/decks/">Back</a></p>
+  <p>	    <a class="action" href="{{ url_for('cards.add_card', deck_id=deck['deck_id']) }}">Add Card</a></p></h3>
+  <section class="cards">
+    {% for card in cards %}
+      <header>
+        <div>
+          <h1>{{ card['front'] }}</h1>
+        </div>
+      {% if g.user['user_id'] == deck['owner_id'] %}
+	  {% endif %}
+      </header>
+      <p class="define">{{ card['back'] }}</p>
+      <p class="notes">{{ card['notes'] }}</p>
+      {% if not loop.last %}
+        <hr>
+      {% endif %}
+    {% endfor %}
+    </section>
+{% endblock %}
