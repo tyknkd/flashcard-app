@@ -37,7 +37,28 @@ def get_cards(deck_id: int):
     # Get card data (None if does not exist)
     return db.execute('SELECT * FROM cards WHERE deck_id =?', (deck_id,)).fetchall()
 
-# 
+# Get single card in deck from database
+def get_card(card_id: int):
+    '''
+    Fetch single card in database by card_id
+    '''
+    # Connect to database
+    db = get_db ()
+    # Get data for single card
+    return db.execute('SELECT * FROM cards WHERE card_id=?', (card_id,)).fetchone()
+
+# Get first card in deck
+def get_first_card(deck_id: int):
+    '''
+    Get first card in deck from database by deck_id
+    '''
+    # Get cards in deck
+    cards = get_cards(deck_id)
+    #return first card
+    first = cards[0]
+    return first
+
+# Display all cards in deck
 @bp.route('/index', methods=('GET', 'POST'))
 def cards(deck_id: int):
     '''
@@ -45,10 +66,15 @@ def cards(deck_id: int):
     '''
     # Get cards from deck
     cards = get_cards (deck_id)
+
     # Get deck info from deck_id
     deck = get_deck(deck_id)
+    if not cards:
+        return render_template('cards/add.html', deck=deck)
+    # Get first card from deck
+    first = get_first_card(deck_id)
 
-    return render_template('cards/card_index.html', cards=cards, deck=deck)
+    return render_template('cards/card_index.html', cards=cards, deck=deck, first=first)
     
 
 
@@ -115,4 +141,28 @@ def create_card(deck_id: int, word: str, definition: str, notes: str):
 
     db.commit()
     return None
+
+# View single card
+@bp.route ('/view/<int:card_id>', methods=('GET', 'POST'))
+def view_card (deck_id: int, card_id: int):
+    '''
+    View one card at a time in deck
+    '''
+    # Get info from database
+    deck = get_deck(deck_id)
+    first = get_first_card(deck_id)
+    cards = get_cards(deck_id)
+    card = get_card (card_id)
+    # If there is no next card
+    if not card:
+        prev_card = card_id - 1
+        new_card = get_card(prev_card)
+        cards = get_cards(deck_id)
+        return render_template('cards/card_index.html', cards=cards, deck=deck, first=first)
+
+    # Check card belongs to deck
+    if deck_id != card['deck_id']:
+        return render_template('cards/card_index.html', cards=cards, deck=deck, first=first)
+
+    return  render_template('cards/view.html', deck = deck, card=card)
 

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!-- Page to view single flashcard -->
+<!-- Reference: https://flask.palletsprojects.com/en/2.1.x/tutorial/blog/ -->
+
+{% extends 'base.html' %}
+{% block header %}
+  <h1>{% block title %}{{ deck['title'] }}{% endblock title %}</h1>
+  {% if g.user %}
+     
+  {% endif %}
+{% endblock %}
+{% block content %}
+  <h3><a class="action" href="{{ url_for('cards.cards', deck_id=deck['deck_id']) }}">Back to Deck</a>&emsp;&emsp;&emsp; 
+  </h3>
+  <h2></h2>
+  <section class="cards">
+      <header>
+        <div id="front">
+          <h1>{{ card['front'] }}</h1>
+        </div>
+    {% if g.user['user_id'] == deck['owner_id'] %}
+	  {% endif %}
+      </header>
+      <button type="button" id="show_def">Show definition</button>
+      <div id="back">
+        <p>Definition:</p>
+        <p class="define">{{  card['back'] }}</p>
+        Notes: 
+        <p class="notes">{{ card['notes'] }}</p>
+
+      </div>
+      {% set next_id = card['card_id'] + 1 %}
+
+      <form action="{{ url_for('cards.view_card', deck_id=deck['deck_id'], card_id=next_id ) }}" method="post">
+      <input id="next_button" type="submit" name="next_button" value="Next"> 
+       
+      </form>
+      {% set prev_id = card['card_id'] - 1 %}
+      <form action="{{ url_for('cards.view_card', deck_id=deck['deck_id'], card_id=prev_id ) }}" method="post">
+        <input id="previous_button" type="submit" name="previous_button" value="Previous"> 
+         
+        </form>
+      
+      
+    </section>
+{% endblock %}
+
+if user selects show fefinition, show it
+if user selects next, iterate to next card in Deck
+if user selects previous, go back to previous card 

@@ -1,19 +1,25 @@
 <!DOCTYPE html>
-<!-- Home page -->
+<!-- Page to view cards in deck -->
 <!-- Reference: https://flask.palletsprojects.com/en/2.1.x/tutorial/blog/ -->
 
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}WordSalad{% endblock title %}</h1>
+  <h1>{% block title %}{{ deck['title'] }}{% endblock title %}</h1>
   {% if g.user %}
      
   {% endif %}
 {% endblock %}
 {% block content %}
-  <h2>{{ deck['title'] }}</h2>
-  <h3><p><a href="/decks/">Back</a></p>
-  <p>	    <a class="action" href="{{ url_for('cards.add_card', deck_id=deck['deck_id']) }}">Add Card</a></p></h3>
+{% if cards %}
+
+<h2><a class="action" href="{{ url_for('cards.view_card', deck_id=deck['deck_id'], card_id=first['card_id']) }}">View Deck</a></h2>
+{% endif %} 
+<h3><a href="/decks/">Back</a>&emsp;&emsp;&emsp; 
+    
+    <a class="action" href="{{ url_for('cards.add_card', deck_id=deck['deck_id']) }}">Add Card</a>&emsp;&emsp;&emsp;
+  </h3>
+  <h2></h2>
   <section class="cards">
     {% for card in cards %}
       <header>
