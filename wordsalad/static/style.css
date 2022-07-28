@@ -1,25 +1,40 @@
 /* Source: https://flask.palletsprojects.com/en/2.1.x/tutorial/static/ */
 
 html {
-  font-family: sans-serif;
+  font-family: 'Nunito', sans-serif;
   background: #eee;
-  padding: 1rem;
+  /* padding: 1rem; */
 }
 
 body {
-  max-width: 960px;
+  max-width: 1100px;
   margin: 0 auto;
+  min-height: 100vh;
   background: white;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: serif;
-  color: #377ba8;
+  font-family: 'Nunito';
+  color: #4854fc;
   margin: 1rem 0;
 }
 
 a {
-  color: #377ba8;
+  text-decoration: none;
+
+  transition-property: font-size;
+  transition-property: color;
+  transition-duration: 0.7s;
+  font-size: 16px;
+  color: #4854fc;
+}
+
+
+a:hover {
+  transition-property: font-size;
+  transition-duration: 0.7s;
+  font-size: 18px;
+  text-decoration: underline;
 }
 
 hr {
@@ -28,20 +43,22 @@ hr {
 }
 
 nav {
-  background: lightgray;
+  background: rgb(254, 250, 255);
   display: flex;
   align-items: center;
-  padding: 0 0.5rem;
+  /* padding: 0 0.5rem; */
+  padding: 20px;
 }
 
-nav h1 {
+.navitems {
   flex: auto;
   margin: 0;
 }
 
-nav h1 a {
+#navWordSalad {
   text-decoration: none;
   padding: 0.25rem 0.5rem;
+  font-size: 24pt;
 }
 
 nav ul  {

@@ -5,11 +5,20 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}About{% endblock title %}</h1>
+  <h1>
+    {% block title %}About{% endblock title %}
+  </h1>
+  
   {% if g.user %}
    
   {% endif %}
 {% endblock %}
 
 {% block content %}
+<br>
+
+<div style="text-align: center;">
+  <img src="/static/images/salad.png" alt="About Us" width="700px" height="500px">
+</div>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde consequuntur placeat, porro vitae odio ratione fugiat quisquam earum pariatur commodi dolorum, magnam veniam. Reprehenderit eaque natus atque praesentium corporis nesciunt. Similique eum voluptatem, sed sint commodi saepe odit, nobis veniam pariatur debitis aut inventore? Maiores est reprehenderit eum eius aliquid.</p>
 {% endblock %}

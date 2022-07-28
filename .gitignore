@@ -17,3 +17,10 @@ build/
 
 # Jupyter Notebook
 .ipynb_checkpoints
+
+
+# MacOS Specific
+.DS_Store
+
+# Running Flask
+runflask.sh
