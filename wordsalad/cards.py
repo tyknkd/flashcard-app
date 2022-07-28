@@ -70,7 +70,7 @@ def cards(deck_id: int):
     # Get deck info from deck_id
     deck = get_deck(deck_id)
     if not cards:
-        return render_template('cards/add.html', deck=deck)
+        return render_template('cards/card_index.html', deck=deck)
     # Get first card from deck
     first = get_first_card(deck_id)
 
@@ -109,11 +109,12 @@ def add_card(deck_id: int):
         # Update deck with new card
         if error is None:
             error = create_card(deck_id, word, definition, notes)
-
-            if error is None:
-                # Redirect to add card page
-                return redirect(url_for('cards.add_card', deck_id=deck['deck_id']))
-
+            
+            return redirect(url_for('cards.cards', deck_id=deck['deck_id']))
+        else:
+            error = "Did not add to table"
+        
+            return redirect(url_for('decks/decks.html'))
         # Store error to retrieve when rendering template
         flash(error)
     return render_template('cards/add.html', deck=deck)
@@ -125,22 +126,34 @@ def create_card(deck_id: int, word: str, definition: str, notes: str):
     Insert row in 'cards' table of database
     :returns: Error message (None if successful)
     '''
-    # connect to database
+    # Connect to database
     db = get_db()
 
+    # db.execute(
+    #     'INSERT INTO cards (deck_id, front, back, notes)'
+    #     'VALUES (?, ?, ?, ?)',
+    #     (deck_id, word, definition, notes)
+    # )
+    # db.commit()
+    # render_template('decks/create.html')
+    # return None
+
+    
     try:
         # Insert new row in database
         db.execute(
             'INSERT INTO cards (deck_id, front, back, notes)'
-            'VALUES(?, ?, ?, ?)', (deck_id, word, definition, notes)
+            ' VALUES (?, ?, ?, ?)',
+            (deck_id, word, definition, notes)
         )
+        db.commit()
 
-    # if error raised
+    # If error raised
     except db.Error as error:
-        return f"Failed to add card {error}"
+       return f"Failed to add deck {error}"
 
-    db.commit()
-    return None
+    else:
+        return None
 
 # View single card
 @bp.route ('/view/<int:card_id>', methods=('GET', 'POST'))

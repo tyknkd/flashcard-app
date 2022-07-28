@@ -20,5 +20,5 @@
     <input name="notes" id="notes" value="{{ request.form['notes'] }}">
     <input type="submit" value="Save">
   </form>
-  <h2><a class="action" href="{{ url_for('cards.cards', deck_id=deck['deck_id']) }}">Done</a>  </h2>
+  <h3><a class="action" href="{{ url_for('cards.cards', deck_id=deck['deck_id']) }}">Back</a>  </h3>
 {% endblock %}
