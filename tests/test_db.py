@@ -7,6 +7,7 @@ import sqlite3
 
 import pytest
 from wordsalad.db import get_db
+import wordsalad.decks, wordsalad.auth #, wordsalad.cards # <- import once implemented
 
 def test_get_close_db(app):
     '''
@@ -33,6 +34,26 @@ def test_init_db_command(runner, monkeypatch):
         Fake init_db that records if called
         '''
         Recorder.called = True
+
+def test_add_user():
+    return
+
+def test_return_user():
+    return
+
+def test_add_deck():
+    return
+
+def test_return_deck():
+    return
+
+def test_add_card():
+    return
+
+def test_return_card():
+    return
+
+
 
     # Replace init_db with fake_init_db
     monkeypatch.setattr('wordsalad.db.init_db', fake_init_db)
