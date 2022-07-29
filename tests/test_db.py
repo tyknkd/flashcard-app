@@ -35,10 +35,26 @@ def test_init_db_command(runner, monkeypatch):
         '''
         Recorder.called = True
 
-def test_add_user():
+    # Replace init_db with fake_init_db
+    monkeypatch.setattr('wordsalad.db.init_db', fake_init_db)
+    result = runner.invoke(args=['init-db'])
+    assert 'Initialized' in result.output
+    assert Recorder.called    
+
+
+def test_add_user(app):
+    with app.app_context():
+        db = get_db()
+        assert db is get_db()
+    
+    #Add user
+    #Add user that already exists
+    #Add invalid user
     return
 
 def test_return_user():
+    #Request valid user
+    #Request user that does not exist
     return
 
 def test_add_deck():
@@ -52,11 +68,3 @@ def test_add_card():
 
 def test_return_card():
     return
-
-
-
-    # Replace init_db with fake_init_db
-    monkeypatch.setattr('wordsalad.db.init_db', fake_init_db)
-    result = runner.invoke(args=['init-db'])
-    assert 'Initialized' in result.output
-    assert Recorder.called    
