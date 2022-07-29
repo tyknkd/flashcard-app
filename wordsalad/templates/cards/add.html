@@ -5,20 +5,17 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}New Card{% endblock %}</h1>
+  <h1>{% block title %}{{ deck['title'] }}: New Card{% endblock title %}</h1>
 {% endblock %}
 
 {% block content %}
   <form method="post">
-    <label for="word">Word</label>
-    <input name="word" id="word" value="{{ request.form['word'] }}" required>
-    <label for="speech">Part of Speech</label>
-    <input name="speech" id="speech" value ="{{ request.form['speech'] }}" >
-    <label for="define">Definition</label>
-    <input name="define" id="define" value ="{{ request.form['define'] }}" required>
+    <label for="front">Front of card</label>
+    <input name="front" id="front" value="{{ request.form['front'] }}" required>
+    <label for="back">Back of card</label>
+    <input name="back" id="back" value ="{{ request.form['back'] }}" required>
     <label for="notes">Notes</label>
     <input name="notes" id="notes" value="{{ request.form['notes'] }}">
     <input type="submit" value="Save">
   </form>
-  <h3><a class="action" href="{{ url_for('cards.cards', deck_id=deck['deck_id']) }}">Back</a>  </h3>
 {% endblock %}
