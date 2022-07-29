@@ -128,7 +128,7 @@ def cards(deck_id: int):
     # Get dict of deck info for deck_id
     deck = get_deck(deck_id)
     
-    return render_template('cards/index.html', cards=cards, deck=deck)
+    return render_template('decks/cards/index.html', cards=cards, deck=deck)
     
 
 @bp.route('/add/', methods=('GET', 'POST'))
@@ -166,7 +166,7 @@ def add(deck_id: int):
         # Store error to retrieve when rendering template
         flash(error)
         
-    return render_template('cards/add.html', deck=deck)
+    return render_template('decks/cards/add.html', deck=deck)
 
 
 # Associate  '/decks/<deck_id>/<card_id>/edit/' with edit(card_id)
@@ -209,7 +209,7 @@ def edit(card_id: int):
         flash(error)
         
     # Render page and pass card data
-    return render_template('cards/edit.html', card=card)
+    return render_template('decks/cards/edit.html', card=card)
     
 # Associate '/decks/<deck_id>/<card_id_/delete/' with delete()
 @bp.route('/<int:card_id>/delete/', methods=('POST',))
@@ -236,4 +236,4 @@ def delete(deck_id):
     flash(error)
 
     # Render page and pass card data
-    return render_template('cards/edit.html', card=card)
+    return render_template('decks/cards/edit.html', card=card)
