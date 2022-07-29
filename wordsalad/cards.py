@@ -105,7 +105,7 @@ def cards(deck_id: int):
 
 @bp.route('/add/', methods=('GET', 'POST'))
 @login_required
-def add_card(deck_id: int):
+def add(deck_id: int):
     '''
     Add card to deck with deck_id
     '''
