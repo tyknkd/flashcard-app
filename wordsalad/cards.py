@@ -28,7 +28,7 @@ bp = Blueprint('cards', __name__, url_prefix='/decks/<int:deck_id>')
 
 
 # Get cards from database
-def get_cards(deck_id: int):
+def get_cards(deck_id: int) -> dict:
     '''
     Fetch cards in deck by deck_id
     '''
@@ -71,7 +71,7 @@ def cards(deck_id: int):
     deck = get_deck(deck_id)
     if not cards:
         return render_template('cards/card_index.html', deck=deck)
-    # Get first card from deck
+    # Get first card from deck (so view card template will load with first card in deck)
     first = get_first_card(deck_id)
 
     return render_template('cards/card_index.html', cards=cards, deck=deck, first=first)
@@ -129,16 +129,6 @@ def create_card(deck_id: int, word: str, definition: str, notes: str):
     # Connect to database
     db = get_db()
 
-    # db.execute(
-    #     'INSERT INTO cards (deck_id, front, back, notes)'
-    #     'VALUES (?, ?, ?, ?)',
-    #     (deck_id, word, definition, notes)
-    # )
-    # db.commit()
-    # render_template('decks/create.html')
-    # return None
-
-    
     try:
         # Insert new row in database
         db.execute(
@@ -155,6 +145,7 @@ def create_card(deck_id: int, word: str, definition: str, notes: str):
     else:
         return None
 
+
 # View single card
 @bp.route ('/view/<int:card_id>', methods=('GET', 'POST'))
 def view_card (deck_id: int, card_id: int):
@@ -163,19 +154,13 @@ def view_card (deck_id: int, card_id: int):
     '''
     # Get info from database
     deck = get_deck(deck_id)
-    first = get_first_card(deck_id)
     cards = get_cards(deck_id)
+    first = get_first_card (deck_id)
     card = get_card (card_id)
-    # If there is no next card
-    if not card:
-        prev_card = card_id - 1
-        new_card = get_card(prev_card)
-        cards = get_cards(deck_id)
-        return render_template('cards/card_index.html', cards=cards, deck=deck, first=first)
+    if card == None:
+        return render_template('cards/card_index.html', deck=deck, cards = cards, first=first)
 
-    # Check card belongs to deck
-    if deck_id != card['deck_id']:
-        return render_template('cards/card_index.html', cards=cards, deck=deck, first=first)
+# MAYBE FIX THE CARD ISSUE HERE???
 
     return  render_template('cards/view.html', deck = deck, card=card)
 

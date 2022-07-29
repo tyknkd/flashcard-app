@@ -2,6 +2,8 @@
 <!-- Page to view single flashcard -->
 <!-- Reference: https://flask.palletsprojects.com/en/2.1.x/tutorial/blog/ -->
 
+
+
 {% extends 'base.html' %}
 {% block header %}
   <h1>{% block title %}{{ deck['title'] }}{% endblock title %}</h1>
@@ -10,10 +12,21 @@
   {% endif %}
 {% endblock %}
 {% block content %}
-  <h3><a class="action" href="{{ url_for('cards.cards', deck_id=deck['deck_id']) }}">Back to Deck</a>&emsp;&emsp;&emsp; 
+
+<h1>
+
+</h1>
+<h3><a class="action" href="{{ url_for('cards.cards', deck_id=deck['deck_id']) }}">Back to Deck</a>&emsp;&emsp;&emsp; 
   </h3>
   <h2></h2>
+  <h3>
+
+  </h3>
   <section class="cards">
+    {% set myList = [] %}
+    {% for card in cards %}
+      {{ myList.append(card['card_id']) }}
+    {% endfor %}
       <header>
         <div id="front">
           <h1>{{ card['front'] }}</h1>
@@ -29,11 +42,17 @@
         <p class="notes">{{ card['notes'] }}</p>
 
       </div>
-      {% set next_id = card['card_id'] + 1 %}
 
-      <form action="{{ url_for('cards.view_card', deck_id=deck['deck_id'], card_id=next_id ) }}" method="post">
+
+<!-- This is where the issue is on this end--incrementing next_id and prev_id 
+for only cards in the deck regardless of where they are in the card table -->
+
+
+
+      {% set next_id = card['card_id']  + 1 %}
+      <form action="{{ url_for('cards.view_card', deck_id=deck['deck_id'], card_id=next_id) }}" method="post">
       <input id="next_button" type="submit" name="next_button" value="Next"> 
-       
+
       </form>
       {% set prev_id = card['card_id'] - 1 %}
       <form action="{{ url_for('cards.view_card', deck_id=deck['deck_id'], card_id=prev_id ) }}" method="post">
@@ -44,7 +63,3 @@
       
     </section>
 {% endblock %}
-
-if user selects show fefinition, show it
-if user selects next, iterate to next card in Deck
-if user selects previous, go back to previous card 
