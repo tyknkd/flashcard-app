@@ -19,7 +19,7 @@ from wordsalad.auth import login_required
 # Database connection function
 from wordsalad.db import get_db
 
-bp = Blueprint('decks', __name__)
+bp = Blueprint('decks', __name__, url_prefix='/decks/')
 
 # Database Access Support Functions
 def get_decks(owner_id) -> dict:
