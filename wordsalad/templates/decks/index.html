@@ -16,7 +16,7 @@
     {% for deck in decks %}
       <header>
         <div>
-          <h1>{{ deck['title'] }}</h1>
+          <h1><a class ="decks" href="{{ url_for('cards.cards', deck_id=deck['deck_id']) }}">{{ deck['title'] }}</a></h1>
         </div>
 	  {% if g.user['user_id'] == deck['owner_id'] %}
 	    <a class="action" href="{{ url_for('decks.edit', deck_id=deck['deck_id']) }}">Edit</a>

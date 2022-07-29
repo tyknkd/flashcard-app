@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 # Python script to create Blueprint to handle flashcard deck requests 
-# to `/decks/`, `/decks/<deck_name>`, `/decks/create/`, `/decks/edit/`,
+# to `/decks/`, `/decks/<deck_id>`, `/decks/create/`, `/decks/edit/`,
 # and `/decks/delete/`
 # Reference: https://flask.palletsprojects.com/en/2.1.x/tutorial/views/
 # https://flask.palletsprojects.com/en/2.1.x/tutorial/blog/
@@ -19,14 +19,14 @@ from wordsalad.auth import login_required
 # Database connection function
 from wordsalad.db import get_db
 
-bp = Blueprint('decks', __name__)
+bp = Blueprint('decks', __name__, url_prefix='/decks')
 
 # Database Access Support Functions
-def get_decks(owner_id) -> dict:
+def get_decks(owner_id) -> list:
     '''
     Gets data for all public and owned decks for owner_id from `decks` table of database
     If owner_id = None, only public decks are returned
-    :returns: dict of deck_id, owner_id, title, category, description, public
+    :returns: list of dicts of deck_id, owner_id, title, category, description, public
     '''
     # Connect to database
     db = get_db()
@@ -52,12 +52,12 @@ def get_deck(deck_id: int) -> dict:
     # Get deck data (None if does not exist)
     return db.execute('SELECT * FROM decks WHERE deck_id = ?', (deck_id,)).fetchone()
 
-def get_own_deck(deck_id: int, check_owner=True) -> dict:
+def get_own_deck(deck_id: int, check_owner=True) -> list:
     '''
     Fetch deck by deck_id
     :param deck_id: deck_id of desired deck
     :param check_owner=True: Abort if user is not owner
-    :returns: dict of deck data for deck_id (None if does not exist)
+    :returns: list of dicts of deck data for deck_id (None if does not exist)
     '''
     # Get dict of deck data
     deck = get_deck(deck_id) 
@@ -141,7 +141,7 @@ def remove(deck_id: int) -> str:
 
 
 # Wrapper to associate `/decks` route with `decks()` function
-@bp.route('/decks/')
+@bp.route('/')
 def decks():
     '''
     Render HTML template with all decks available to user
@@ -157,12 +157,13 @@ def decks():
     return render_template('decks/index.html', decks=decks)
 
 
-@bp.route('/decks/create/', methods=('GET', 'POST'))
+@bp.route('/create/', methods=('GET', 'POST'))
 @login_required
 def create():
     '''
     Create new flashcard deck
     '''
+    # Process form input
     if request.method == 'POST':
         title = request.form['title']
         category = request.form['category']
@@ -201,7 +202,7 @@ def create():
     return render_template('decks/create.html')
     
 # Associate  '/decks/<deck_id>/edit/' with edit(deck_id)
-@bp.route('/decks/<int:deck_id>/edit/', methods=('GET', 'POST'))
+@bp.route('/<int:deck_id>/edit/', methods=('GET', 'POST'))
 @login_required
 def edit(deck_id: int):
     '''
@@ -209,7 +210,8 @@ def edit(deck_id: int):
     '''
     # Get deck and check if user is owner
     deck = get_own_deck(deck_id)
-
+    
+    # Process form input
     if request.method == 'POST':
         title = request.form['title']
         category = request.form['category']
@@ -249,9 +251,9 @@ def edit(deck_id: int):
     return render_template('decks/edit.html', deck=deck)
     
 # Associate '/decks/<deck_id>/delete/' with delete()
-@bp.route('/decks/<int:deck_id>/delete/', methods=('POST',))
+@bp.route('/<int:deck_id>/delete/', methods=('POST',))
 @login_required
-def delete(deck_id):
+def delete(deck_id: int):
     '''
     Delete deck
     '''

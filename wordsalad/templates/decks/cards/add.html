@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!-- Page to create new card -->
+<!-- Reference: https://flask.palletsprojects.com/en/2.1.x/tutorial/blog/ -->
+
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}{{ deck['title'] }}: New Card{% endblock title %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="front">Front of card</label>
+    <input name="front" id="front" value="{{ request.form['front'] }}" required>
+    <label for="back">Back of card</label>
+    <input name="back" id="back" value ="{{ request.form['back'] }}" required>
+    <label for="notes">Notes</label>
+    <input name="notes" id="notes" value="{{ request.form['notes'] }}">
+    <input type="submit" value="Save">
+  </form>
+{% endblock %}

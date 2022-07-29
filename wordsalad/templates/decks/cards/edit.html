@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!-- Page to edit/delete an existing card -->
+<!-- Reference: https://flask.palletsprojects.com/en/2.1.x/tutorial/blog/ -->
+
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Edit Card in "{{deck['title']}}" {% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="front">Front of card</label>
+    <input name="front" id="front" value="{{ request.form['front'] }}" required>
+    <label for="back">Back of card</label>
+    <input name="back" id="back" value ="{{ request.form['back'] }}" required>
+    <label for="notes">Notes</label>
+    <input name="notes" id="notes" value="{{ request.form['notes'] }}">
+    <input type="submit" value="Save">
+  </form>
+  <hr>
+  <form action="{{ url_for('cards.delete', deck_id=deck['deck_id'], card_id=card['card_id']) }}" method="post">
+    <input class="danger" type="submit" value="Delete" onclick="return confirm('Are you sure?');">
+  </form>
+{% endblock %}
