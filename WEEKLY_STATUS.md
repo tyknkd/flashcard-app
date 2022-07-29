@@ -78,6 +78,20 @@
 
 ### Week 8 (July 24-31) ###
 * Completed:
+  * Atreyu: Improved/expanded web page templates and style sheet
+  * Janet: Coded flashcard view blueprint and html templates; added checkbox to edit decks page
+  * Thomas: Coded database tests
+  * Tyler: Coded flask app blueprints and templates; refactored database; drafted presentation slide template
+* Next tasks:
+  * Atreyu: Continue enhancing web page design/functionality
+  * Janet: Troubleshoot card pages
+  * Thomas: Code card page tests
+  * Tyler: Troubleshoot card pages; add CSV upload option
+
+<img src="https://github.com/ThomasJHLees/Team0Project/blob/main/images/kanban/kanban20220728.png" width="300">
+
+### Week 9 (August 1-8) ###
+* Completed:
   * Atreyu:
   * Janet:
   * Thomas:
@@ -88,7 +102,7 @@
   * Thomas:
   * Tyler:
 
-### Week 9 (August 1-8) ###
+### Week 10 (August 1-8) ###
 * Completed:
   * Atreyu:
   * Janet:
