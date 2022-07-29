@@ -172,7 +172,7 @@ def add(deck_id: int):
 # Associate  '/decks/<deck_id>/<card_id>/edit/' with edit(card_id)
 @bp.route('/<int:card_id>/edit/', methods=('GET', 'POST'))
 @login_required
-def edit(card_id: int):
+def edit(deck_id: int, card_id: int):
     '''
     Edit info of a card with card_id
     '''
@@ -214,7 +214,7 @@ def edit(card_id: int):
 # Associate '/decks/<deck_id>/<card_id_/delete/' with delete()
 @bp.route('/<int:card_id>/delete/', methods=('POST',))
 @login_required
-def delete(deck_id):
+def delete(deck_id: int, card_id: int):
     '''
     Delete deck
     '''
