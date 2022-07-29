@@ -255,7 +255,7 @@ def edit(deck_id: int):
 # Associate '/decks/<deck_id>/delete/' with delete()
 @bp.route('/<int:deck_id>/delete/', methods=('POST',))
 @login_required
-def delete(deck_id):
+def delete(deck_id: int):
     '''
     Delete deck
     '''
