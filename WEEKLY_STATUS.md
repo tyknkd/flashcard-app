@@ -102,7 +102,7 @@
   * Thomas:
   * Tyler:
 
-### Week 10 (August 1-8) ###
+### Week 10 (August 9-15) ###
 * Completed:
   * Atreyu:
   * Janet:
