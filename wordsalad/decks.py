@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 # Python script to create Blueprint to handle flashcard deck requests 
-# to `/decks/`, `/decks/<deck_name>`, `/decks/create/`, `/decks/edit/`,
+# to `/decks/`, `/decks/<deck_id>`, `/decks/create/`, `/decks/edit/`,
 # and `/decks/delete/`
 # Reference: https://flask.palletsprojects.com/en/2.1.x/tutorial/views/
 # https://flask.palletsprojects.com/en/2.1.x/tutorial/blog/
