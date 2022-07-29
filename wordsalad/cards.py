@@ -169,21 +169,71 @@ def add(deck_id: int):
     return render_template('cards/add.html', deck=deck)
 
 
-# # View single card
-# @bp.route ('/view/<int:card_id>', methods=('GET', 'POST'))
-# def view_card (deck_id: int, card_id: int):
-#     '''
-#     View one card at a time in deck
-#     '''
-#     # Get info from database
-#     deck = get_deck(deck_id)
-#     cards = get_cards(deck_id)
-#     first = get_first_card (deck_id)
-#     card = get_card (card_id)
-#     if card == None:
-#         return render_template('cards/card_index.html', deck=deck, cards = cards, first=first)
+# Associate  '/decks/<deck_id>/<card_id>/edit/' with edit(card_id)
+@bp.route('/<int:card_id>/edit/', methods=('GET', 'POST'))
+@login_required
+def edit(card_id: int):
+    '''
+    Edit info of a card with card_id
+    '''
+    # Get card info
+    card = get_card(card_id)
+    
+    # Get deck and check if user is owner
+    deck = get_own_deck(card['deck_id'])
 
-# # MAYBE FIX THE CARD ISSUE HERE???
+    # Process form input
+    if request.method == 'POST':
+        front = request.form['front']
+        back = request.form['back']
+        notes = request.form['notes']
 
-#     return  render_template('cards/view.html', deck = deck, card=card)
+        error = None
+        
+        # Handle missing info
+        if not front:
+            error = 'Front of card is required'
 
+        elif not back:
+            error = 'Back of card is required'
+ 
+        if error is None:
+            # Update card in database
+            error = update(card_id, front, back, notes)
+            
+            if error is None:
+                # Redirect to deck_id page
+                return redirect(url_for('cards.cards', deck_id=deck_id))
+        
+        # Store error to retrieve when rendering template
+        flash(error)
+        
+    # Render page and pass card data
+    return render_template('cards/edit.html', card=card)
+    
+# Associate '/decks/<deck_id>/<card_id_/delete/' with delete()
+@bp.route('/<int:card_id>/delete/', methods=('POST',))
+@login_required
+def delete(deck_id):
+    '''
+    Delete deck
+    '''
+    # Get card info
+    card = get_card(card_id)
+    
+    # Get deck and check if user is owner
+    deck = get_own_deck(card['deck_id'])
+
+    if card is not None:
+        # Delete card 
+        error = remove(card_id)
+
+        if error is None:
+            # Redirect to deck_id page
+            return redirect(url_for('cards.cards', deck_id=deck_id))
+
+    # Store error to retrieve when rendering template
+    flash(error)
+
+    # Render page and pass card data
+    return render_template('cards/edit.html', card=card)
