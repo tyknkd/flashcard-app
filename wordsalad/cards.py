@@ -180,7 +180,7 @@ def edit(deck_id: int, card_id: int):
     card = get_card(card_id)
     
     # Get deck and check if user is owner
-    deck = get_own_deck(card['deck_id'])
+    deck = get_own_deck(card_id)
 
     # Process form input
     if request.method == 'POST':
@@ -209,7 +209,7 @@ def edit(deck_id: int, card_id: int):
         flash(error)
         
     # Render page and pass card data
-    return render_template('decks/cards/edit.html', card=card)
+    return render_template('decks/cards/edit.html', deck=deck, card=card)
     
 # Associate '/decks/<deck_id>/<card_id_/delete/' with delete()
 @bp.route('/<int:card_id>/delete/', methods=('POST',))
@@ -222,7 +222,7 @@ def delete(deck_id: int, card_id: int):
     card = get_card(card_id)
     
     # Get deck and check if user is owner
-    deck = get_own_deck(card['deck_id'])
+    deck = get_own_deck(card_id)
 
     if card is not None:
         # Delete card 
@@ -236,4 +236,4 @@ def delete(deck_id: int, card_id: int):
     flash(error)
 
     # Render page and pass card data
-    return render_template('decks/cards/edit.html', card=card)
+    return render_template('decks/cards/edit.html', deck=deck, card=card)
