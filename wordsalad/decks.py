@@ -22,11 +22,11 @@ from wordsalad.db import get_db
 bp = Blueprint('decks', __name__, url_prefix='/decks/')
 
 # Database Access Support Functions
-def get_decks(owner_id) -> dict:
+def get_decks(owner_id) -> list:
     '''
     Gets data for all public and owned decks for owner_id from `decks` table of database
     If owner_id = None, only public decks are returned
-    :returns: dict of deck_id, owner_id, title, category, description, public
+    :returns: list of dicts of deck_id, owner_id, title, category, description, public
     '''
     # Connect to database
     db = get_db()
@@ -52,12 +52,12 @@ def get_deck(deck_id: int) -> dict:
     # Get deck data (None if does not exist)
     return db.execute('SELECT * FROM decks WHERE deck_id = ?', (deck_id,)).fetchone()
 
-def get_own_deck(deck_id: int, check_owner=True) -> dict:
+def get_own_deck(deck_id: int, check_owner=True) -> list:
     '''
     Fetch deck by deck_id
     :param deck_id: deck_id of desired deck
     :param check_owner=True: Abort if user is not owner
-    :returns: dict of deck data for deck_id (None if does not exist)
+    :returns: list of dicts of deck data for deck_id (None if does not exist)
     '''
     # Get dict of deck data
     deck = get_deck(deck_id) 
