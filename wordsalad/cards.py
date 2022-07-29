@@ -180,7 +180,7 @@ def edit(deck_id: int, card_id: int):
     card = get_card(card_id)
     
     # Get deck and check if user is owner
-    deck = get_own_deck(card_id)
+    deck = get_own_deck(deck_id)
 
     # Process form input
     if request.method == 'POST':
@@ -222,7 +222,7 @@ def delete(deck_id: int, card_id: int):
     card = get_card(card_id)
     
     # Get deck and check if user is owner
-    deck = get_own_deck(card_id)
+    deck = get_own_deck(deck_id)
 
     if card is not None:
         # Delete card 
