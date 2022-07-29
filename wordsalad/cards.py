@@ -5,8 +5,6 @@
 # Reference: https://flask.palletsprojects.com/en/2.1.x/tutorial/views/
 # https://flask.palletsprojects.com/en/2.1.x/tutorial/blog/
 
-# from crypt import methods
-# from webbrowser import get
 from flask import (
     Blueprint, flash, g, redirect, render_template, request, url_for
 )
@@ -49,15 +47,6 @@ def get_card(card_id: int) -> dict:
     # Get data for single card
     return db.execute('SELECT * FROM cards WHERE card_id=?', (card_id,)).fetchone()
 
-# def get_first_card(deck_id: int) -> dict:
-#     '''
-#     Get first card in deck from database by deck_id
-#     '''
-#     # Get cards in deck
-#     cards = get_cards(deck_id)
-#     #return first card
-#     first = cards[0]
-#     return first
 
 def add_card(deck_id: int, front: str, back: str, notes: str) -> str:
     '''
@@ -83,6 +72,50 @@ def add_card(deck_id: int, front: str, back: str, notes: str) -> str:
     else:
         return None
 
+def update(card_id: int, front: str, back: str, notes: str) -> str:
+    '''
+    Update card with card_id
+    :returns: Error message (None if successful)
+    '''
+    # Connect to database
+    db = get_db()
+    
+    try:
+        # Update database
+        db.execute(
+            'UPDATE cards SET front = ?, back = ?, notes = ?'
+            ' WHERE card_id = ?',
+            (front, back, notes, card_id)
+        )
+        db.commit()
+
+    # If error raised
+    except db.Error as error:
+       return f"Failed to update card {error}"
+
+    else:
+        return None
+
+def remove(card_id: int) -> str:
+    '''
+    Remove card with card_id
+    :returns: Error message (None if successful)
+    '''
+    # Connect to database
+    db = get_db()
+    
+    try:
+        # Delete deck 
+        db.execute('DELETE FROM cards WHERE card_id = ?', (card_id,))
+        db.commit()
+
+    # If error raised
+    except db.Error as error:
+       return f"Failed to delete card {error}"
+
+    else:
+        return None    
+    
 # Associate `/decks/<deck_id>` with cards() function
 @bp.route('/')
 def cards(deck_id: int):
@@ -95,11 +128,6 @@ def cards(deck_id: int):
     # Get dict of deck info for deck_id
     deck = get_deck(deck_id)
     
-#     if not cards:
-#         return render_template('cards/card_index.html', deck=deck)
-#     # Get first card from deck (so view card template will load with first card in deck)
-#     first = get_first_card(deck_id)
-
     return render_template('cards/index.html', cards=cards, deck=deck)
     
 
@@ -112,6 +140,7 @@ def add(deck_id: int):
     # Get deck and check if user is owner
     deck = get_own_deck(deck_id)
 
+    # Process form input
     if request.method == 'POST':
         front = request.form['front']
         back = request.form['back']
