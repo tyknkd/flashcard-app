@@ -84,9 +84,9 @@
   * Tyler: Coded flask app blueprints and templates; refactored database; drafted presentation slide template
 * Next tasks:
   * Atreyu: Continue enhancing web page design/functionality
-  * Janet: Troubleshoot card pages
+  * Janet: Work on card display feature
   * Thomas: Code card page tests
-  * Tyler: Troubleshoot card pages; add CSV upload option
+  * Tyler: Work on card display feature; add CSV upload option
 
 <img src="https://github.com/ThomasJHLees/Team0Project/blob/main/images/kanban/kanban20220728.png" width="300">
 
