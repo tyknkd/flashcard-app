@@ -19,7 +19,7 @@ from wordsalad.auth import login_required
 # Database connection function
 from wordsalad.db import get_db
 
-bp = Blueprint('decks', __name__, url_prefix='/decks/')
+bp = Blueprint('decks', __name__, url_prefix='/decks')
 
 # Database Access Support Functions
 def get_decks(owner_id) -> list:
@@ -141,7 +141,7 @@ def remove(deck_id: int) -> str:
 
 
 # Wrapper to associate `/decks` route with `decks()` function
-@bp.route('/decks/')
+@bp.route('/')
 def decks():
     '''
     Render HTML template with all decks available to user
@@ -157,7 +157,7 @@ def decks():
     return render_template('decks/index.html', decks=decks)
 
 
-@bp.route('/decks/create/', methods=('GET', 'POST'))
+@bp.route('/create/', methods=('GET', 'POST'))
 @login_required
 def create():
     '''
@@ -203,7 +203,7 @@ def create():
     return render_template('decks/create.html')
     
 # Associate  '/decks/<deck_id>/edit/' with edit(deck_id)
-@bp.route('/decks/<int:deck_id>/edit/', methods=('GET', 'POST'))
+@bp.route('/<int:deck_id>/edit/', methods=('GET', 'POST'))
 @login_required
 def edit(deck_id: int):
     '''
@@ -251,7 +251,7 @@ def edit(deck_id: int):
     return render_template('decks/edit.html', deck=deck)
     
 # Associate '/decks/<deck_id>/delete/' with delete()
-@bp.route('/decks/<int:deck_id>/delete/', methods=('POST',))
+@bp.route('/<int:deck_id>/delete/', methods=('POST',))
 @login_required
 def delete(deck_id):
     '''
