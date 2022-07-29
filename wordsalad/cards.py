@@ -1,13 +1,12 @@
 # !/usr/bin/python3
 
 # Python script to create Blueprint to handle flashcard requests
-# to `/decks/`, `/decks/<deck_name>`, `/decks/create/`, `/decks/edit/`,
-# and `/decks/delete/`
+# to `/decks/<deck_name>/`, `/decks/<deck_name>/add/`, `/decks/<deck_name>/<card_id>/edit/`
 # Reference: https://flask.palletsprojects.com/en/2.1.x/tutorial/views/
 # https://flask.palletsprojects.com/en/2.1.x/tutorial/blog/
 
-from crypt import methods
-from webbrowser import get
+# from crypt import methods
+# from webbrowser import get
 from flask import (
     Blueprint, flash, g, redirect, render_template, request, url_for
 )
