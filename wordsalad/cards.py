@@ -38,7 +38,6 @@ def get_cards(deck_id: int) -> list:
     # Get card data (None if does not exist)
     return db.execute('SELECT * FROM cards WHERE deck_id =?', (deck_id,)).fetchall()
 
-# Get single card in deck from database
 def get_card(card_id: int) -> dict:
     '''
     Fetch single card in database by card_id (None if does not exist)
@@ -50,16 +49,39 @@ def get_card(card_id: int) -> dict:
     # Get data for single card
     return db.execute('SELECT * FROM cards WHERE card_id=?', (card_id,)).fetchone()
 
-# Get first card in deck
-def get_first_card(deck_id: int) -> dict:
+# def get_first_card(deck_id: int) -> dict:
+#     '''
+#     Get first card in deck from database by deck_id
+#     '''
+#     # Get cards in deck
+#     cards = get_cards(deck_id)
+#     #return first card
+#     first = cards[0]
+#     return first
+
+def add_card(deck_id: int, front: str, back: str, notes: str) -> str:
     '''
-    Get first card in deck from database by deck_id
+    Insert row in 'cards' table of database
+    :returns: Error message (None if successful)
     '''
-    # Get cards in deck
-    cards = get_cards(deck_id)
-    #return first card
-    first = cards[0]
-    return first
+    # Connect to database
+    db = get_db()
+
+    try:
+        # Insert new row in database
+        db.execute(
+            'INSERT INTO cards (deck_id, front, back, notes)'
+            ' VALUES (?, ?, ?, ?)',
+            (deck_id, front, back, notes)
+        )
+        db.commit()
+
+    # If error raised
+    except db.Error as error:
+       return f"Failed to add card {error}"
+
+    else:
+        return None
 
 # Associate `/decks/<deck_id>` with cards() function
 @bp.route('/')
@@ -78,11 +100,10 @@ def cards(deck_id: int):
 #     # Get first card from deck (so view card template will load with first card in deck)
 #     first = get_first_card(deck_id)
 
-    return render_template('cards/card_index.html', cards=cards, deck=deck)
+    return render_template('cards/index.html', cards=cards, deck=deck)
     
 
-
-@bp.route('/add', methods=('GET', 'POST'))
+@bp.route('/add/', methods=('GET', 'POST'))
 @login_required
 def add_card(deck_id: int):
     '''
@@ -92,79 +113,47 @@ def add_card(deck_id: int):
     deck = get_own_deck(deck_id)
 
     if request.method == 'POST':
-        word = request.form['word']
-        speech = request.form['speech']
-        define = request.form['define']
+        front = request.form['front']
+        back = request.form['back']
         notes = request.form['notes']
 
         error = None
         # Handle missing info (part of speech and notes not required)
         if not word:
-            error = 'Word is required'
+            error = 'Front of card is required'
 
-        elif not speech:
-            speech = ""
-
-        elif not define:
-            error = 'Definition is required'
-        elif not notes:
-            notes = ""
-        definition = speech + " " + define
-        # Update deck with new card
+        elif not back:
+            error = 'Back of card is required'
+ 
         if error is None:
-            error = create_card(deck_id, word, definition, notes)
+            # Add card to database
+            error = add_card(deck_id, front, back, notes)
             
-            return redirect(url_for('cards.cards', deck_id=deck['deck_id']))
-        else:
-            error = "Did not add to table"
+            if error is None:
+                # Redirect to deck_id page
+                return redirect(url_for('cards.cards', deck_id=deck_id))
         
-            return redirect(url_for('decks/decks.html'))
         # Store error to retrieve when rendering template
         flash(error)
+        
     return render_template('cards/add.html', deck=deck)
 
 
-# Create card in database
-def create_card(deck_id: int, word: str, definition: str, notes: str):
-    '''
-    Insert row in 'cards' table of database
-    :returns: Error message (None if successful)
-    '''
-    # Connect to database
-    db = get_db()
+# # View single card
+# @bp.route ('/view/<int:card_id>', methods=('GET', 'POST'))
+# def view_card (deck_id: int, card_id: int):
+#     '''
+#     View one card at a time in deck
+#     '''
+#     # Get info from database
+#     deck = get_deck(deck_id)
+#     cards = get_cards(deck_id)
+#     first = get_first_card (deck_id)
+#     card = get_card (card_id)
+#     if card == None:
+#         return render_template('cards/card_index.html', deck=deck, cards = cards, first=first)
 
-    try:
-        # Insert new row in database
-        db.execute(
-            'INSERT INTO cards (deck_id, front, back, notes)'
-            ' VALUES (?, ?, ?, ?)',
-            (deck_id, word, definition, notes)
-        )
-        db.commit()
+# # MAYBE FIX THE CARD ISSUE HERE???
 
-    # If error raised
-    except db.Error as error:
-       return f"Failed to add deck {error}"
-
-    else:
-        return None
-
-
-# View single card
-@bp.route ('/view/<int:card_id>', methods=('GET', 'POST'))
-def view_card (deck_id: int, card_id: int):
-    '''
-    View one card at a time in deck
-    '''
-    # Get info from database
-    deck = get_deck(deck_id)
-    cards = get_cards(deck_id)
-    first = get_first_card (deck_id)
-    card = get_card (card_id)
-    if card == None:
-        return render_template('cards/card_index.html', deck=deck, cards = cards, first=first)
-
-# MAYBE FIX THE CARD ISSUE HERE???
-
-    return  render_template('cards/view.html', deck = deck, card=card)
+#     return  render_template('cards/view.html', deck = deck, card=card)
 
