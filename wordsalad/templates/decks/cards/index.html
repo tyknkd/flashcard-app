@@ -15,24 +15,14 @@
 {% endblock %}
 
 {% block content %}
-  {% if cards %}
-    <section class="cards">
-      <!-- Iterate through list of dicts and display card front/back -->
-      {% for card in cards %}
-        <article>
-          <!-- Pass card dict as safe JSON object to JavaScript 
-               See: https://jinja.palletsprojects.com/en/3.0.x/templates/#jinja-filters.tojson -->
-          <div id="card" onclick='displayCard({{card | tojson}})'>
-            <h1>{{ card['front'] }}</h1>
-          </div>
-            {% if g.user['user_id'] == deck['owner_id'] %}
-	      <a class="action" href="{{ url_for('cards.edit', deck_id=deck['deck_id'], card_id=card['card_id']) }}">Edit</a>
-	    {% endif %}
-         </article>
-         {% if not loop.last %}
-           <hr>
-         {% endif %}
-      {% endfor %}
-    </section>
-  {% endif %} 
+  <section class="cards">
+    <!-- Pass list of card dicts as safe JSON object to JavaScript 
+         https://flask.palletsprojects.com/en/2.1.x/patterns/javascript/ --> 
+    <div id="cards" data-cards='{{ cards|tojson }}'>
+      <div id="card">click here</div>
+    </div>
+    <div class="buttons">
+      <button id="nextButton">Next</button>
+    </div>
+  </section>
 {% endblock %}
