@@ -118,8 +118,9 @@ def add(deck_id: int):
         notes = request.form['notes']
 
         error = None
-        # Handle missing info (part of speech and notes not required)
-        if not word:
+        
+        # Handle missing info
+        if not front:
             error = 'Front of card is required'
 
         elif not back:
