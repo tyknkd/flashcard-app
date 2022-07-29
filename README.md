@@ -119,13 +119,13 @@ This project has the following directory tree:
 │   │       ├── login.html
 │   │       └── register.html
 │   ├── static/
-│   |   └── style.css
-│   └── images/
-│       ├── logo.jpg
-│       ├── lettuce.png
-│       ├── deck1.png
-│       ├── deck2.png
-│       └── deck3.png
+│   |   ├── style.css
+|   │   └── images/
+|   │       ├── logo.jpg
+|   │       ├── lettuce.png
+|   │       ├── deck1.png
+|   │       ├── deck2.png
+|   │       └── deck3.png
 ├── tests/  
 │   ├── data.sql  
 │   ├── conftest.py  
@@ -189,8 +189,8 @@ This project has the following directory tree:
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;register.html               | Web app user registration page                         |
 | &nbsp;&nbsp;&nbsp;static/                                                         | Web app static files directory                         |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;style.css                                     | Cascading style sheet                                  |
-| &nbsp;&nbsp;&nbsp;images/                                                         | Web app images directory                               |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*.png                                         | Web app images files                                   |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;images/                                       | Web app images directory                               |
+|  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*.png                      | Web app images files                                   |
 | tests/                                                                            | Unit tests directory                                   |
 | &nbsp;&nbsp;&nbsp;data.sql                                                        | Unit test SQL data                                     |
 | &nbsp;&nbsp;&nbsp;conftest.py                                                     | Unit test configuration script (runs for every test)   |
