@@ -163,6 +163,7 @@ def create():
     '''
     Create new flashcard deck
     '''
+    # Process form input
     if request.method == 'POST':
         title = request.form['title']
         category = request.form['category']
@@ -211,7 +212,8 @@ def edit(deck_id: int):
     '''
     # Get deck and check if user is owner
     deck = get_own_deck(deck_id)
-
+    
+    # Process form input
     if request.method == 'POST':
         title = request.form['title']
         category = request.form['category']
