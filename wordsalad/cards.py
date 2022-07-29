@@ -23,14 +23,14 @@ from wordsalad.db import get_db
 # Deck functions
 from wordsalad.decks import get_own_deck, get_deck
 
-bp = Blueprint('cards', __name__, url_prefix='/decks/<int:deck_id>/')
+bp = Blueprint('cards', __name__, url_prefix='/decks/<int:deck_id>')
 
 # Database Access Support Functions
 
 def get_cards(deck_id: int) -> list:
     '''
     Fetch cards in deck by deck_id form data base
-    :returns: list of dicts of cards (front, back, notes) (None if does not exist)
+    :returns: list of dicts of cards (card_id, front, back, notes) (None if does not exist)
     '''
     # Connect to database
     db = get_db()
@@ -42,7 +42,7 @@ def get_cards(deck_id: int) -> list:
 def get_card(card_id: int) -> dict:
     '''
     Fetch single card in database by card_id (None if does not exist)
-    :returns: dict of front, back, notes for card_id
+    :returns: dict of card_id, front, back, notes for card_id
     '''
     # Connect to database
     db = get_db ()
@@ -61,23 +61,24 @@ def get_first_card(deck_id: int) -> dict:
     first = cards[0]
     return first
 
-# Display all cards in deck
-@bp.route('/index', methods=('GET', 'POST'))
+# Associate `/decks/<deck_id>` with cards() function
+@bp.route('/')
 def cards(deck_id: int):
     '''
-    Render HTML template with all cards in deck
+    Render HTML template displaying cards in deck
     '''
-    # Get cards from deck
-    cards = get_cards (deck_id)
+    # Get list of dicts of cards from deck
+    cards = get_cards(deck_id)
 
-    # Get deck info from deck_id
+    # Get dict of deck info for deck_id
     deck = get_deck(deck_id)
-    if not cards:
-        return render_template('cards/card_index.html', deck=deck)
-    # Get first card from deck (so view card template will load with first card in deck)
-    first = get_first_card(deck_id)
+    
+#     if not cards:
+#         return render_template('cards/card_index.html', deck=deck)
+#     # Get first card from deck (so view card template will load with first card in deck)
+#     first = get_first_card(deck_id)
 
-    return render_template('cards/card_index.html', cards=cards, deck=deck, first=first)
+    return render_template('cards/card_index.html', cards=cards, deck=deck)
     
 
 
