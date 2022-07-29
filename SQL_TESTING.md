@@ -85,7 +85,7 @@
 * Name: `decks.get_decks(owner_id)`
 * Description: Retrieve deck information for all public decks and decks belonging to `owner_id`. If owner is `None`, then only public decks returned.
 * Parameters: None
-* Return values: dict of `deck_id`, `owner_id`, `title`, `category`, `description`, `public`  
+* Return values: list of dicts of `deck_id`, `owner_id`, `title`, `category`, `description`, `public`  
 * List of tests for verifying each access method:
   * Return expected values for all public decks
   * Return expected values for all public decks and decks belonging to `owner_id`
