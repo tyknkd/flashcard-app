@@ -23,31 +23,35 @@ from wordsalad.db import get_db
 # Deck functions
 from wordsalad.decks import get_own_deck, get_deck
 
-bp = Blueprint('cards', __name__, url_prefix='/decks/<int:deck_id>')
+bp = Blueprint('cards', __name__, url_prefix='/decks/<int:deck_id>/')
 
+# Database Access Support Functions
 
-# Get cards from database
-def get_cards(deck_id: int) -> dict:
+def get_cards(deck_id: int) -> list:
     '''
-    Fetch cards in deck by deck_id
+    Fetch cards in deck by deck_id form data base
+    :returns: list of dicts of cards (front, back, notes) (None if does not exist)
     '''
     # Connect to database
     db = get_db()
+    
     # Get card data (None if does not exist)
     return db.execute('SELECT * FROM cards WHERE deck_id =?', (deck_id,)).fetchall()
 
 # Get single card in deck from database
-def get_card(card_id: int):
+def get_card(card_id: int) -> dict:
     '''
-    Fetch single card in database by card_id
+    Fetch single card in database by card_id (None if does not exist)
+    :returns: dict of front, back, notes for card_id
     '''
     # Connect to database
     db = get_db ()
+    
     # Get data for single card
     return db.execute('SELECT * FROM cards WHERE card_id=?', (card_id,)).fetchone()
 
 # Get first card in deck
-def get_first_card(deck_id: int):
+def get_first_card(deck_id: int) -> dict:
     '''
     Get first card in deck from database by deck_id
     '''
