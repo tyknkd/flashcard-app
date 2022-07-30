@@ -2,6 +2,7 @@
 # Sets up configuration and returns Flask app
 # Note: Filename `__init__.py` tells Python that `wordsalad` directory is a package 
 # Reference: https://flask.palletsprojects.com/en/2.1.x/tutorial/factory/
+# https://flask.palletsprojects.com/en/2.1.x/patterns/fileuploads/
 #
 # Import Flask, template, reverse URL class
 from flask import Flask, render_template, url_for
@@ -20,10 +21,8 @@ def create_app(test_config=None):
     app.config.from_mapping(
         SECRET_KEY='dev',
         DATABASE=os.path.join(app.instance_path, 'wordsalad.sqlite'),
+        UPLOAD_FOLDER='../static/files'
     )
-
-    # Set folder for uploads
-    app.config['UPLOAD_FOLDER'] = 'static/files'
 
     if test_config is None:
         # Load the instance config, if it exists, when not testing

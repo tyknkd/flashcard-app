@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <!-- Page to create new card -->
 <!-- Reference: https://flask.palletsprojects.com/en/2.1.x/tutorial/blog/ -->
+<!--https://flask.palletsprojects.com/en/2.1.x/patterns/fileuploads/ -->
 <!-- https://medevel.com/flask-tutorial-upload-csv-file-and-insert-rows-into-the-database/ -->
 
 {% extends 'base.html' %}
@@ -10,10 +11,10 @@
 {% endblock %}
 
 {% block content %}
-  <p id="instructions">Upload a plain-text comma-separated values. First row must have headings: 'front', 'back', 'notes' in that order.</p>
-  <form method="POST" action="" enctype="multipart/form-data">
+  <p id="instructions">Upload a plain-text, comma-separated values (CSV) file. The first row must have the headings: 'front', 'back', 'notes' in that order.</p>
+  <form method="POST" enctype="multipart/form-data">
     <label for="file">CSV file</label>
-    <input name="file" id="file" type="file" required>
+    <input type="file" name="file" id="file" required>
     <input type="submit" value="Submit">
   </form>
 {% endblock %}

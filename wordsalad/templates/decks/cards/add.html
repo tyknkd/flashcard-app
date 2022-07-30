@@ -18,4 +18,7 @@
     <input name="notes" id="notes" value="{{ request.form['notes'] }}">
     <input type="submit" value="Save">
   </form>
+  <hr>
+  <section class="csv">
+    <a class="action" href="{{ url_for('cards.upload', deck_id=deck['deck_id']) }}">Upload CSV</a>
 {% endblock %}

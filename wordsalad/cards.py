@@ -4,14 +4,16 @@
 # to `/decks/<deck_name>/`, `/decks/<deck_name>/add/`, `/decks/<deck_name>/<card_id>/edit/`
 # Reference: https://flask.palletsprojects.com/en/2.1.x/tutorial/views/
 # https://flask.palletsprojects.com/en/2.1.x/tutorial/blog/
+# https://flask.palletsprojects.com/en/2.1.x/patterns/fileuploads/
 # https://medevel.com/flask-tutorial-upload-csv-file-and-insert-rows-into-the-database/
 
 from flask import (
-    Blueprint, flash, g, redirect, render_template, request, url_for
+    Blueprint, flash, g, redirect, render_template, request, url_for, current_app
 )
 
 # https://werkzeug.palletsprojects.com/en/2.1.x/utils/
 from werkzeug.exceptions import abort
+from werkzeug.utils import secure_filename
 
 # Python library to handle operating system paths
 import os
@@ -29,6 +31,7 @@ from wordsalad.db import get_db
 from wordsalad.decks import get_own_deck, get_deck
 
 bp = Blueprint('cards', __name__, url_prefix='/decks/<int:deck_id>')
+
 
 # Database Access Support Functions
 
@@ -159,6 +162,16 @@ def remove(card_id: int) -> str:
     else:
         return None    
 
+# Extensions allowed for upload
+ALLOWED_EXTENSIONS = {'csv'}
+
+def allowed_file(filename):
+    '''
+    Check if filename extension is allowed
+    '''
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
 def rows_to_list_of_dicts(rows) -> list:
     '''
     Convert sqlite3.Row object to Python list of dicts
@@ -233,32 +246,44 @@ def upload(deck_id: int):
     '''
     Add multiple cards from uploaded CSV
     '''
+    # Get deck and check if user is owner
+    deck = get_own_deck(deck_id)
+
     # Process form input
     if request.method == 'POST':
-        csv_file = request.form['file']
 
         error = None
-        
-        # Handle missing info
-        if not csv_file:
-            error = 'CSV file is required'
 
-        if error is None:
-            # Set file path
-            file_path = os.path.join(app.config['UPLOAD_FOLDER'], csv_file.filename)
-            
-            # Save file 
-            uploaded_file.save(file_path)
+        # Check if post contains file part
+        if 'file' not in request.files:
+            error = 'No file'
 
-            # Parse the file and add to database
-            error = parse_csv(deck_id, file_path)
+        else:
+            file = request.files['file']
+
+            # Handle missing info
+            if file.filename == '':
+                error = 'No selected file'
+
+            if error is None and file and allowed_file(file.filename):
+                # Get secure filename
+                filename = secure_filename(file.filename)
+
+                # Set file path
+                file_path = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
+                
+                # Save file 
+                file.save(file_path)
+
+                # Parse the file and add to database
+                error = parse_csv(deck_id, file_path)
+                
+                if error is None:
+                    # Redirect to deck_id page
+                    return redirect(url_for('cards.cards', deck_id=deck_id))
             
-            if error is None:
-                # Redirect to deck_id page
-                return redirect(url_for('cards.cards', deck_id=deck_id))
-        
-        # Store error to retrieve when rendering template
-        flash(error)
+            # Store error to retrieve when rendering template
+            flash(error)
         
     return render_template('decks/cards/upload.html', deck=deck)
 
