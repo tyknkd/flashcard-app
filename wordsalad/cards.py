@@ -125,7 +125,7 @@ def rows_to_list_of_dicts(rows) -> list:
     '''
     results = []
     for row in rows:
-        results.append(dict(zip(row.keys(), row))
+        results.append(dict(zip(row.keys(), row)))
     return results
     
 # Associate `/decks/<deck_id>` with cards() function
