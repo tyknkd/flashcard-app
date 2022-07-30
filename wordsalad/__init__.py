@@ -21,7 +21,7 @@ def create_app(test_config=None):
     app.config.from_mapping(
         SECRET_KEY='dev',
         DATABASE=os.path.join(app.instance_path, 'wordsalad.sqlite'),
-        UPLOAD_FOLDER='/static/csv'
+        UPLOAD_FOLDER=os.path.join(app.instance_path, 'static/csv')
     )
 
     if test_config is None:
