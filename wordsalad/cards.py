@@ -4,6 +4,7 @@
 # to `/decks/<deck_name>/`, `/decks/<deck_name>/add/`, `/decks/<deck_name>/<card_id>/edit/`
 # Reference: https://flask.palletsprojects.com/en/2.1.x/tutorial/views/
 # https://flask.palletsprojects.com/en/2.1.x/tutorial/blog/
+# https://medevel.com/flask-tutorial-upload-csv-file-and-insert-rows-into-the-database/
 
 from flask import (
     Blueprint, flash, g, redirect, render_template, request, url_for
@@ -11,6 +12,12 @@ from flask import (
 
 # https://werkzeug.palletsprojects.com/en/2.1.x/utils/
 from werkzeug.exceptions import abort
+
+# Python library to handle operating system paths
+import os
+
+# Library to handle csv parsing
+import csv 
 
 # Require login function
 from wordsalad.auth import login_required
@@ -71,6 +78,42 @@ def add_card(deck_id: int, front: str, back: str, notes: str) -> str:
 
     else:
         return None
+
+def parse_csv(deck_id: int, filepath) -> str:
+    '''
+    Insert rows from csv into 'cards' table of database
+    :returns: Error message (None if successful)
+    '''
+    # Connect to database
+    db = get_db()
+
+    try:
+        # Get data from CSV
+        csv_rows = []
+        with open (filepath, 'r', newline='') as csv_file:        
+            rows = csv.reader(csv_file, delimiter=',')
+            for row in rows:
+                csv_rows.append(row)
+        
+        # Remove header row
+        csv_rows.pop(0)
+
+        # Insert rows into database
+        for row in csv_rows: 
+            db.execute(
+                'INSERT INTO cards (deck_id, front, back, notes)'
+                ' VALUES (?, ?, ?, ?)',
+                (deck_id, row[0], row[1], row[2])
+            )
+        db.commit()
+
+    # If error raised
+    except db.Error as error:
+       return f"Failed to add cards {error}"
+
+    else:
+        return None
+    
 
 def update(card_id: int, front: str, back: str, notes: str) -> str:
     '''
@@ -183,6 +226,41 @@ def add(deck_id: int):
         
     return render_template('decks/cards/add.html', deck=deck)
 
+# Associate '/decks/<deck_id>/upload/' with upload(deck_id)
+@bp.route('/upload/', methods=('GET','POST'))
+@login_required
+def upload(deck_id: int):
+    '''
+    Add multiple cards from uploaded CSV
+    '''
+    # Process form input
+    if request.method == 'POST':
+        csv_file = request.form['file']
+
+        error = None
+        
+        # Handle missing info
+        if not csv_file:
+            error = 'CSV file is required'
+
+        if error is None:
+            # Set file path
+            file_path = os.path.join(app.config['UPLOAD_FOLDER'], csv_file.filename)
+            
+            # Save file 
+            uploaded_file.save(file_path)
+
+            # Parse the file and add to database
+            error = parse_csv(deck_id, file_path)
+            
+            if error is None:
+                # Redirect to deck_id page
+                return redirect(url_for('cards.cards', deck_id=deck_id))
+        
+        # Store error to retrieve when rendering template
+        flash(error)
+        
+    return render_template('decks/cards/upload.html', deck=deck)
 
 # Associate  '/decks/<deck_id>/<card_id>/edit/' with edit(card_id)
 @bp.route('/<int:card_id>/edit/', methods=('GET', 'POST'))
