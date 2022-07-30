@@ -120,11 +120,6 @@ This project has the following directory tree:
 │   │       └── register.html
 │   ├── static/
 │   |   ├── style.css
-|   |   ├── csv/
-|   |   │   ├── source_info.csv
-|   |   │   ├── SAT_vocab.csv
-|   |   │   ├── GRE_vocab.csv
-|   |   │   └── LSAT_vocab.csv
 |   │   └── images/
 |   │       ├── logo.jpg
 |   │       ├── lettuce.png
@@ -140,6 +135,11 @@ This project has the following directory tree:
 │   ├── test_auth.py  
 │   ├── test_home.py  
 │   └── test_decks.py  
+├── csv/
+├── source_info.csv
+├── SAT_vocab.csv
+├── GRE_vocab.csv
+│   └── LSAT_vocab.csv
 ├── images/  
 │   ├── db_schematic.png  
 │   ├── kanban/  
@@ -188,11 +188,6 @@ This project has the following directory tree:
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;login.html                  | Web app user authentication login page                 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;register.html               | Web app user registration page                         |
 | &nbsp;&nbsp;&nbsp;static/                                                         | Web app static files directory                         |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;csv/                                          | Flashcard CSV files directory                          |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;source_info.csv             | Source data information                                |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SAT_vocab.csv               | SAT vocabulary source data                             |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GRE_vocab.csv               | GRE vocabulary source data                             |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LSAT_vocab.csv              | LSAT vocabulary source data                            |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;style.css                                     | Cascading style sheet                                  |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;images/                                       | Web app images directory                               |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*.png                       | Web app images files                                   |
@@ -205,6 +200,11 @@ This project has the following directory tree:
 | &nbsp;&nbsp;&nbsp;test_auth.py                                                    | Authentication unit tests                              |
 | &nbsp;&nbsp;&nbsp;test_home.py                                                    | Home page unit tests                                   |
 | &nbsp;&nbsp;&nbsp;test_decks.py                                                   | Decks pages unit tests                                 |
+| csv/                                                                              | Flashcard CSV files directory                          |
+| &nbsp;&nbsp;&nbsp;source_info.csv                                                 | Source data information                                |
+| &nbsp;&nbsp;&nbsp;SAT_vocab.csv                                                   | SAT vocabulary source data                             |
+| &nbsp;&nbsp;&nbsp;GRE_vocab.csv                                                   | GRE vocabulary source data                             |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LSAT_vocab.csv              | LSAT vocabulary source data                            |
 | images/                                                                           | Documentation images directory                         |
 | &nbsp;&nbsp;&nbsp;db_schematic.png                                                | Database schematic diagram                             |
 | &nbsp;&nbsp;&nbsp;kanban/                                                         | Kanban screenshots directory                           |
