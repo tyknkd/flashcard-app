@@ -204,7 +204,7 @@ This project has the following directory tree:
 | &nbsp;&nbsp;&nbsp;source_info.csv                                                 | Source data information                                |
 | &nbsp;&nbsp;&nbsp;SAT_vocab.csv                                                   | SAT vocabulary source data                             |
 | &nbsp;&nbsp;&nbsp;GRE_vocab.csv                                                   | GRE vocabulary source data                             |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LSAT_vocab.csv                                | LSAT vocabulary source data                            |
+| &nbsp;&nbsp;&nbsp;LSAT_vocab.csv                                                  | LSAT vocabulary source data                            |
 | images/                                                                           | Documentation images directory                         |
 | &nbsp;&nbsp;&nbsp;db_schematic.png                                                | Database schematic diagram                             |
 | &nbsp;&nbsp;&nbsp;kanban/                                                         | Kanban screenshots directory                           |
