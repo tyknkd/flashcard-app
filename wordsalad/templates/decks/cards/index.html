@@ -4,7 +4,7 @@
 
 {% extends 'base.html' %}
 {% block scripts %}
-  <script src="cards.js" defer></script>
+  <script src="/static/js/cards.js" defer></script>
 {% endblock %}
 
 {% block header %}
@@ -16,10 +16,10 @@
 
 {% block content %}
   <section class="cards">
-    <!-- Pass list of card dicts as safe JSON object to JavaScript 
+    <!-- Pass JSON of card dicts to JavaScript 
          https://flask.palletsprojects.com/en/2.1.x/patterns/javascript/ --> 
-    <div id="cards" data-cards='{{ cards|tojson }}'>
-      <div id="card">click here</div>
+    <div id="cards" data-cards='{{ cards }}'>
+      <h1 id="card">No cards in deck</h1>
     </div>
     <div class="buttons">
       <button id="nextButton">Next</button>
