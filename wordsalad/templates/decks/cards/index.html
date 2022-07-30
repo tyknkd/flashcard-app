@@ -16,13 +16,13 @@
 
 {% block content %}
   <section class="cards">
-    <!-- Pass JSON of card dicts to JavaScript 
+    <!-- Convert Python list to safe JSON of card dicts to JavaScript 
          https://flask.palletsprojects.com/en/2.1.x/patterns/javascript/ --> 
-    <div id="cards" data-cards='{{ cards }}'>
+    <div id="cards" data-cards='{{ cards | tojson }}'>
       <h1 id="card">No cards in deck</h1>
+      <p id="notes"></p>
     </div>
-    <div class="buttons">
-      <button id="nextButton">Next</button>
+    <div id="buttons">
     </div>
   </section>
 {% endblock %}
