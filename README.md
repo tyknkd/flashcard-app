@@ -120,7 +120,7 @@ This project has the following directory tree:
 │   │       └── register.html
 │   ├── static/
 │   |   ├── style.css
-|   |   ├── files/
+|   |   ├── csv/
 |   |   │   ├── source_info.csv
 |   |   │   ├── SAT_vocab.csv
 |   |   │   ├── GRE_vocab.csv
@@ -188,7 +188,7 @@ This project has the following directory tree:
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;login.html                  | Web app user authentication login page                 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;register.html               | Web app user registration page                         |
 | &nbsp;&nbsp;&nbsp;static/                                                         | Web app static files directory                         |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;files/                                        | Flashcard CSV files directory                          |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;csv/                                          | Flashcard CSV files directory                          |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;source_info.csv             | Source data information                                |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SAT_vocab.csv               | SAT vocabulary source data                             |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GRE_vocab.csv               | GRE vocabulary source data                             |
