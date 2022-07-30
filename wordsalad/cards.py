@@ -138,7 +138,7 @@ def cards(deck_id: int):
     cards_rows = get_cards(deck_id)
 
     # Convert to Python list
-    
+    cards = rows_to_list_of_dicts(cards_rows) 
 
     # Get dict of deck info for deck_id
     deck = get_deck(deck_id)
