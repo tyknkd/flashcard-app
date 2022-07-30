@@ -1,0 +1,5 @@
+filename, name, category, description, source
+SAT_vocab.csv, SAT Vocabulary, SAT_vocab, English vocabulary words likely to appear on the SAT and their English definitions, ???
+GRE_vocab.csv, GRE Vocabulary, GRE_vocab, English vocabulary words likely to appear on the GRE and their English definitions, https://www.ocf.berkeley.edu/~wwu/downloads/downloads.html
+LSAT_vocab.csv, LSAT Vocabulary, LSAT_vocab, English vocabulary words likely to appear on the LSAT and their English definitions, ???
+
