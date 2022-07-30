@@ -252,38 +252,55 @@ def upload(deck_id: int):
     # Process form input
     if request.method == 'POST':
 
+        filename = None
+        filepath = None
         error = None
 
-        # Check if post contains file part
-        if 'file' not in request.files:
-            error = 'No file'
+        # Check if preexisting deck option selected
+        if 'preloaded' in request.form:
+            # Get choice for uploaded
+            choice = request.form.get('preloaded')
+            if choice == 'SAT':
+                filename = 'SAT_vocab.csv'   
+            elif choice == 'LSAT':
+                filename = 'LSAT_vocab.csv'   
+            else:
+                filename = 'GRE_vocab.csv'   
 
-        else:
+            # Set file path
+            filepath = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
+
+        # Check if post contains file part and allowed file extension
+        elif 'file' in request.files:
             file = request.files['file']
 
             # Handle missing info
             if file.filename == '':
                 error = 'No selected file'
 
-            if error is None and file and allowed_file(file.filename):
+            elif file and allowed_file(file.filename):
                 # Get secure filename
                 filename = secure_filename(file.filename)
 
                 # Set file path
-                file_path = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
+                filepath = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
                 
                 # Save file 
-                file.save(file_path)
+                file.save(filepath)
 
-                # Parse the file and add to database
-                error = parse_csv(deck_id, file_path)
-                
-                if error is None:
-                    # Redirect to deck_id page
-                    return redirect(url_for('cards.cards', deck_id=deck_id))
+        else:
+            error = 'Must upload file or select preloaded card set'
+
+        if error is None:
+            # Parse the file and add to database
+            error = parse_csv(deck_id, filepath)
             
-            # Store error to retrieve when rendering template
-            flash(error)
+            if error is None:
+                # Redirect to deck_id page
+                return redirect(url_for('cards.cards', deck_id=deck_id))
+            
+        # Store error to retrieve when rendering template
+        flash(error)
         
     return render_template('decks/cards/upload.html', deck=deck)
 
