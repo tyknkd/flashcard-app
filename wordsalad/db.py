@@ -24,7 +24,8 @@ def get_db():
             current_app.config['DATABASE'],
             detect_types=sqlite3.PARSE_DECLTYPES
         )
-        # Return rows as dictionary objects
+        # Return sqlite.Row object accessible by index and column name
+        # https://docs.python.org/3/library/sqlite3.html#accessing-columns-by-name-instead-of-by-index
         g.db.row_factory = sqlite3.Row
 
     return g.db
