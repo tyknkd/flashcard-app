@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!-- Page to create new card -->
+<!-- Reference: https://flask.palletsprojects.com/en/2.1.x/tutorial/blog/ -->
+<!-- https://medevel.com/flask-tutorial-upload-csv-file-and-insert-rows-into-the-database/ -->
+
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}{{ deck['title'] }}: Upload CSV of Cards{% endblock title %}</h1>
+{% endblock %}
+
+{% block content %}
+  <p id="instructions">Upload a plain-text comma-separated values. First row must have headings: 'front', 'back', 'notes' in that order.</p>
+  <form method="POST" action="" enctype="multipart/form-data">
+    <label for="file">CSV file</label>
+    <input name="file" id="file" type="file" required>
+    <input type="submit" value="Submit">
+  </form>
+{% endblock %}
