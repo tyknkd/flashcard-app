@@ -115,6 +115,18 @@ def remove(card_id: int) -> str:
 
     else:
         return None    
+
+def rows_to_list_of_dicts(rows) -> list:
+    '''
+    Convert sqlite3.Row object to Python list of dicts
+    https://docs.python.org/3/library/sqlite3.html#sqlite3.Row
+    https://stackoverflow.com/a/16523148
+    :returns: dict of keys and values from sqlite3.Row object
+    '''
+    results = []
+    for row in rows:
+        results.append(dict(zip(row.keys(), row)))
+    return results
     
 # Associate `/decks/<deck_id>` with cards() function
 @bp.route('/')
@@ -122,8 +134,11 @@ def cards(deck_id: int):
     '''
     Render HTML template displaying cards in deck
     '''
-    # Get list of dicts of cards from deck
-    cards = get_cards(deck_id)
+    # Get sqlite3.Row object of cards from deck
+    cards_rows = get_cards(deck_id)
+
+    # Convert to Python list
+    cards = rows_to_list_of_dicts(cards_rows) 
 
     # Get dict of deck info for deck_id
     deck = get_deck(deck_id)

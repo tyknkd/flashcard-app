@@ -3,6 +3,9 @@
 <!-- Reference: https://flask.palletsprojects.com/en/2.1.x/tutorial/blog/ -->
 
 {% extends 'base.html' %}
+{% block scripts %}
+  <script src="/static/js/cards.js" defer></script>
+{% endblock %}
 
 {% block header %}
   <h1>{% block title %}{{ deck['title'] }}{% endblock title %}</h1>
@@ -12,21 +15,14 @@
 {% endblock %}
 
 {% block content %}
-  {% if cards %}
-    <section class="cards">
-      {% for card in cards %}
-        <article>
-          <div>
-            <h1>{{ card['front'] }}</h1>
-          </div>
-            {% if g.user['user_id'] == deck['owner_id'] %}
-	      <a class="action" href="{{ url_for('cards.edit', deck_id=deck['deck_id'], card_id=card['card_id']) }}">Edit</a>
-	    {% endif %}
-         </article>
-         {% if not loop.last %}
-           <hr>
-         {% endif %}
-      {% endfor %}
-    </section>
-  {% endif %} 
+  <section class="cards">
+    <!-- Convert Python list to safe JSON of card dicts to JavaScript 
+         https://flask.palletsprojects.com/en/2.1.x/patterns/javascript/ --> 
+    <div id="cards" data-cards='{{ cards | tojson }}'>
+      <h1 id="card">No cards in deck</h1>
+      <p id="notes"></p>
+    </div>
+    <div id="buttons">
+    </div>
+  </section>
 {% endblock %}
