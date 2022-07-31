@@ -2,6 +2,10 @@
 <!-- User account registration page -->
 <!-- Source: https://flask.palletsprojects.com/en/2.1.x/tutorial/templates/ -->
 
+<style>
+
+</style>
+
 {% extends 'base.html' %}
 
 {% block header %}
@@ -9,12 +13,19 @@
 {% endblock %}
 
 {% block content %}
-  <form method="post">
-    <label for="username">Username</label>
-    <input name="username" id="username" required>
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password" required>
-    <input type="submit" value="Log In">
-  </form>
+
+<div>
+  <div class="login" >
+    <h2 style="color:white">Log In</h2>
+    <form method="post">
+      <label for="username">Username</label>
+      <input type="text" name="username" id="username" required>
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" required>
+      <input type="submit" value="Log In">
+    </form>
+  </div>
+</div>
+
 
 {% endblock %}

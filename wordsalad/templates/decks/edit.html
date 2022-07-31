@@ -9,13 +9,15 @@
 {% endblock %}
 
 {% block content %}
+<div class="editdeck">
+  <h2 style="color:white">Edit Deck</h2>
   <form method="post">
     <label for="title">Title</label>
     <input name="title" id="title" value="{{ request.form['title'] }}" required>
     <label for="category">Category</label>
     <input name="category" id="category" value ="{{ request.form['category'] }}" required>
     <label for="description">Description</label>
-    <input name="description" id="description" value ="{{ request.form['description'] }}" required>
+    <textarea type="desc" name="description" id="description" value ="{{ request.form['description'] }}" required></textarea>
     <label for="checkbox">This is a public deck</label>
     <input type="checkbox" id="public" name="public" value = "{{ checked if value== 'public'}}">
     <input type="submit" value="Save">
@@ -24,4 +26,7 @@
   <form action="{{ url_for('decks.delete', deck_id=deck['deck_id']) }}" method="post">
     <input class="danger" type="submit" value="Delete" onclick="return confirm('Are you sure?');">
   </form>
+
+</div>
+
 {% endblock %}
