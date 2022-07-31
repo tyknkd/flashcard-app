@@ -151,3 +151,48 @@ input[type=submit] {
   align-self: start;
   min-width: 10em;
 }
+
+
+.createdeck, .editdeck, .register, .login {
+  max-width: 350px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-color: #6771f7;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+input[type=text]{
+  margin: 0px 50px;
+  margin-bottom: 10px;
+  height: 30px;
+}
+input[type=password]{
+  margin: 0px 50px;
+  margin-bottom: 10px;
+  height: 30px;
+}
+input[type=desc]{
+  margin: 0px 50px;
+  margin-bottom: 10px;
+}
+
+
+input[type = submit]{
+  margin: 0px auto;
+  margin-top: 20px;
+  border-radius: 4px;
+  border-color: white;
+  border-style: solid;
+  background-color: white;
+  font-size: 14pt;
+  color: #6771f7;
+  height: 40px;
+}
+
+input[type = submit]:hover{
+box-shadow: 0 -4px black;
+}
