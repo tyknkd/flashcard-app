@@ -42,32 +42,13 @@ def test_init_db_command(runner, monkeypatch):
     assert 'Initialized' in result.output
     assert Recorder.called    
 
-
-def test_add_user(app):
+#Test that the DB actually opens and closes by calling
+#.close() on a running DB
+def test_close_db(app):
     with app.app_context():
-        db = get_db()
-        assert db is get_db()
-    with pytest.raises(sqlite3.ProgrammingError) as e:
-        db.execute() #Insert user 
-    
-    #Add user
-    #Add user that already exists
-    #Add invalid user
-    return
-
-def test_return_user():
-    #Request valid user
-    #Request user that does not exist
-    return
-
-def test_add_deck():
-    return
-
-def test_return_deck():
-    return
-
-def test_add_card():
-    return
-
-def test_return_card():
-    return
+        try:
+            db = get_db()
+            assert db is not None
+        except:
+            db.close()
+            assert db is None
