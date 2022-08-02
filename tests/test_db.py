@@ -16,6 +16,7 @@ def test_get_close_db(app):
     with app.app_context():
         db = get_db()
         assert db is get_db()
+        assert db is not None
 
     with pytest.raises(sqlite3.ProgrammingError) as e:
         db.execute('SELECT 1')
@@ -46,6 +47,8 @@ def test_add_user(app):
     with app.app_context():
         db = get_db()
         assert db is get_db()
+    with pytest.raises(sqlite3.ProgrammingError) as e:
+        db.execute() #Insert user 
     
     #Add user
     #Add user that already exists
