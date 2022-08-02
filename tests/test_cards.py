@@ -27,3 +27,29 @@ def test_cards(client, auth):
     
     # Confirm card front from tests/data.sql displayed on page
     assert b'test card front' in response.data
+
+# Repeat following test with different arguments
+@pytest.mark.parametrize('path', (
+    '/decks/cards/index',
+    '/decks/cards/add',
+    '/decks/cards/edit',
+))
+def test_login_required(client, path):
+    '''
+    Confirm login required
+    '''
+    # Confirm redirected to login page 
+    # when accessing page requiring login
+    response = client.post(path)
+    assert response.headers["Location"] == "/auth/login/"
+
+# Repeat following test with different arguments
+@pytest.mark.parametrize('path', (
+    '/decks/cards/edit',
+))
+def test_exists_required(client, auth, path):
+    '''
+    Confirm nonexistent deck cannot be edited
+    '''
+    auth.login()
+    assert client.post(path).status_code == 404
