@@ -7,6 +7,7 @@ import sqlite3
 
 import pytest
 from wordsalad.db import get_db
+import wordsalad.decks, wordsalad.auth #, wordsalad.cards # <- import once implemented
 
 def test_get_close_db(app):
     '''
@@ -15,6 +16,7 @@ def test_get_close_db(app):
     with app.app_context():
         db = get_db()
         assert db is get_db()
+        assert db is not None
 
     with pytest.raises(sqlite3.ProgrammingError) as e:
         db.execute('SELECT 1')
@@ -39,3 +41,14 @@ def test_init_db_command(runner, monkeypatch):
     result = runner.invoke(args=['init-db'])
     assert 'Initialized' in result.output
     assert Recorder.called    
+
+#Test that the DB actually opens and closes by calling
+#.close() on a running DB
+def test_close_db(app):
+    with app.app_context():
+        try:
+            db = get_db()
+            assert db is not None
+        except:
+            db.close()
+            assert db is None
