@@ -28,6 +28,7 @@ def test_cards(client, auth):
     # Confirm card front from tests/data.sql displayed on page
     assert b'test card front' in response.data
 
+
 # Repeat following test with different arguments
 @pytest.mark.parametrize('path', (
     '/decks/1/add/',
@@ -53,8 +54,85 @@ def test_exists_required(client, auth, path):
     auth.login()
     assert client.post(path).status_code == 404
 
-# Repeat following test with different arguments
-@pytest.mark.parametrize('path', (
-    'decks/cards/index'
-))
-def test_cards(client, auth, path):
+
+def test_add(client, auth, app):
+    auth.login()
+
+    assert client.get('/decks/1/add/').status_code == 200
+    client.post(
+        '/decks/1/add/',
+        data={
+            'front': 'Card1 Front',
+            'back': 'Card1 Back',
+            'notes': 'Notes Card1'
+        }
+    )
+
+    #confirm card is there
+    with app.app_context():
+        db = get_db()
+        sqlite_card = db.execute('SELECT * FROM cards WHERE front = "Card1 Front"').fetchall()
+        card = cards.rows_to_list_of_dicts(sqlite_card)
+        assert str(card) == "[{'card_id': 2, 'deck_id': 1, 'front': 'Card1 Front', 'back': 'Card1 Back', 'notes': 'Notes Card1'}]"
+
+
+def test_edit(client, auth, app):
+    auth.login()
+
+    assert client.get('decks/1/1/edit/').status_code == 200
+    client.post(
+        'decks/1/1/edit/',
+        data = {
+            'front': 'CARD EDIT',
+            'back': 'CARD EDIT',
+            'notes': 'CARD EDIT'
+        }
+    )
+
+    #confirm card is there
+    with app.app_context():
+        db = get_db()
+        sqlite_card = db.execute('SELECT * FROM cards WHERE front = "CARD EDIT"').fetchall()
+        card = cards.rows_to_list_of_dicts(sqlite_card)
+        assert str(card) == "[{'card_id': 1, 'deck_id': 1, 'front': 'CARD EDIT', 'back': 'CARD EDIT', 'notes': 'CARD EDIT'}]"
+
+
+def test_delete(client, auth, app):
+    auth.login()
+
+    #creating a deck
+    client.post(
+        '/decks/create/', 
+        data={
+            'title': 'New Deck', 
+            'category': 'new_category', 
+            'description': 'New deck description.', 
+            'public': 'TRUE'
+        }
+    )
+
+    #creating a card
+    client.post(
+        '/decks/2/add/',
+        data={
+            'front': 'Card1 Front',
+            'back': 'Card1 Back',
+            'notes': 'Notes Card1'
+        }
+    )
+
+    client.post(
+        'decks/2/2/delete/',
+        data = {}
+    )
+    client.post(
+        'decks/1/1/delete/',
+        data = {}
+    )
+
+    #confirm card is gone
+    with app.app_context():
+        db = get_db()
+        sqlite_card = db.execute('SELECT * FROM cards').fetchall()
+        card = cards.rows_to_list_of_dicts(sqlite_card)
+        assert card == []
