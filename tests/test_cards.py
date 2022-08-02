@@ -53,26 +53,8 @@ def test_exists_required(client, auth, path):
     auth.login()
     assert client.post(path).status_code == 404
 
-
-def test_card_functions(app):
-
-    # Add a card and confirm it exist in database
-    with app.app_context():
-        db = get_db()
-        cards.add_card(1, "Card Front", "Card Back", "Notes")
-        
-        count = db.execute('SELECT COUNT(card_id) FROM cards').fetchone()[0] 
-        assert count == 2
-
-        # Querying DB for Cards
-        card_return = cards.get_cards(1)
-        assert card_return is not None
-        assert len(card_return) == 2
-
-        single_return = cards.get_card(1)
-        assert single_return is not None
-
-        
-
-
-        
+# Repeat following test with different arguments
+@pytest.mark.parametrize('path', (
+    'decks/cards/index'
+))
+def test_cards(client, auth, path):
