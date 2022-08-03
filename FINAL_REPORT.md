@@ -31,6 +31,7 @@
  * Flashcard editing
 ### What you had planned for the future ###
  * Spaced-repetition flashcard review
+ * Auto-fill card/deck editing forms with existing values
 ### Any known problems (bugs, issues) ###
  * Data does not persist due to use of SQLite
 
