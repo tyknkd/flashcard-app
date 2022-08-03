@@ -99,8 +99,8 @@
 * Next tasks:
   * Atreyu: Improve design of remaining forms and card display page; update homepage content; record app demo
   * Janet: Deploy updated app to Heroku; continue PostgreSQL conversion
-  * Thomas: Research autodocumentation
-  * Tyler: Add card edit feature
+  * Thomas: Research autodocumentation; draft FINAL_REPORT.md
+  * Tyler: Add card edit feature; draft FINAL_REPORT.md
 
 <img src="https://github.com/ThomasJHLees/Team0Project/blob/main/images/kanban/kanban20220802.png" width="300">
 
