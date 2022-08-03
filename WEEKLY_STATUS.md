@@ -104,14 +104,3 @@
 
 <img src="https://github.com/ThomasJHLees/Team0Project/blob/main/images/kanban/kanban20220802.png" width="300">
 
-### Week 10 (August 9-15) ###
-* Completed:
-  * Atreyu:
-  * Janet:
-  * Thomas:
-  * Tyler:
-* Next tasks:
-  * Atreyu:
-  * Janet:
-  * Thomas:
-  * Tyler:
