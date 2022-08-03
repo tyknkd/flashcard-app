@@ -120,6 +120,8 @@ This project has the following directory tree:
 │   │       └── register.html
 │   ├── static/
 │   |   ├── style.css
+│   |   ├── js/
+|   │   |   └── deck3.png
 |   │   └── images/
 |   │       ├── logo.jpg
 |   │       ├── lettuce.png
@@ -189,6 +191,8 @@ This project has the following directory tree:
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;register.html               | Web app user registration page                         |
 | &nbsp;&nbsp;&nbsp;static/                                                         | Web app static files directory                         |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;style.css                                     | Cascading style sheet                                  |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;js/                                           | JavaScript directory                                   |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cards.js                    | Card flipping JavaScript                               |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;images/                                       | Web app images directory                               |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*.png                       | Web app images files                                   |
 | tests/                                                                            | Unit tests directory                                   |

@@ -86,30 +86,21 @@
   * Atreyu: Continue enhancing web page design/functionality
   * Janet: Work on card display feature
   * Thomas: Code card page tests
-  * Tyler: Work on card display feature; add CSV upload option
+  * Tyler: Work on card display feature; add CSV upload option; drafted presentation slides
 
 <img src="https://github.com/ThomasJHLees/Team0Project/blob/main/images/kanban/kanban20220728.png" width="300">
 
 ### Week 9 (August 1-8) ###
 * Completed:
-  * Atreyu:
-  * Janet:
-  * Thomas:
-  * Tyler:
+  * Atreyu: Added graphic organization to decks page; improved form design
+  * Janet: Deployed app to Heroku, began conversion to PostgreSQL; edited presentation slides
+  * Thomas: Completed card page tests and improved database tests; edited presentation slides
+  * Tyler: Created scripts to display card contents; added CSV upload option
 * Next tasks:
-  * Atreyu:
-  * Janet:
-  * Thomas:
-  * Tyler:
+  * Atreyu: Improve design of card forms and card display page; update homepage content; record app demo
+  * Janet: Deploy updated app to Heroku; continue PostgreSQL conversion
+  * Thomas: Research autodocumentation; draft FINAL_REPORT.md
+  * Tyler: Add card edit feature; draft FINAL_REPORT.md
 
-### Week 10 (August 9-15) ###
-* Completed:
-  * Atreyu:
-  * Janet:
-  * Thomas:
-  * Tyler:
-* Next tasks:
-  * Atreyu:
-  * Janet:
-  * Thomas:
-  * Tyler:
+<img src="https://github.com/ThomasJHLees/Team0Project/blob/main/images/kanban/kanban20220802.png" width="300">
+
