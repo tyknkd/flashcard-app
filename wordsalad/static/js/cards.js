@@ -8,6 +8,14 @@ function editButton() {
         <a class="action" href="{{ url_for('cards.edit', deck_id=deck['deck_id'], card_id=card['card_id']) }}">Edit</a>
     {% endif %}
     */
+    // Add edit button for editing card
+    const editButton = document.createElement("button");
+    editButton.id = "editButton";
+    editButton.textContent = "Edit";
+    document.getElementById("buttons").appendChild(editButton);
+
+    // Add event listener to flip button
+    flipButton.addEventListener("click", flipCard);
 }
 
 // Display next card in deck
