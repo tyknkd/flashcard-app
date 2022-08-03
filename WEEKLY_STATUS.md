@@ -94,7 +94,7 @@
 * Completed:
   * Atreyu: Added graphic organization to decks page; improved form design
   * Janet: Deployed app to Heroku, began conversion to PostgreSQL; edited presentation slides
-  * Thomas: Completed card page tests and improved database tests
+  * Thomas: Completed card page tests and improved database tests; edited presentation slides
   * Tyler: Created scripts to display card contents; added CSV upload option
 * Next tasks:
   * Atreyu: Improve design of card forms and card display page; update homepage content; record app demo
