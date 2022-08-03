@@ -92,15 +92,15 @@
 
 ### Week 9 (August 1-8) ###
 * Completed:
-  * Atreyu:
-  * Janet:
-  * Thomas:
-  * Tyler:
+  * Atreyu: Added graphic organization to decks page, improved form design
+  * Janet: Deployed app to Heroku, began conversion to PostgreSQL
+  * Thomas: Completed card page tests and improved database tests
+  * Tyler: Created scripts to display card contents
 * Next tasks:
-  * Atreyu:
-  * Janet:
-  * Thomas:
-  * Tyler:
+  * Atreyu: Improve design of remaining forms, card display page
+  * Janet: Deploy updated app to Heroku, continue PostgreSQL conversion
+  * Thomas: Research autodocumentation
+  * Tyler: Add card edit feature
 
 ### Week 10 (August 9-15) ###
 * Completed:
