@@ -97,7 +97,7 @@
   * Thomas: Completed card page tests and improved database tests
   * Tyler: Created scripts to display card contents; added CSV upload option
 * Next tasks:
-  * Atreyu: Improve design of remaining forms and card display page; update homepage content; record app demo
+  * Atreyu: Improve design of card forms and card display page; update homepage content; record app demo
   * Janet: Deploy updated app to Heroku; continue PostgreSQL conversion
   * Thomas: Research autodocumentation; draft FINAL_REPORT.md
   * Tyler: Add card edit feature; draft FINAL_REPORT.md
