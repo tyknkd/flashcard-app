@@ -16,24 +16,25 @@
   [https://github.com/ThomasJHLees/Team0Project.git](https://github.com/ThomasJHLees/Team0Project.git)
   
 ## Final Status Report ##
-### What you completed ###
+### Completed ###
  * Minimum viable product flashcard web app
    * User authentication 
    * Flashcard deck creation/editing
    * Flashcard creation/upload
    * Flashcard viewing for study
- * Unit tests
+ * Unit testing
    * Database
    * Web app
  * Production deployment (Heroku)
-### What you were in the middle of implementing ###
+### In progress ###
  * Conversion to PostgreSQL
  * Flashcard editing
-### What you had planned for the future ###
+ * Improve unit test coverage
+### Future plans ###
  * Spaced-repetition flashcard review
- * Auto-fill card/deck editing forms with existing values
-### Any known problems (bugs, issues) ###
- * Data does not persist due to use of SQLite
+ * Auto-fill deck/card editing forms with existing values
+### Known issues/bugs ###
+ * Data does not persist due to use of SQLite on Heroku
 
-## List your public hosting site and make sure that it is available ##
+## Public hosting site ##
 [https://word-salad-project.herokuapp.com/](https://word-salad-project.herokuapp.com/)
