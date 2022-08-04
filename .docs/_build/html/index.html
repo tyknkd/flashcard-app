@@ -1,0 +1,332 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Welcome to WordSalad’s documentation! &#8212; WordSalad 0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-wordsalad.auth">
+<span id="welcome-to-wordsalad-s-documentation"></span><h1>Welcome to WordSalad’s documentation!<a class="headerlink" href="#module-wordsalad.auth" title="Permalink to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="wordsalad.auth.add_user">
+<span class="sig-prename descclassname"><span class="pre">wordsalad.auth.</span></span><span class="sig-name descname"><span class="pre">add_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#wordsalad.auth.add_user" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add new user to <cite>users</cite> table in database
+:return: Error message (None if successful)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wordsalad.auth.get_user">
+<span class="sig-prename descclassname"><span class="pre">wordsalad.auth.</span></span><span class="sig-name descname"><span class="pre">get_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#wordsalad.auth.get_user" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get user details from <cite>users</cite> table in database
+:return: dict with user_id, name, email, username, password or None if no such username</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wordsalad.auth.get_user_from_id">
+<span class="sig-prename descclassname"><span class="pre">wordsalad.auth.</span></span><span class="sig-name descname"><span class="pre">get_user_from_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#wordsalad.auth.get_user_from_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get user details from <cite>users</cite> table in database
+:return: dict with user_id, name, email, username, password or None if no such user_id</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wordsalad.auth.load_logged_in_user">
+<span class="sig-prename descclassname"><span class="pre">wordsalad.auth.</span></span><span class="sig-name descname"><span class="pre">load_logged_in_user</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wordsalad.auth.load_logged_in_user" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if user id is stored in session
+If exists, get user’s data from database</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wordsalad.auth.login">
+<span class="sig-prename descclassname"><span class="pre">wordsalad.auth.</span></span><span class="sig-name descname"><span class="pre">login</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wordsalad.auth.login" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verify user login</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wordsalad.auth.login_required">
+<span class="sig-prename descclassname"><span class="pre">wordsalad.auth.</span></span><span class="sig-name descname"><span class="pre">login_required</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">view</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wordsalad.auth.login_required" title="Permalink to this definition">¶</a></dt>
+<dd><p>Require login</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wordsalad.auth.logout">
+<span class="sig-prename descclassname"><span class="pre">wordsalad.auth.</span></span><span class="sig-name descname"><span class="pre">logout</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wordsalad.auth.logout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log out user</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wordsalad.auth.register">
+<span class="sig-prename descclassname"><span class="pre">wordsalad.auth.</span></span><span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wordsalad.auth.register" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register new user</p>
+</dd></dl>
+
+<span class="target" id="module-wordsalad.cards"></span><dl class="py function">
+<dt class="sig sig-object py" id="wordsalad.cards.add">
+<span class="sig-prename descclassname"><span class="pre">wordsalad.cards.</span></span><span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deck_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wordsalad.cards.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add card to deck with deck_id</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wordsalad.cards.add_card">
+<span class="sig-prename descclassname"><span class="pre">wordsalad.cards.</span></span><span class="sig-name descname"><span class="pre">add_card</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deck_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">front</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">back</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">notes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#wordsalad.cards.add_card" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert row in ‘cards’ table of database
+:returns: Error message (None if successful)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wordsalad.cards.allowed_file">
+<span class="sig-prename descclassname"><span class="pre">wordsalad.cards.</span></span><span class="sig-name descname"><span class="pre">allowed_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wordsalad.cards.allowed_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if filename extension is allowed</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wordsalad.cards.cards">
+<span class="sig-prename descclassname"><span class="pre">wordsalad.cards.</span></span><span class="sig-name descname"><span class="pre">cards</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deck_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wordsalad.cards.cards" title="Permalink to this definition">¶</a></dt>
+<dd><p>Render HTML template displaying cards in deck</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wordsalad.cards.delete">
+<span class="sig-prename descclassname"><span class="pre">wordsalad.cards.</span></span><span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deck_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">card_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wordsalad.cards.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete deck</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wordsalad.cards.edit">
+<span class="sig-prename descclassname"><span class="pre">wordsalad.cards.</span></span><span class="sig-name descname"><span class="pre">edit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deck_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">card_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wordsalad.cards.edit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Edit info of a card with card_id</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wordsalad.cards.get_card">
+<span class="sig-prename descclassname"><span class="pre">wordsalad.cards.</span></span><span class="sig-name descname"><span class="pre">get_card</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">card_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#wordsalad.cards.get_card" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetch single card in database by card_id (None if does not exist)
+:returns: dict of card_id, front, back, notes for card_id</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wordsalad.cards.get_cards">
+<span class="sig-prename descclassname"><span class="pre">wordsalad.cards.</span></span><span class="sig-name descname"><span class="pre">get_cards</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deck_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#wordsalad.cards.get_cards" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetch cards in deck by deck_id form data base
+:returns: list of dicts of cards (card_id, front, back, notes) (None if does not exist)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wordsalad.cards.parse_csv">
+<span class="sig-prename descclassname"><span class="pre">wordsalad.cards.</span></span><span class="sig-name descname"><span class="pre">parse_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deck_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#wordsalad.cards.parse_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert rows from csv into ‘cards’ table of database
+:returns: Error message (None if successful)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wordsalad.cards.remove">
+<span class="sig-prename descclassname"><span class="pre">wordsalad.cards.</span></span><span class="sig-name descname"><span class="pre">remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">card_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#wordsalad.cards.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove card with card_id
+:returns: Error message (None if successful)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wordsalad.cards.rows_to_list_of_dicts">
+<span class="sig-prename descclassname"><span class="pre">wordsalad.cards.</span></span><span class="sig-name descname"><span class="pre">rows_to_list_of_dicts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rows</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#wordsalad.cards.rows_to_list_of_dicts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert sqlite3.Row object to Python list of dicts
+<a class="reference external" href="https://docs.python.org/3/library/sqlite3.html#sqlite3.Row">https://docs.python.org/3/library/sqlite3.html#sqlite3.Row</a>
+<a class="reference external" href="https://stackoverflow.com/a/16523148">https://stackoverflow.com/a/16523148</a>
+:returns: dict of keys and values from sqlite3.Row object</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wordsalad.cards.update">
+<span class="sig-prename descclassname"><span class="pre">wordsalad.cards.</span></span><span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">card_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">front</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">back</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">notes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#wordsalad.cards.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update card with card_id
+:returns: Error message (None if successful)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wordsalad.cards.upload">
+<span class="sig-prename descclassname"><span class="pre">wordsalad.cards.</span></span><span class="sig-name descname"><span class="pre">upload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deck_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wordsalad.cards.upload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add multiple cards from uploaded CSV</p>
+</dd></dl>
+
+<span class="target" id="module-wordsalad.db"></span><span class="target" id="module-wordsalad.decks"></span><dl class="py function">
+<dt class="sig sig-object py" id="wordsalad.decks.add_deck">
+<span class="sig-prename descclassname"><span class="pre">wordsalad.decks.</span></span><span class="sig-name descname"><span class="pre">add_deck</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">owner_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">public</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#wordsalad.decks.add_deck" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert row in <cite>decks</cite> table of database
+:returns: Error message (None if successful)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wordsalad.decks.create">
+<span class="sig-prename descclassname"><span class="pre">wordsalad.decks.</span></span><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wordsalad.decks.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create new flashcard deck</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wordsalad.decks.decks">
+<span class="sig-prename descclassname"><span class="pre">wordsalad.decks.</span></span><span class="sig-name descname"><span class="pre">decks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wordsalad.decks.decks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Render HTML template with all decks available to user</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wordsalad.decks.delete">
+<span class="sig-prename descclassname"><span class="pre">wordsalad.decks.</span></span><span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deck_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wordsalad.decks.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete deck</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wordsalad.decks.edit">
+<span class="sig-prename descclassname"><span class="pre">wordsalad.decks.</span></span><span class="sig-name descname"><span class="pre">edit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deck_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wordsalad.decks.edit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Edit info of a deck with deck_id</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wordsalad.decks.get_deck">
+<span class="sig-prename descclassname"><span class="pre">wordsalad.decks.</span></span><span class="sig-name descname"><span class="pre">get_deck</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deck_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#wordsalad.decks.get_deck" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetch deck by deck_id
+:returns: dict of data for deck_id (None if does not exist)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wordsalad.decks.get_decks">
+<span class="sig-prename descclassname"><span class="pre">wordsalad.decks.</span></span><span class="sig-name descname"><span class="pre">get_decks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">owner_id</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#wordsalad.decks.get_decks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets data for all public and owned decks for owner_id from <cite>decks</cite> table of database
+If owner_id = None, only public decks are returned
+:returns: list of dicts of deck_id, owner_id, title, category, description, public</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wordsalad.decks.get_own_deck">
+<span class="sig-prename descclassname"><span class="pre">wordsalad.decks.</span></span><span class="sig-name descname"><span class="pre">get_own_deck</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deck_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_owner</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#wordsalad.decks.get_own_deck" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetch deck by deck_id
+:param deck_id: deck_id of desired deck
+:param check_owner=True: Abort if user is not owner
+:returns: list of dicts of deck data for deck_id (None if does not exist)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wordsalad.decks.remove">
+<span class="sig-prename descclassname"><span class="pre">wordsalad.decks.</span></span><span class="sig-name descname"><span class="pre">remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deck_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#wordsalad.decks.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove deck with deck_id
+:returns: Error message (None if successful)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wordsalad.decks.update">
+<span class="sig-prename descclassname"><span class="pre">wordsalad.decks.</span></span><span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deck_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">public</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#wordsalad.decks.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update deck with deck_id
+:returns: Error message (None if successful)</p>
+</dd></dl>
+
+<span class="target" id="module-wordsalad.home"></span><dl class="py function">
+<dt class="sig sig-object py" id="wordsalad.home.about">
+<span class="sig-prename descclassname"><span class="pre">wordsalad.home.</span></span><span class="sig-name descname"><span class="pre">about</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wordsalad.home.about" title="Permalink to this definition">¶</a></dt>
+<dd><p>Render about page</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wordsalad.home.index">
+<span class="sig-prename descclassname"><span class="pre">wordsalad.home.</span></span><span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wordsalad.home.index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Render home page</p>
+</dd></dl>
+
+<div class="toctree-wrapper compound">
+</div>
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">WordSalad</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Tyler Kincade, Janet Derrico, Atreyu Sutton, Thomas Lees.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.1.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
