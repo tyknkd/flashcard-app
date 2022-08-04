@@ -1,21 +1,21 @@
 /* JavaScript to control the display of cards' front and back */
 
-// Determine if user is deck owner and display edit button if so
+// Display card edit button 
 function editButton() {
-    /* 
-    Need to adapt Jinja template code below to JS (might need to use request to Flask to render url)
-    {% if g.user['user_id'] == deck['owner_id'] %}
-        <a class="action" href="{{ url_for('cards.edit', deck_id=deck['deck_id'], card_id=card['card_id']) }}">Edit</a>
-    {% endif %}
-    */
+    // Build card editing URL
+    const cardID = cards[cardCount]['card_id'];
+    const urlBase = cardID.toString();
+    const editURL = urlBase.concat("/edit/"); 
+
     // Add edit button for editing card
     const editButton = document.createElement("button");
     editButton.id = "editButton";
     editButton.textContent = "Edit";
     document.getElementById("buttons").appendChild(editButton);
 
-    // Add event listener to flip button
-    flipButton.addEventListener("click", flipCard);
+    // Add event listener to edit button
+    editButton.addEventListener("click", function(){ window.location.replace(editURL )});
+
 }
 
 // Display next card in deck
@@ -32,12 +32,14 @@ function nextCard(){
     // Remove next button
     document.getElementById("nextButton").remove();
     
+    // Remove edit button if owner
+    if (owner) {
+        document.getElementById("editButton").remove();
+    }
+
     // Display front of next card
     document.getElementById("card").innerHTML = cards[cardCount]['front'];
 
-    // Display edit button if appropriate
-    editButton();
- 
     // Add flip button for flipping card
     const flipButton = document.createElement("button");
     flipButton.id = "flipButton";
@@ -46,6 +48,11 @@ function nextCard(){
 
     // Add event listener to flip button
     flipButton.addEventListener("click", flipCard);
+
+    // Display edit button if deck owner
+    if (owner) {
+        editButton();
+    } 
 }
 
 // Flip current card
@@ -68,11 +75,19 @@ function flipCard() {
         const nextButton = document.createElement("button");
         nextButton.id = "nextButton";
         nextButton.textContent = "Next Card";
-        document.getElementById("buttons").appendChild(nextButton);
+        const buttonsNode = document.getElementById("buttons");
+        if (owner) {
+            editButton = document.getElementById("editButton");
+            buttonsNode.insertBefore(nextButton, editButton);
+        }
+        else {
+            buttonsNode.appendChild(nextButton);
+        }
 
         // Add event listener to next button
         nextButton.addEventListener("click", nextCard);
     }
+
 }
 
 // Get cards JSON string from HTML (cards is list of card dicts) 
@@ -90,15 +105,11 @@ let cardCount = 0;
 // Click counter
 let clickCount = 0;
 
-
 // If deck not empty
 if (numCards > 0) {
     // Display front of first card
     document.getElementById("card").innerHTML = cards[cardCount]['front'];
 
-    // Determine if deck owner and display edit button if so
-    editButton();
-    
     // Add flip button for flipping card
     const flipButton = document.createElement("button");
     flipButton.id = "flipButton";
@@ -108,4 +119,8 @@ if (numCards > 0) {
     // Add event listener to flip button
     flipButton.addEventListener("click", flipCard);
 
+    // Display edit button if deck owner
+    if (owner) {
+        editButton();
+    } 
 }
