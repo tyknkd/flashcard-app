@@ -24,3 +24,6 @@ build/
 
 # Running Flask
 runflask.sh
+
+# Test config
+.vscode/settings.json
