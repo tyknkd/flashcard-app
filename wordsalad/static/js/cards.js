@@ -42,6 +42,7 @@ function nextCard(){
 
     // Add flip button for flipping card
     const flipButton = document.createElement("button");
+    flipButton.type = "flipbutton"
     flipButton.id = "flipButton";
     flipButton.textContent = "Flip Card";
     document.getElementById("buttons").appendChild(flipButton);
@@ -73,6 +74,7 @@ function flipCard() {
     if (cardCount + 1 < numCards) {
         // Add next card button
         const nextButton = document.createElement("button");
+        nextButton.type = "nextbutton";
         nextButton.id = "nextButton";
         nextButton.textContent = "Next Card";
         const buttonsNode = document.getElementById("buttons");

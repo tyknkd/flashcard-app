@@ -9,15 +9,21 @@
 {% endblock %}
 
 {% block content %}
+<div class="addcard">
+
   <form method="post">
+    <h2 style="color:white">Add Card</h2>
     <label for="front">Front of card</label>
-    <input name="front" id="front" value="{{ request.form['front'] }}" required>
+    <input type=text name="front" id="front" value="{{ request.form['front'] }}" required>
     <label for="back">Back of card</label>
-    <input name="back" id="back" value ="{{ request.form['back'] }}" required>
+    <input type=text name="back" id="back" value ="{{ request.form['back'] }}" required>
     <label for="notes">Notes</label>
-    <input name="notes" id="notes" value="{{ request.form['notes'] }}">
+    <input type=text name="notes" id="notes" value="{{ request.form['notes'] }}">
     <input type="submit" value="Save">
   </form>
+
+</div>
+
   <hr>
   <section class="csv">
     <a class="action" href="{{ url_for('cards.upload', deck_id=deck['deck_id']) }}">Upload CSV</a>

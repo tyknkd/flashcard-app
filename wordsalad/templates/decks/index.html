@@ -2,6 +2,7 @@
 <!-- Page to display decks choices -->
 <!-- Reference: https://flask.palletsprojects.com/en/2.1.x/tutorial/blog/ -->
 
+
 {% extends 'base.html' %}
 
 {% block header %}
@@ -12,20 +13,25 @@
 {% endblock %}
 
 {% block content %}
+
   <section class="decks">
     {% for deck in decks %}
-      <header>
-        <div>
-          <h1><a class ="decks" href="{{ url_for('cards.cards', deck_id=deck['deck_id']) }}">{{ deck['title'] }}</a></h1>
-        </div>
-	  {% if g.user['user_id'] == deck['owner_id'] %}
-	    <a class="action" href="{{ url_for('decks.edit', deck_id=deck['deck_id']) }}">Edit</a>
-	  {% endif %}
-      </header>
-      <p class="description">{{ deck['description'] }}</p>
-      {% if not loop.last %}
+      <div class="deck">
+
+        <h3 style="color:white">{{ deck['title'] }}</h3>
+        <p class="description">{{ deck['description'] }}</p>
+        <a href="{{ url_for('cards.cards', deck_id=deck['deck_id']) }}"><button type="redirect">View Deck</button></a>
+        {% if g.user['user_id'] == deck['owner_id'] %}
+        <a class="action" href="{{ url_for('decks.edit', deck_id=deck['deck_id']) }}"><button type="redirect">Edit</button></a>
+        {% endif %}
+
+      </div>
+
+      <!-- {% if not loop.last %}
         <hr>
-      {% endif %}
+      {% endif %} -->
+
     {% endfor %}
   </section>
+
 {% endblock %}
