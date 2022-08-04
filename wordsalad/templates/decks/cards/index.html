@@ -49,10 +49,12 @@
   <h1>{% block title %}{{ deck['title'] }}{% endblock title %}</h1>
   {% if g.user['user_id'] == deck['owner_id'] %}
     <a class="action" href="{{ url_for('cards.add', deck_id=deck['deck_id']) }}">Add Card</a>
+    
     <script>
-        const owner=true;
-        const deckID={{ deck['deck_id'] }};
+      const owner=true;
+      const deckID={{ deck['deck_id'] }}
     </script>
+    
   {% endif %}
 {% endblock %}
 
