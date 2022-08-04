@@ -1,7 +1,7 @@
 /* JavaScript to control the display of cards' front and back */
 
 // Display card edit button 
-function editButton() {
+function addEditButton() {
     // Build card editing URL
     const cardID = cards[cardCount]['card_id'];
     const urlBase = cardID.toString();
@@ -51,7 +51,7 @@ function nextCard(){
 
     // Display edit button if deck owner
     if (owner) {
-        editButton();
+        addEditButton();
     } 
 }
 
@@ -121,6 +121,6 @@ if (numCards > 0) {
 
     // Display edit button if deck owner
     if (owner) {
-        editButton();
+        addEditButton();
     } 
 }
