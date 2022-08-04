@@ -5,7 +5,7 @@ venv/
 __pycache__/
 
 # Flask app instance
-instance/
+# instance/
 
 .pytest_cache/
 .coverage
