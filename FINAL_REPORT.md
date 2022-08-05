@@ -28,7 +28,6 @@
  * Production deployment (Heroku)
 ### In progress ###
  * Conversion to PostgreSQL
- * Flashcard editing
  * Improve unit test coverage
 ### Future plans ###
  * Spaced-repetition flashcard review
