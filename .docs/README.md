@@ -7,11 +7,7 @@ AutoDoc is a utility that can be used to automatically document functions in cod
  2. Open index.html in a web browser
 
 ### To update the documentation after adding new functions to existing python files: ###
- 1. Install Sphinx
- ```
- pip install sphinx
- ```
- 2. From the ./docs directory run:
+ 1. From the ./docs directory run:
  ```
  make html
  ```
