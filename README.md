@@ -145,16 +145,15 @@ This project has the following directory tree:
 ├── images/  
 │   ├── db_schematic.png  
 │   ├── kanban/  
-│   │       ├── kanban20220627.png
-│   │       └── kanban202207*.png
+│   │    └── kanban20220*.png
 │   └── mockups/  
-│           ├── about.png
-│           ├── createcard.png
-│           ├── decks.png
-│           ├── flashcard.png
-│           ├── home.png
-│           ├── homepage.jpg
-│           └── login.png
+│        ├── about.png
+│        ├── createcard.png
+│        ├── decks.png
+│        ├── flashcard.png
+│        ├── home.png
+│        ├── homepage.jpg
+│        └── login.png
 ├── setup.py 
 ├── MANIFEST.in 
 ├── README.md 
