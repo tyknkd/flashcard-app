@@ -121,7 +121,7 @@ This project has the following directory tree:
 │   ├── static/
 │   |   ├── style.css
 │   |   ├── js/
-|   │   |   └── deck3.png
+|   │   |   └── cards.js
 |   │   └── images/
 |   │       ├── logo.jpg
 |   │       ├── lettuce.png
@@ -136,7 +136,17 @@ This project has the following directory tree:
 │   ├── test_db.py  
 │   ├── test_auth.py  
 │   ├── test_home.py  
-│   └── test_decks.py  
+│   ├── test_decks.py  
+│   └── test_cards.py  
+├── .docs/
+|   ├── _build/
+|   |   ├── doctrees/
+|   |   └── html/
+|   ├── Makefile
+|   ├── README.md
+|   ├── conf.py
+|   ├── index.rst
+│   └── make.bat
 ├── csv/
 |   ├── source_info.csv
 |   ├── SAT_vocab.csv
@@ -203,6 +213,16 @@ This project has the following directory tree:
 | &nbsp;&nbsp;&nbsp;test_auth.py                                                    | Authentication unit tests                              |
 | &nbsp;&nbsp;&nbsp;test_home.py                                                    | Home page unit tests                                   |
 | &nbsp;&nbsp;&nbsp;test_decks.py                                                   | Decks pages unit tests                                 |
+| &nbsp;&nbsp;&nbsp;test_cards.py                                                   | Cards pages unit tests                                 |
+| .docs/                                                                            | Autodocumenter directory                               |
+| &nbsp;&nbsp;&nbsp;_build/                                                         | Build files directory                                  |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doctrees/                                     | Document trees directory                               |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;html/                                         | HTML files directory                                   |
+| &nbsp;&nbsp;&nbsp;Makefile                                                        | Make file                                              |
+| &nbsp;&nbsp;&nbsp;README.md                                                       | Instructions for installing autodocumenter             |
+| &nbsp;&nbsp;&nbsp;conf.py                                                         | Configuration script                                   |
+| &nbsp;&nbsp;&nbsp;index.rst                                                       | Documentation index page                               |
+| &nbsp;&nbsp;&nbsp;make.bat                                                        | Make batch file                                        |
 | csv/                                                                              | Flashcard CSV files directory                          |
 | &nbsp;&nbsp;&nbsp;source_info.csv                                                 | Source data information                                |
 | &nbsp;&nbsp;&nbsp;SAT_vocab.csv                                                   | SAT vocabulary source data                             |
