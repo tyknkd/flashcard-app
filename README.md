@@ -124,10 +124,10 @@ This project has the following directory tree:
 |   │   |   └── cards.js
 |   │   └── images/
 |   │       ├── logo.jpg
-|   │       ├── lettuce.png
-|   │       ├── deck1.png
-|   │       ├── deck2.png
-|   │       └── deck3.png
+|   │       ├── salad.png
+|   │       ├── GRE.png
+|   │       ├── LSAT.png
+|   │       └── SAT.png
 ├── tests/  
 │   ├── data.sql  
 │   ├── conftest.py  
@@ -164,6 +164,9 @@ This project has the following directory tree:
 │        ├── home.png
 │        ├── homepage.jpg
 │        └── login.png
+├── Procfile 
+├── requirements.txt 
+├── run.py 
 ├── setup.py 
 ├── MANIFEST.in 
 ├── README.md 
@@ -234,6 +237,9 @@ This project has the following directory tree:
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kanban2022\*.png                              | Weekly Kanban screenshots                              |
 | &nbsp;&nbsp;&nbsp;mockups/                                                        | Web page mockup directory                              |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\*.png                                        | Web page mockups                                       |
+| Procfile                                                                          | Heroku procfile                                        |
+| requirements.txt                                                                  | Dependencies for deploying to Heroku                   |
+| run.py                                                                            | Script for Heroku deployment                           |
 | setup.py                                                                          | Script to install app                                  |
 | MANIFEST.in                                                                       | List of other files to include at installation         |
 | README.md                                                                         | Summary of project                                     |
