@@ -129,7 +129,7 @@ This project has the following directory tree:
 |   │       ├── LSAT.png
 |   │       └── SAT.png
 ├── instance/  
-│   ├── wordsalad.sqlite  
+│   └── wordsalad.sqlite  
 ├── tests/  
 │   ├── data.sql  
 │   ├── conftest.py  
