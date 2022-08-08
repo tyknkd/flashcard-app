@@ -128,6 +128,8 @@ This project has the following directory tree:
 |   │       ├── GRE.png
 |   │       ├── LSAT.png
 |   │       └── SAT.png
+├── instance/  
+│   ├── wordsalad.sqlite  
 ├── tests/  
 │   ├── data.sql  
 │   ├── conftest.py  
@@ -207,6 +209,8 @@ This project has the following directory tree:
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cards.js                    | Card flipping JavaScript                               |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;images/                                       | Web app images directory                               |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*.png                       | Web app images files                                   |
+| instance/                                                                         | Database directory                                     |
+| &nbsp;&nbsp;&nbsp;wordsalad.sqlite                                                | SQLite sample database for Heroku deployment           |
 | tests/                                                                            | Unit tests directory                                   |
 | &nbsp;&nbsp;&nbsp;data.sql                                                        | Unit test SQL data                                     |
 | &nbsp;&nbsp;&nbsp;conftest.py                                                     | Unit test configuration script (runs for every test)   |
