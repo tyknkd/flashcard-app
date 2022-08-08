@@ -36,5 +36,8 @@ https://drive.google.com/file/d/1S4296GJDzbJEyQfe1LZil0gGdcfVINWu/view?usp=shari
 ### Known issues/bugs ###
  * Data does not persist due to use of SQLite on Heroku
 
+## Project Presentation Slides ##
+  [Presentation Slides](https://docs.google.com/presentation/d/e/2PACX-1vT0D5K5G-H9BH5A9YFw5_ymyfEQ2phlKKtJTXFWIrMLYgszrhCeKmX3s7FZxSpvH_uP6eH25X62LbHW/pub?start=false&loop=false&delayms=3000)
+
 ## Public hosting site ##
 [https://word-salad-project.herokuapp.com/](https://word-salad-project.herokuapp.com/)
