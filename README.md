@@ -5,10 +5,10 @@
  Word Salad
 
 ### Team Members: ###
- * Thomas Lees, ThomasJHLees, Thomas.Lees@colorado.edu
- * Janet Matthews-Derrico, j-derrico, jama1091@colorado.edu
- * Atreyu Sutton, asutton01, atsu4189@colorado.edu
- * Tyler Kinkade, tyknkd, Tyler.Kinkade@colorado.edu
+ * Thomas Lees, ThomasJHLees
+ * Janet Matthews-Derrico, j-derrico
+ * Atreyu Sutton, asutton01
+ * Tyler Kinkade, tyknkd
 
 ### Weekly Meeting: ###
  Mondays, 18:00 MDT, Zoom
