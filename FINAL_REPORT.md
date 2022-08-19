@@ -2,10 +2,10 @@
 ## Word Salad Flashcard App #
 
 ## Team members' names ##
- * Thomas Lees, ThomasJHLees, Thomas.Lees@colorado.edu
- * Janet Matthews-Derrico, j-derrico, jama1091@colorado.edu
- * Atreyu Sutton, asutton01, atsu4189@colorado.edu
- * Tyler Kinkade, tyknkd, Tyler.Kinkade@colorado.edu
+ * Thomas Lees, ThomasJHLees
+ * Janet Matthews-Derrico, j-derrico
+ * Atreyu Sutton, asutton01
+ * Tyler Kinkade, tyknkd
 
 ## Project tracker link (Instructor can access) ##
   [GitHub Projects](https://github.com/users/ThomasJHLees/projects/1)
