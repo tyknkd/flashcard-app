@@ -1,5 +1,5 @@
-# Project Title #
-## Word Salad Flashcard App #
+# WordSalad Flashcard App #
+A web-based dynamic flashcard study app created as a team project for the [CU CSPB 3308 Software Development Methods and Tools](https://www.colorado.edu/program/cspb/cspb-3308-software-development-methods-and-tools) Summer 2022 course
 
 ## Team members ##
  * Thomas Lees, [ThomasJHLees](https://github.com/ThomasJHLees)
