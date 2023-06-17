@@ -1,19 +1,19 @@
 # Project Title #
 ## Word Salad Flashcard App #
 
-## Team members' names ##
+## Team members ##
  * Thomas Lees, ThomasJHLees
  * Janet Matthews-Derrico, j-derrico
  * Atreyu Sutton, asutton01
  * Tyler Kinkade, tyknkd
 
-## Project tracker link ##
+## Project tracker ##
   [GitHub Projects](https://github.com/users/ThomasJHLees/projects/1)
 
-## Link to 5 minute video: A demo for a potential customer ##
-https://drive.google.com/file/d/1S4296GJDzbJEyQfe1LZil0gGdcfVINWu/view?usp=sharing
+## Demo video ##
+[https://youtu.be/8eDfaov-n4A](https://youtu.be/8eDfaov-n4A)
 
-## Version control repository link ##
+## Version control repository ##
   [https://github.com/ThomasJHLees/Team0Project.git](https://github.com/ThomasJHLees/Team0Project.git)
   
 ## Final status report ##
