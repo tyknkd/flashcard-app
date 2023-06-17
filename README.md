@@ -9,9 +9,6 @@ A web-based dynamic flashcard study app created as a team project for the [CU CS
  
 ## Project presentation slides ##
   [Presentation slides](https://docs.google.com/presentation/d/1b9k7UJkH9uh1Y2gA2xFZLrqHMdz9fpYYBPwkH3T7agM/)
-
-## Demo video ##
-[https://youtu.be/8eDfaov-n4A](https://youtu.be/8eDfaov-n4A)
   
 ## Final status report ##
 ### Completed ###
