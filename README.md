@@ -7,13 +7,13 @@
  * Atreyu Sutton, asutton01
  * Tyler Kinkade, tyknkd
 
-## Project tracker link (Instructor can access) ##
+## Project tracker link ##
   [GitHub Projects](https://github.com/users/ThomasJHLees/projects/1)
 
-## Link to 5 minute video: a demo for a potential customer ##
+## Link to 5 minute video: A demo for a potential customer ##
 https://drive.google.com/file/d/1S4296GJDzbJEyQfe1LZil0gGdcfVINWu/view?usp=sharing
 
-## Version control repository link (Instructor can access) ##
+## Version control repository link ##
   [https://github.com/ThomasJHLees/Team0Project.git](https://github.com/ThomasJHLees/Team0Project.git)
   
 ## Final status report ##
