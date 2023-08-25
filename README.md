@@ -35,6 +35,3 @@ A web-based dynamic flashcard study app created as a team project for the [CU CS
 
 ## Version control repository ##
   [https://github.com/ThomasJHLees/Team0Project.git](https://github.com/ThomasJHLees/Team0Project.git)
-
-## Public hosting site ##
-[https://word-salad-project.herokuapp.com/](https://word-salad-project.herokuapp.com/)
